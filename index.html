@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
@@ -12,34 +11,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Gloock&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            headline: ['Gloock', 'serif'],
-            italicHero: ['Newsreader', 'Georgia', 'serif'],
-            sans: [
-              '-apple-system',
-              'BlinkMacSystemFont',
-              '"SF Pro Display"',
-              '"SF Pro Text"',
-              '"Neue Montreal"',
-              'Geist',
-              'sans-serif'
-            ],
-          }
-        }
-      }
-    }
-  </script>
-
   <style>
+    @font-face {
+      font-family: 'Neue Montreal';
+      src: url('https://uploads-ssl.webflow.com/6429fa2077e68233767cbe5b/642a046c8273673752e25ae9_NeueMontreal-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Neue Montreal';
+      src: url('https://uploads-ssl.webflow.com/6429fa2077e68233767cbe5b/642a046c8273670984e25aea_NeueMontreal-Medium.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Neue Montreal';
+      src: url('https://uploads-ssl.webflow.com/6429fa2077e68233767cbe5b/642a046c82736774a3e25aeb_NeueMontreal-Bold.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
     body {
       background-color: #0c0c0e;
       color: #e6e6e8;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Neue Montreal", Geist, sans-serif;
-      letter-spacing: -0.012em;
+      font-family: 'Neue Montreal', -apple-system, BlinkMacSystemFont, sans-serif;
+      letter-spacing: -0.015em;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       text-rendering: optimizeLegibility;
@@ -259,6 +258,20 @@
       animation: arrowBounce 1.8s ease-in-out infinite;
     }
   </style>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            headline: ['Gloock', 'serif'],
+            italicHero: ['Newsreader', 'Georgia', 'serif'],
+            sans: ['"Neue Montreal"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
 </head>
 <body class="selection:bg-neutral-800 selection:text-white relative min-h-screen pb-24">
 
@@ -271,20 +284,20 @@
         
         <div class="w-full sm:w-auto flex items-center justify-between">
           <div>
-            <a href="#" onclick="switchTab('work')" class="text-base sm:text-lg font-semibold tracking-[-0.015em] text-white block hover:text-neutral-200 transition-colors">
+            <a href="#" onclick="switchTab('work')" class="text-base sm:text-lg font-medium tracking-tight text-white block hover:text-neutral-200 transition-colors">
               Roberto Muñoz
             </a>
-            <span class="text-xs sm:text-[13px] text-[#95959e] font-normal block mt-0.5 tracking-[-0.01em]">
+            <span class="text-xs sm:text-[13px] text-[#95959e] font-normal block mt-0.5 tracking-tight">
               Técnico Informático &bull; DAM
             </span>
           </div>
 
           <div class="flex sm:hidden items-center gap-5 text-sm text-[#95959e]">
-            <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
+            <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5 font-normal">
               <span>LinkedIn</span>
               <svg class="w-3 h-3 text-current opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
             </a>
-            <a href="https://github.com/roberttedt-jr" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
+            <a href="https://github.com/roberttedt-jr" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5 font-normal">
               <span>GitHub</span>
               <svg class="w-3 h-3 text-current opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
             </a>
@@ -295,15 +308,15 @@
           <div id="notch-glow" class="pill-halo"></div>
           <div id="notch" class="pill-notch pointer-events-none"></div>
 
-          <button id="btn-work" onclick="switchTab('work')" class="relative z-10 px-6 py-2 rounded-full text-sm font-medium text-white bg-[#2c2c33] shadow-sm transition-all duration-200 tracking-[-0.01em]">
+          <button id="btn-work" onclick="switchTab('work')" class="relative z-10 px-6 py-2 rounded-full text-sm font-medium text-white bg-[#2c2c33] shadow-sm transition-all duration-200 tracking-tight">
             Work
           </button>
-          <button id="btn-info" onclick="switchTab('info')" class="relative z-10 px-6 py-2 rounded-full text-sm font-medium text-[#8c8c94] hover:text-white transition-all duration-200 tracking-[-0.01em]">
+          <button id="btn-info" onclick="switchTab('info')" class="relative z-10 px-6 py-2 rounded-full text-sm font-medium text-[#8c8c94] hover:text-white transition-all duration-200 tracking-tight">
             Info
           </button>
         </div>
 
-        <div class="hidden sm:flex items-center gap-7 text-sm text-[#95959e] font-medium tracking-[-0.01em]">
+        <div class="hidden sm:flex items-center gap-7 text-sm text-[#95959e] font-normal tracking-tight">
           <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
             <span>LinkedIn</span>
             <svg class="w-3 h-3 text-current opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
@@ -328,7 +341,7 @@
               <div class="flex items-center gap-2">
                 <div class="w-3 h-3 rounded-full bg-[#ff5f56] border border-[#e0443e]"></div>
                 <div class="w-3 h-3 rounded-full bg-[#ffbd2e] border border-[#dea123]"></div>
-                <div class="w-3 h-3 rounded-full bg-[#27c93f] border border-[#1aab29]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#62c554] border border-[#4ea741]"></div>
               </div>
               <div class="text-[#55555c] hover:text-white text-xs font-light cursor-default select-none pr-1">
                 +
@@ -345,7 +358,7 @@
 
                 <div class="mt-14 sm:mt-28 flex justify-end">
                   <div class="text-right">
-                    <p class="text-xs sm:text-[15px] md:text-base text-[#d8d8de] font-normal tracking-[-0.01em]">
+                    <p class="text-xs sm:text-[15px] md:text-base text-[#d8d8de] font-normal tracking-tight">
                       Técnico de Sistemas &amp; DAM en formación. Based in Benidorm.
                     </p>
                     <p class="text-[11px] sm:text-xs text-[#7a7a82] mt-1 font-light">
@@ -370,10 +383,10 @@
           
           <div class="relative z-10 flex items-start justify-between gap-4 mb-6 sm:mb-8">
             <div>
-              <h2 class="text-lg sm:text-[22px] font-semibold text-white tracking-[-0.02em]">
+              <h2 class="text-lg sm:text-[22px] font-medium text-white tracking-tight">
                 ATMOS
               </h2>
-              <p class="text-xs sm:text-sm text-[#7e7e86] group-hover:text-[#a0b8d8] transition-colors mt-0.5 font-normal tracking-[-0.01em]">
+              <p class="text-xs sm:text-sm text-[#7e7e86] group-hover:text-[#a0b8d8] transition-colors mt-0.5 font-normal tracking-tight">
                 UNIVERSAE, '25 — Aplicación del Tiempo PWA interactiva, estilo Liquid Glass.
               </p>
             </div>
@@ -396,7 +409,7 @@
                 <svg class="w-3.5 h-3.5 text-[#2997ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
                 </svg>
-                <span class="text-xs font-medium text-white tracking-[-0.01em]">ATMOS — Weather Mode</span>
+                <span class="text-xs font-medium text-white tracking-tight">ATMOS — Weather Mode</span>
                 <span class="text-[#62626e] hover:text-white text-xs ml-1 cursor-default">&times;</span>
               </div>
 
@@ -427,14 +440,14 @@
 
         <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
           <div class="md:col-span-5">
-            <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-white tracking-[-0.02em]">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-medium text-white tracking-tight">
               Higher Education Barcelona
             </h2>
           </div>
           <div class="md:col-span-7 space-y-1">
-            <h3 class="text-sm sm:text-base font-semibold text-white tracking-[-0.01em]">Técnico informático</h3>
+            <h3 class="text-sm sm:text-base font-medium text-white tracking-tight">Técnico informático</h3>
             <p class="text-xs font-mono text-[#7a7a84]">09/'24 - 12/'24 &bull; En remoto</p>
-            <p class="text-xs sm:text-sm text-[#a0a0a8] font-light leading-relaxed pt-2">
+            <p class="text-xs sm:text-sm text-[#a0a0a8] font-normal leading-relaxed pt-2">
               Soporte técnico, diagnóstico de incidencias, optimización de sistemas y gestión de infraestructuras IT corporativas en entorno remoto.
             </p>
           </div>
@@ -450,12 +463,12 @@
         <div class="space-y-8 sm:space-y-12">
           <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
             <div class="md:col-span-5">
-              <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-white tracking-[-0.02em]">UNIVERSAE</h2>
+              <h2 class="text-xl sm:text-2xl md:text-3xl font-medium text-white tracking-tight">UNIVERSAE</h2>
             </div>
             <div class="md:col-span-7 space-y-1">
-              <h3 class="text-sm sm:text-base font-semibold text-white tracking-[-0.01em]">Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
+              <h3 class="text-sm sm:text-base font-medium text-white tracking-tight">Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
               <p class="text-xs font-mono text-[#7a7a84]">02/'25 - 01/'27</p>
-              <p class="text-xs sm:text-sm text-[#a0a0a8] font-light leading-relaxed pt-2">
+              <p class="text-xs sm:text-sm text-[#a0a0a8] font-normal leading-relaxed pt-2">
                 Especialización en desarrollo multiplataforma, bases de datos relacionales, servicios y arquitecturas de aplicaciones modernas.
               </p>
             </div>
@@ -463,12 +476,12 @@
 
           <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
             <div class="md:col-span-5">
-              <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-white tracking-[-0.02em]">UNIVERSAE</h2>
+              <h2 class="text-xl sm:text-2xl md:text-3xl font-medium text-white tracking-tight">UNIVERSAE</h2>
             </div>
             <div class="md:col-span-7 space-y-1">
-              <h3 class="text-sm sm:text-base font-semibold text-white tracking-[-0.01em]">Técnico en Sistemas Microinformáticos y Redes (SMR)</h3>
+              <h3 class="text-sm sm:text-base font-medium text-white tracking-tight">Técnico en Sistemas Microinformáticos y Redes (SMR)</h3>
               <p class="text-xs font-mono text-[#7a7a84]">02/'24 - 02/'25</p>
-              <p class="text-xs sm:text-sm text-[#a0a0a8] font-light leading-relaxed pt-2">
+              <p class="text-xs sm:text-sm text-[#a0a0a8] font-normal leading-relaxed pt-2">
                 Instalación, configuración y mantenimiento de redes locales, hardware, servidores y protocolos de seguridad informática.
               </p>
             </div>
@@ -484,10 +497,10 @@
 
         <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
           <div class="md:col-span-5">
-            <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-white tracking-[-0.02em]">Bio</h2>
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-medium text-white tracking-tight">Bio</h2>
           </div>
           <div class="md:col-span-7">
-            <p class="text-sm sm:text-base font-light text-[#d0d0d8] leading-relaxed">
+            <p class="text-sm sm:text-base font-normal text-[#d0d0d8] leading-relaxed">
               Hola mi nombre es Roberto, soy Técnico en Sistemas Microinformáticos y Redes, y ahora estoy estudiando para ser Técnico de Desarrollo de Aplicaciones Multiplataforma (DAM), a la vez lo compagino trabajando los meses de verano y estudiando campos de la informática que me gustan desde casa.
             </p>
           </div>
@@ -502,7 +515,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
           <div class="md:col-span-5">
-            <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-white tracking-[-0.02em]">Idiomas</h2>
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-medium text-white tracking-tight">Idiomas</h2>
           </div>
           <div class="md:col-span-7 space-y-2 sm:space-y-3 text-xs sm:text-sm text-[#c4c4cc]">
             <p><span class="text-white font-medium">Español</span> — Competencia bilingüe o nativa</p>
@@ -520,7 +533,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
           <div class="md:col-span-5">
-            <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-white tracking-[-0.02em]">Get in touch</h2>
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-medium text-white tracking-tight">Get in touch</h2>
           </div>
           <div class="md:col-span-7 space-y-3 sm:space-y-4">
             <div>
@@ -536,7 +549,7 @@
               </button>
             </div>
             <div>
-              <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="text-xs sm:text-sm text-[#9e9ea8] hover:text-white transition-colors inline-flex items-center gap-1.5">
+              <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="text-xs sm:text-sm text-[#9e9ea8] hover:text-white transition-colors inline-flex items-center gap-1.5 font-normal">
                 <span>LinkedIn Profile</span>
                 <svg class="w-2.5 h-2.5 text-current opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
               </a>
@@ -551,12 +564,12 @@
   <div id="project-view" class="hidden relative z-20 min-h-screen">
     
     <nav class="w-full px-6 sm:px-12 md:px-16 lg:px-20 pt-7 pb-4 flex items-center justify-between max-w-[1360px] mx-auto">
-      <button onclick="closeProject()" class="pill-capsule px-4 py-2 rounded-full text-xs font-medium text-white hover:text-neutral-300 transition-colors flex items-center gap-2 cursor-pointer shadow-lg tracking-[-0.01em]">
+      <button onclick="closeProject()" class="pill-capsule px-4 py-2 rounded-full text-xs font-medium text-white hover:text-neutral-300 transition-colors flex items-center gap-2 cursor-pointer shadow-lg">
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
         <span>Back</span>
       </button>
 
-      <div class="flex items-center gap-6 text-sm text-[#95959e] font-medium tracking-[-0.01em]">
+      <div class="flex items-center gap-6 text-sm text-[#95959e] font-normal">
         <a href="https://roberttedt-jr.github.io/ATMOS./" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5 text-white font-medium">
           <span>Live App</span>
           <svg class="w-2.5 h-2.5 text-current opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
@@ -608,7 +621,7 @@
           </div>
         </div>
 
-        <article class="mt-20 max-w-3xl space-y-14 text-sm font-light text-[#c4c4cc] leading-relaxed">
+        <article class="mt-20 max-w-3xl space-y-14 text-sm font-normal text-[#c4c4cc] leading-relaxed">
           
           <section id="overview">
             <h2 class="text-xs font-mono uppercase tracking-widest text-[#7a7a84] mb-3">01 / OVERVIEW</h2>
@@ -621,7 +634,7 @@
           <section id="architecture">
             <h2 class="text-xs font-mono uppercase tracking-widest text-[#7a7a84] mb-3">02 / ARCHITECTURE & TECH STACK</h2>
             <h3 class="text-2xl font-serif text-white mb-4">Estructura moderna sin dependencias pesadas</h3>
-            <p class="mb-4">
+            <p>
               La arquitectura se construyó sobre JavaScript puro (Vanilla), HTML5 semántico y CSS3 con técnicas avanzadas de desenfoque por capas. Se implementó una integración directa con la API pública de Windy para la recepción continua de variables de presión, viento y proyecciones térmicas.
             </p>
           </section>
@@ -674,15 +687,15 @@
       if (tab === 'work') {
         viewWork.classList.remove('hidden');
         viewInfo.classList.add('hidden');
-        btnWork.className = "relative z-10 px-6 py-2 rounded-full text-sm font-medium text-white bg-[#2c2c33] shadow-sm transition-all duration-200 tracking-[-0.01em]";
-        btnInfo.className = "relative z-10 px-6 py-2 rounded-full text-sm font-medium text-[#8c8c94] hover:text-white transition-all duration-200 tracking-[-0.01em]";
+        btnWork.className = "relative z-10 px-6 py-2 rounded-full text-sm font-medium text-white bg-[#2c2c33] shadow-sm transition-all duration-200 tracking-tight";
+        btnInfo.className = "relative z-10 px-6 py-2 rounded-full text-sm font-medium text-[#8c8c94] hover:text-white transition-all duration-200 tracking-tight";
         notch.classList.remove('info-active');
         notchGlow.classList.remove('info-active');
       } else {
         viewWork.classList.add('hidden');
         viewInfo.classList.remove('hidden');
-        btnInfo.className = "relative z-10 px-6 py-2 rounded-full text-sm font-medium text-white bg-[#2c2c33] shadow-sm transition-all duration-200 tracking-[-0.01em]";
-        btnWork.className = "relative z-10 px-6 py-2 rounded-full text-sm font-medium text-[#8c8c94] hover:text-white transition-all duration-200 tracking-[-0.01em]";
+        btnInfo.className = "relative z-10 px-6 py-2 rounded-full text-sm font-medium text-white bg-[#2c2c33] shadow-sm transition-all duration-200 tracking-tight";
+        btnWork.className = "relative z-10 px-6 py-2 rounded-full text-sm font-medium text-[#8c8c94] hover:text-white transition-all duration-200 tracking-tight";
         notch.classList.add('info-active');
         notchGlow.classList.add('info-active');
       }
