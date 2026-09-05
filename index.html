@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Roberto Muñoz Rovira</title>
 
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Tipografías: Gloock (Titular Perry Wang) + Newsreader Italic + Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
@@ -36,21 +34,20 @@
       overflow-x: hidden;
     }
 
-    /* Iluminación superior cenital en el fondo general */
     .hero-spotlight {
       position: absolute;
       top: -120px;
       left: 50%;
       transform: translateX(-50%);
-      width: 1200px;
-      height: 700px;
+      width: 100%;
+      max-width: 1200px;
+      height: 600px;
       background: radial-gradient(ellipse at 50% 15%, rgba(140, 148, 170, 0.18) 0%, rgba(20, 22, 28, 0.04) 55%, transparent 75%);
-      filter: blur(90px);
+      filter: blur(80px);
       pointer-events: none;
       z-index: 0;
     }
 
-    /* Cápsula de navegación */
     .pill-capsule {
       position: relative;
       background: linear-gradient(180deg, #202025 0%, #141417 100%);
@@ -90,11 +87,10 @@
       left: 72%;
     }
 
-    /* Marco de la Ventana Hero con difuminado por máscara */
     .mac-window-hero {
       position: relative;
       background: #0f0f13;
-      border-radius: 22px 22px 0 0;
+      border-radius: 18px 18px 0 0;
       border-top: 1px solid rgba(255, 255, 255, 0.15);
       border-left: 1px solid rgba(255, 255, 255, 0.12);
       border-right: 1px solid rgba(255, 255, 255, 0.12);
@@ -102,62 +98,57 @@
       box-shadow: 
         0 45px 120px -20px rgba(0, 0, 0, 0.95),
         inset 0 1px 0 rgba(255, 255, 255, 0.22);
-      
-      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 98%);
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 98%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 98%);
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 98%);
       overflow: hidden;
     }
 
-    /* Difuminado suave exterior que rodea la ventana */
     .hero-backlight {
       position: absolute;
-      inset: -35px;
+      inset: -25px;
       background: radial-gradient(circle at 50% 35%, rgba(150, 160, 195, 0.2) 0%, rgba(35, 40, 55, 0.05) 55%, transparent 70%);
-      filter: blur(75px);
+      filter: blur(60px);
       z-index: -1;
       pointer-events: none;
     }
 
-    /* Resplandor tras las letras */
     .perry-glow-layer {
       position: absolute;
       top: 40%;
-      left: 42%;
+      left: 50%;
       transform: translate(-50%, -50%);
-      width: 680px;
+      width: 100%;
+      max-width: 680px;
       height: 320px;
-      background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.22) 0%, rgba(185, 205, 240, 0.12) 40%, transparent 72%);
-      filter: blur(55px);
+      background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.2) 0%, rgba(185, 205, 240, 0.1) 40%, transparent 70%);
+      filter: blur(50px);
       pointer-events: none;
       z-index: 1;
     }
 
-    /* Barra superior ventana macOS */
     .mac-titlebar {
-      height: 48px;
+      height: 42px;
       background: linear-gradient(180deg, #242429 0%, #1a1a1f 100%);
       border-bottom: 1px solid rgba(0, 0, 0, 0.7);
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 20px;
+      padding: 0 16px;
     }
 
-    /* Ventana completa para proyectos */
     .mac-window-closed {
       position: relative;
       background: #0f0f13;
-      border-radius: 22px;
+      border-radius: 18px;
       border: 1px solid rgba(255, 255, 255, 0.12);
       box-shadow: 0 45px 120px -20px rgba(0, 0, 0, 0.95);
       overflow: hidden;
     }
 
-    /* Animación flecha vertical */
     @keyframes arrowBounce {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(12px); }
+      50% { transform: translateY(10px); }
     }
     .arrow-bounce {
       animation: arrowBounce 1.8s ease-in-out infinite;
@@ -166,83 +157,93 @@
 </head>
 <body class="selection:bg-neutral-800 selection:text-white relative min-h-screen pb-20">
 
-  <!-- Resplandor de fondo superior -->
   <div class="hero-spotlight"></div>
 
-  <!-- HEADER AJUSTADO A LOS BORDES DE LA PANTALLA -->
-  <header class="relative z-10 w-full px-6 sm:px-12 md:px-16 pt-7 pb-8 flex items-center justify-between">
-    <div>
-      <a href="#" onclick="switchTab('work')" class="text-sm font-semibold tracking-tight text-white block">
-        Roberto Muñoz
-      </a>
-      <span class="text-xs text-[#808086] font-normal block">
-        Técnico Informático &bull; DAM
-      </span>
-    </div>
+  <!-- HEADER RESPONSIVE -->
+  <header class="relative z-20 w-full px-5 sm:px-12 md:px-16 pt-5 pb-6">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      
+      <!-- Fila superior en móvil / izquierda en desktop -->
+      <div class="w-full sm:w-auto flex items-center justify-between">
+        <div>
+          <a href="#" onclick="switchTab('work')" class="text-sm font-semibold tracking-tight text-white block">
+            Roberto Muñoz
+          </a>
+          <span class="text-[11px] text-[#808086] font-normal block">
+            Técnico Informático &bull; DAM
+          </span>
+        </div>
 
-    <!-- Conmutador Work / Info -->
-    <div class="relative pill-capsule rounded-full p-1 flex items-center">
-      <div id="notch-glow" class="pill-halo"></div>
-      <div id="notch" class="pill-notch pointer-events-none"></div>
+        <!-- Enlaces en móvil a la derecha -->
+        <div class="flex sm:hidden items-center gap-4 text-xs text-[#808086]">
+          <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-0.5">
+            LinkedIn <span class="text-[10px]">↗</span>
+          </a>
+          <a href="https://github.com/roberttedt-jr" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-0.5">
+            GitHub <span class="text-[10px]">↗</span>
+          </a>
+        </div>
+      </div>
 
-      <button id="btn-work" onclick="switchTab('work')" class="relative z-10 px-5 py-1.5 rounded-full text-xs font-medium text-white bg-[#2c2c33] shadow-sm transition-all duration-200">
-        Work
-      </button>
-      <button id="btn-info" onclick="switchTab('info')" class="relative z-10 px-5 py-1.5 rounded-full text-xs font-medium text-[#808086] hover:text-white transition-all duration-200">
-        Info
-      </button>
-    </div>
+      <!-- Selector Central Work / Info -->
+      <div class="relative pill-capsule rounded-full p-1 flex items-center shrink-0">
+        <div id="notch-glow" class="pill-halo"></div>
+        <div id="notch" class="pill-notch pointer-events-none"></div>
 
-    <!-- Enlaces Derecha -->
-    <div class="flex items-center gap-6 text-xs text-[#808086] font-medium">
-      <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1">
-        LinkedIn <span class="text-[10px]">↗</span>
-      </a>
-      <a href="https://github.com/roberttedt-jr" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1">
-        GitHub <span class="text-[10px]">↗</span>
-      </a>
+        <button id="btn-work" onclick="switchTab('work')" class="relative z-10 px-5 py-1.5 rounded-full text-xs font-medium text-white bg-[#2c2c33] shadow-sm transition-all duration-200">
+          Work
+        </button>
+        <button id="btn-info" onclick="switchTab('info')" class="relative z-10 px-5 py-1.5 rounded-full text-xs font-medium text-[#808086] hover:text-white transition-all duration-200">
+          Info
+        </button>
+      </div>
+
+      <!-- Enlaces solo en Desktop -->
+      <div class="hidden sm:flex items-center gap-6 text-xs text-[#808086] font-medium">
+        <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1">
+          LinkedIn <span class="text-[10px]">↗</span>
+        </a>
+        <a href="https://github.com/roberttedt-jr" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1">
+          GitHub <span class="text-[10px]">↗</span>
+        </a>
+      </div>
+
     </div>
   </header>
 
-  <!-- ==================== VISTA 1: WORK ==================== -->
-  <main id="view-work" class="relative z-10 px-6 sm:px-12 md:px-16 mt-6 space-y-12">
+  <!-- VISTA 1: WORK -->
+  <main id="view-work" class="relative z-10 px-4 sm:px-12 md:px-16 mt-4 sm:mt-6 space-y-12">
     
-    <!-- Hero Window Container con Mask Fade-out real -->
     <section class="flex flex-col items-center relative">
       <div class="w-full max-w-[1140px] relative">
         <div class="hero-backlight"></div>
 
-        <!-- Ventana difuminada progresivamente hacia el fondo -->
         <div class="mac-window-hero">
-          <!-- Titlebar macOS -->
           <div class="mac-titlebar">
             <div class="flex items-center gap-2">
               <div class="w-3 h-3 rounded-full bg-[#ff5f56] border border-[#e0443e]"></div>
               <div class="w-3 h-3 rounded-full bg-[#ffbd2e] border border-[#dea123]"></div>
               <div class="w-3 h-3 rounded-full bg-[#27c93f] border border-[#1aab29]"></div>
             </div>
-
             <div class="text-[#55555c] hover:text-white text-xs font-light cursor-default select-none pr-1">
               +
             </div>
           </div>
 
-          <!-- Cuerpo con halo interior y titular rotundo: I build software, interfaces & systems. -->
-          <div class="relative bg-[#0d0d10] p-8 sm:p-14 md:p-20 pb-36 overflow-hidden">
+          <div class="relative bg-[#0d0d10] p-6 sm:p-14 md:p-20 pb-28 sm:pb-36 overflow-hidden">
             <div class="perry-glow-layer"></div>
 
             <div class="relative z-10">
-              <h1 class="font-headline text-5xl sm:text-7xl md:text-[5.4rem] lg:text-[6.1rem] font-normal text-[#f4f4f6] leading-[1.05] tracking-tight max-w-4xl drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]">
+              <h1 class="font-headline text-[2.5rem] leading-[1.08] sm:text-7xl md:text-[5.4rem] lg:text-[6.1rem] font-normal text-[#f4f4f6] tracking-tight max-w-4xl drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]">
                 I build <span class="font-italicHero italic font-normal text-white drop-shadow-[0_0_35px_rgba(255,255,255,0.45)]">software</span>,<br />interfaces &amp; systems.
               </h1>
 
-              <!-- Subtítulo inferior derecho -->
-              <div class="mt-20 sm:mt-28 flex justify-end">
+              <div class="mt-14 sm:mt-28 flex justify-end">
                 <div class="text-right">
-                  <p class="text-sm sm:text-base text-[#d8d8de] font-normal">
+                  <p class="text-xs sm:text-base text-[#d8d8de] font-normal">
                     Técnico de Sistemas &amp; DAM en formación. Based in Benidorm.
                   </p>
-                  <p class="text-xs sm:text-sm text-[#7a7a82] mt-1 font-light">
+                  <p class="text-[11px] sm:text-sm text-[#7a7a82] mt-1 font-light">
                     Formerly at Higher Education Barcelona.
                   </p>
                 </div>
@@ -252,7 +253,6 @@
         </div>
       </div>
 
-      <!-- Flecha animada -->
       <div class="mt-4 select-none cursor-pointer flex flex-col items-center">
         <a href="#atmos-project" class="arrow-bounce text-2xl text-[#82828e] hover:text-white transition-colors inline-block">
           ↓
@@ -260,15 +260,14 @@
       </div>
     </section>
 
-    <!-- PROYECTO DESTACADO: ATMOS CON TU FOTO REAL -->
-    <section id="atmos-project" class="w-full max-w-[1140px] mx-auto pt-6">
-      <div class="mac-window-closed p-6 sm:p-10 hover:border-[#35353d] transition-all">
+    <!-- PROYECTO ATMOS -->
+    <section id="atmos-project" class="w-full max-w-[1140px] mx-auto pt-4 sm:pt-6">
+      <div class="mac-window-closed p-5 sm:p-10 hover:border-[#35353d] transition-all">
         
-        <!-- Cabecera del Proyecto -->
-        <div class="flex items-start justify-between gap-4 mb-6">
+        <div class="flex items-start justify-between gap-4 mb-5">
           <div>
-            <h2 class="text-xl sm:text-2xl font-semibold text-white tracking-tight">ATMOS</h2>
-            <p class="text-xs sm:text-sm text-[#7e7e86] mt-1">
+            <h2 class="text-lg sm:text-2xl font-semibold text-white tracking-tight">ATMOS</h2>
+            <p class="text-xs sm:text-sm text-[#7e7e86] mt-0.5 sm:mt-1">
               UNIVERSAE, '25 — Aplicación del Tiempo PWA interactiva, estilo Liquid Glass.
             </p>
           </div>
@@ -277,22 +276,19 @@
           </a>
         </div>
 
-        <!-- Ventana interior con TU CAPTURA DE PANTALLA REAL -->
         <a href="https://roberttedt-jr.github.io/ATMOS./" target="_blank" rel="noopener noreferrer" class="block group">
           <div class="bg-[#09090c] border border-[#202026] rounded-xl overflow-hidden group-hover:border-[#3a3a44] transition-all">
             
-            <!-- Barra superior con puntos de color -->
-            <div class="bg-[#141418] border-b border-[#202026] px-4 py-2.5 flex items-center justify-between">
+            <div class="bg-[#141418] border-b border-[#202026] px-3 sm:px-4 py-2 sm:py-2.5 flex items-center justify-between">
               <div class="flex items-center gap-1.5">
                 <div class="w-2.5 h-2.5 rounded-full bg-[#ff5f56] border border-[#e0443e]"></div>
                 <div class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e] border border-[#dea123]"></div>
                 <div class="w-2.5 h-2.5 rounded-full bg-[#27c93f] border border-[#1aab29]"></div>
               </div>
-              <span class="text-[11px] font-mono text-[#62626e]">roberttedt-jr.github.io/ATMOS./</span>
+              <span class="text-[10px] sm:text-[11px] font-mono text-[#62626e] truncate max-w-[200px] sm:max-w-none">roberttedt-jr.github.io/ATMOS./</span>
               <div class="w-4"></div>
             </div>
 
-            <!-- TU IMAGEN REAL INCRUSTADA (Guarda tu captura como atmos.jpg junto a este archivo) -->
             <div class="relative w-full overflow-hidden bg-black flex justify-center">
               <img 
                 src="atmos.jpg" 
@@ -309,26 +305,26 @@
 
   </main>
 
-  <!-- ==================== VISTA 2: INFO ==================== -->
-  <main id="view-info" class="relative z-10 px-6 sm:px-12 md:px-16 mt-16 max-w-[1140px] mx-auto space-y-20 hidden">
+  <!-- VISTA 2: INFO -->
+  <main id="view-info" class="relative z-10 px-5 sm:px-12 md:px-16 mt-10 sm:mt-16 max-w-[1140px] mx-auto space-y-14 sm:space-y-20 hidden">
     
     <!-- EXPERIENCE -->
-    <section class="border-t border-[#1e1e24] pt-10">
-      <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-10">
+    <section class="border-t border-[#1e1e24] pt-8 sm:pt-10">
+      <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-6 sm:mb-10">
         <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
         <span>EXPERIENCE</span>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
         <div class="md:col-span-5">
-          <h2 class="text-2xl sm:text-3xl font-semibold text-white tracking-tight">
+          <h2 class="text-xl sm:text-3xl font-semibold text-white tracking-tight">
             Higher Education Barcelona
           </h2>
         </div>
         <div class="md:col-span-7 space-y-1">
-          <h3 class="text-base font-semibold text-white">Técnico informático</h3>
+          <h3 class="text-sm sm:text-base font-semibold text-white">Técnico informático</h3>
           <p class="text-xs font-mono text-[#7a7a84]">09/'24 - 12/'24 &bull; En remoto</p>
-          <p class="text-sm text-[#a0a0a8] font-light leading-relaxed pt-3">
+          <p class="text-xs sm:text-sm text-[#a0a0a8] font-light leading-relaxed pt-2">
             Soporte técnico, diagnóstico de incidencias, optimización de sistemas y gestión de infraestructuras IT corporativas en entorno remoto.
           </p>
         </div>
@@ -336,34 +332,34 @@
     </section>
 
     <!-- EDUCATION -->
-    <section class="border-t border-[#1e1e24] pt-10">
-      <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-10">
+    <section class="border-t border-[#1e1e24] pt-8 sm:pt-10">
+      <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-6 sm:mb-10">
         <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
         <span>EDUCATION</span>
       </div>
 
-      <div class="space-y-12">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      <div class="space-y-8 sm:space-y-12">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
           <div class="md:col-span-5">
-            <h2 class="text-2xl sm:text-3xl font-semibold text-white tracking-tight">UNIVERSAE</h2>
+            <h2 class="text-xl sm:text-3xl font-semibold text-white tracking-tight">UNIVERSAE</h2>
           </div>
           <div class="md:col-span-7 space-y-1">
-            <h3 class="text-base font-semibold text-white">Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
+            <h3 class="text-sm sm:text-base font-semibold text-white">Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
             <p class="text-xs font-mono text-[#7a7a84]">02/'25 - 01/'27</p>
-            <p class="text-sm text-[#a0a0a8] font-light leading-relaxed pt-3">
+            <p class="text-xs sm:text-sm text-[#a0a0a8] font-light leading-relaxed pt-2">
               Especialización en desarrollo multiplataforma, bases de datos relacionales, servicios y arquitecturas de aplicaciones modernas.
             </p>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
           <div class="md:col-span-5">
-            <h2 class="text-2xl sm:text-3xl font-semibold text-white tracking-tight">UNIVERSAE</h2>
+            <h2 class="text-xl sm:text-3xl font-semibold text-white tracking-tight">UNIVERSAE</h2>
           </div>
           <div class="md:col-span-7 space-y-1">
-            <h3 class="text-base font-semibold text-white">Técnico en Sistemas Microinformáticos y Redes (SMR)</h3>
+            <h3 class="text-sm sm:text-base font-semibold text-white">Técnico en Sistemas Microinformáticos y Redes (SMR)</h3>
             <p class="text-xs font-mono text-[#7a7a84]">02/'24 - 02/'25</p>
-            <p class="text-sm text-[#a0a0a8] font-light leading-relaxed pt-3">
+            <p class="text-xs sm:text-sm text-[#a0a0a8] font-light leading-relaxed pt-2">
               Instalación, configuración y mantenimiento de redes locales, hardware, servidores y protocolos de seguridad informática.
             </p>
           </div>
@@ -372,18 +368,18 @@
     </section>
 
     <!-- ABOUT -->
-    <section class="border-t border-[#1e1e24] pt-10">
-      <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-10">
+    <section class="border-t border-[#1e1e24] pt-8 sm:pt-10">
+      <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-6 sm:mb-10">
         <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
         <span>ABOUT</span>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
         <div class="md:col-span-5">
-          <h2 class="text-2xl sm:text-3xl font-semibold text-white tracking-tight">Bio</h2>
+          <h2 class="text-xl sm:text-3xl font-semibold text-white tracking-tight">Bio</h2>
         </div>
         <div class="md:col-span-7">
-          <p class="text-base font-light text-[#d0d0d8] leading-relaxed">
+          <p class="text-sm sm:text-base font-light text-[#d0d0d8] leading-relaxed">
             Hola mi nombre es Roberto, soy Técnico en Sistemas Microinformáticos y Redes, y ahora estoy estudiando para ser Técnico de Desarrollo de Aplicaciones Multiplataforma (DAM), a la vez lo compagino trabajando los meses de verano y estudiando campos de la informática que me gustan desde casa.
           </p>
         </div>
@@ -391,17 +387,17 @@
     </section>
 
     <!-- LANGUAGES -->
-    <section class="border-t border-[#1e1e24] pt-10">
-      <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-10">
+    <section class="border-t border-[#1e1e24] pt-8 sm:pt-10">
+      <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-6 sm:mb-10">
         <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
         <span>LANGUAGES</span>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
         <div class="md:col-span-5">
-          <h2 class="text-2xl sm:text-3xl font-semibold text-white tracking-tight">Idiomas</h2>
+          <h2 class="text-xl sm:text-3xl font-semibold text-white tracking-tight">Idiomas</h2>
         </div>
-        <div class="md:col-span-7 space-y-3 text-sm text-[#c4c4cc]">
+        <div class="md:col-span-7 space-y-2 sm:space-y-3 text-xs sm:text-sm text-[#c4c4cc]">
           <p><span class="text-white font-medium">Español</span> — Competencia bilingüe o nativa</p>
           <p><span class="text-white font-medium">Valenciano</span> — Competencia bilingüe o nativa</p>
           <p><span class="text-white font-medium">Inglés</span> — Competencia básica profesional</p>
@@ -410,31 +406,31 @@
     </section>
 
     <!-- CONTACT -->
-    <section class="border-t border-[#1e1e24] pt-10 pb-12">
-      <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-10">
+    <section class="border-t border-[#1e1e24] pt-8 sm:pt-10 pb-8 sm:pb-12">
+      <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-6 sm:mb-10">
         <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
         <span>CONTACT</span>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
         <div class="md:col-span-5">
-          <h2 class="text-2xl sm:text-3xl font-semibold text-white tracking-tight">Get in touch</h2>
+          <h2 class="text-xl sm:text-3xl font-semibold text-white tracking-tight">Get in touch</h2>
         </div>
-        <div class="md:col-span-7 space-y-4">
+        <div class="md:col-span-7 space-y-3 sm:space-y-4">
           <div>
-            <button onclick="copy('robertomrovira@gmail.com', 'Correo copiado')" class="text-sm font-mono text-white hover:text-[#8e8e98] transition-colors flex items-center gap-2 cursor-pointer">
+            <button onclick="copy('robertomrovira@gmail.com', 'Correo copiado')" class="text-xs sm:text-sm font-mono text-white hover:text-[#8e8e98] transition-colors flex items-center gap-2 cursor-pointer">
               <span>robertomrovira@gmail.com</span>
-              <span class="text-xs text-[#72727a] font-sans">(Click to copy)</span>
+              <span class="text-[11px] sm:text-xs text-[#72727a] font-sans">(Click to copy)</span>
             </button>
           </div>
           <div>
-            <button onclick="copy('654851836', 'Teléfono copiado')" class="text-sm font-mono text-white hover:text-[#8e8e98] transition-colors flex items-center gap-2 cursor-pointer">
+            <button onclick="copy('654851836', 'Teléfono copiado')" class="text-xs sm:text-sm font-mono text-white hover:text-[#8e8e98] transition-colors flex items-center gap-2 cursor-pointer">
               <span>+34 654 85 18 36</span>
-              <span class="text-xs text-[#72727a] font-sans">(Click to copy)</span>
+              <span class="text-[11px] sm:text-xs text-[#72727a] font-sans">(Click to copy)</span>
             </button>
           </div>
           <div>
-            <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="text-sm text-[#9e9ea8] hover:text-white transition-colors inline-flex items-center gap-1">
+            <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="text-xs sm:text-sm text-[#9e9ea8] hover:text-white transition-colors inline-flex items-center gap-1">
               LinkedIn Profile <span>↗</span>
             </a>
           </div>
@@ -444,7 +440,6 @@
 
   </main>
 
-  <!-- Notificación Toast -->
   <div id="toast" class="fixed bottom-6 right-6 bg-white text-black text-xs font-medium px-4 py-2 rounded-full shadow-2xl transition-all duration-300 opacity-0 pointer-events-none z-50">
     Copiado al portapapeles
   </div>
