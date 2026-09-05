@@ -1,760 +1,493 @@
-
-html_content = '''<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portafolio de Roberto Muñoz - Desarrollador Multiplataforma especializado en Java, Android, iOS, SQL y Ciberseguridad.">
-  <meta name="theme-color" content="#0a0a0a">
-  <title>Roberto Muñoz | Desarrollador Multiplataforma</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roberto Muñoz Rovira</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tipografías: Gloock (Titular Perry Wang) + Newsreader Italic + Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0a0a0a;
-      --bg-elevated: #111111;
-      --bg-card: #161616;
-      --bg-hover: #1c1c1c;
-      --text-primary: #f5f5f5;
-      --text-secondary: #a0a0a0;
-      --text-muted: #666666;
-      --border: #222222;
-      --border-hover: #333333;
-      --accent: #e8e8e8;
-      --accent-soft: #2a2a2a;
-      --success: #22c55e;
-      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
-      --radius-sm: 6px;
-      --radius-md: 10px;
-      --radius-lg: 14px;
-      --transition-fast: 0.15s ease;
-      --transition-normal: 0.3s ease;
-    }
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            headline: ['Gloock', 'serif'],
+            italicHero: ['Newsreader', 'Georgia', 'serif'],
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
     body {
-      font-family: var(--font-sans);
-      background: var(--bg);
-      color: var(--text-primary);
-      line-height: 1.6;
+      background-color: #0c0c0e;
+      color: #e6e6e8;
+      font-family: 'Inter', sans-serif;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
-    ::selection { background: rgba(255,255,255,0.15); color: #fff; }
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--border-hover); border-radius: 3px; }
 
-    /* ===== NAVBAR ===== */
-    .navbar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-      background: rgba(10,10,10,0.8);
-      backdrop-filter: blur(20px) saturate(1.5);
-      -webkit-backdrop-filter: blur(20px) saturate(1.5);
-      border-bottom: 1px solid var(--border);
-      transition: var(--transition-normal);
+    /* Iluminación superior cenital en el fondo general */
+    .hero-spotlight {
+      position: absolute;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1200px;
+      height: 700px;
+      background: radial-gradient(ellipse at 50% 15%, rgba(140, 148, 170, 0.18) 0%, rgba(20, 22, 28, 0.04) 55%, transparent 75%);
+      filter: blur(90px);
+      pointer-events: none;
+      z-index: 0;
     }
-    .navbar-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 24px; height: 64px;
-    }
-    .nav-logo {
-      font-size: 15px; font-weight: 600; letter-spacing: -0.3px;
-      color: var(--text-primary); text-decoration: none;
-      display: flex; align-items: center; gap: 8px;
-    }
-    .nav-logo::before {
-      content: ''; width: 8px; height: 8px; border-radius: 50%;
-      background: var(--success); display: inline-block;
-      animation: pulse 2.5s ease-in-out infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
-      50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(34,197,94,0); }
-    }
-    .nav-links { display: flex; gap: 4px; list-style: none; }
-    .nav-links a {
-      color: var(--text-secondary); text-decoration: none;
-      font-size: 14px; font-weight: 500; padding: 6px 14px;
-      border-radius: var(--radius-sm); transition: var(--transition-fast);
+
+    /* Cápsula de navegación */
+    .pill-capsule {
       position: relative;
+      background: linear-gradient(180deg, #202025 0%, #141417 100%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.15);
     }
-    .nav-links a:hover, .nav-links a.active {
-      color: var(--text-primary); background: var(--accent-soft);
+    
+    .pill-halo {
+      position: absolute;
+      top: -16px;
+      left: 28%;
+      transform: translateX(-50%);
+      width: 48px;
+      height: 22px;
+      background: radial-gradient(ellipse, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 70%);
+      filter: blur(4px);
+      pointer-events: none;
+      transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .nav-links a::after {
-      content: ''; position: absolute; bottom: 2px; left: 14px; right: 14px;
-      height: 1.5px; background: var(--text-primary); border-radius: 1px;
-      transform: scaleX(0); transition: transform var(--transition-fast);
-    }
-    .nav-links a.active::after { transform: scaleX(1); }
-    .nav-toggle { display: none; background: none; border: none; color: var(--text-primary); cursor: pointer; }
-
-    /* ===== HERO ===== */
-    .hero {
-      min-height: 100vh; display: flex; align-items: center;
-      padding: 120px 24px 80px; position: relative; overflow: hidden;
-    }
-    .hero-grid {
-      max-width: 1100px; margin: 0 auto; width: 100%;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 6px 14px; border-radius: 100px;
-      border: 1px solid var(--border); font-size: 12px;
-      color: var(--text-muted); font-weight: 500; margin-bottom: 24px;
-      background: var(--bg-elevated);
-    }
-    .hero-badge .dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--success); animation: pulse 2.5s ease-in-out infinite;
-    }
-    .hero h1 {
-      font-size: clamp(40px, 6vw, 64px); font-weight: 700;
-      line-height: 1.05; letter-spacing: -1.5px; margin-bottom: 16px;
-    }
-    .hero h1 span { color: var(--text-muted); }
-    .hero-subtitle {
-      font-size: 18px; color: var(--text-secondary);
-      font-weight: 400; margin-bottom: 20px; line-height: 1.5;
-    }
-    .hero-desc {
-      font-size: 15px; color: var(--text-muted); line-height: 1.7;
-      max-width: 480px; margin-bottom: 32px;
-    }
-    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 12px 24px; border-radius: var(--radius-md);
-      font-size: 14px; font-weight: 600; text-decoration: none;
-      transition: var(--transition-fast); cursor: pointer; border: none;
-      font-family: var(--font-sans);
-    }
-    .btn-primary {
-      background: var(--text-primary); color: var(--bg);
-    }
-    .btn-primary:hover { background: #fff; transform: translateY(-1px); }
-    .btn-secondary {
-      background: transparent; color: var(--text-secondary);
-      border: 1px solid var(--border);
-    }
-    .btn-secondary:hover {
-      border-color: var(--border-hover); color: var(--text-primary);
-      background: var(--bg-card);
+    .pill-halo.info-active {
+      left: 72%;
     }
 
-    /* Terminal card */
-    .terminal {
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: var(--radius-lg); overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    .pill-notch {
+      position: absolute;
+      top: -1px;
+      left: 28%;
+      transform: translateX(-50%);
+      width: 24px;
+      height: 2px;
+      background: #ffffff;
+      border-radius: 9999px;
+      box-shadow: 0 0 12px 2px rgba(255, 255, 255, 0.9);
+      transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .terminal-header {
-      display: flex; align-items: center; gap: 8px;
-      padding: 14px 16px; border-bottom: 1px solid var(--border);
-      background: var(--bg-elevated);
+    .pill-notch.info-active {
+      left: 72%;
     }
-    .terminal-btn { width: 12px; height: 12px; border-radius: 50%; }
-    .tb-red { background: #ff5f56; }
-    .tb-yellow { background: #ffbd2e; }
-    .tb-green { background: #27c93f; }
-    .terminal-title { font-size: 12px; color: var(--text-muted); margin-left: 8px; font-family: var(--font-mono); }
-    .terminal-body {
-      padding: 20px 24px; font-family: var(--font-mono); font-size: 13px;
-      line-height: 1.8; color: var(--text-secondary); min-height: 280px;
-    }
-    .terminal-line { display: flex; gap: 8px; margin-bottom: 4px; opacity: 0; animation: typeIn 0.3s ease forwards; }
-    .terminal-prompt { color: var(--success); flex-shrink: 0; }
-    .terminal-cmd { color: var(--text-primary); }
-    .terminal-output { color: var(--text-muted); padding-left: 20px; margin-bottom: 8px; opacity: 0; animation: typeIn 0.3s ease forwards; }
-    .terminal-cursor { display: inline-block; width: 8px; height: 16px; background: var(--text-primary); animation: blink 1s step-end infinite; vertical-align: middle; margin-left: 2px; }
-    @keyframes blink { 50% { opacity: 0; } }
-    @keyframes typeIn { to { opacity: 1; } }
 
-    /* ===== SECTIONS ===== */
-    .section {
-      max-width: 1100px; margin: 0 auto; padding: 100px 24px;
+    /* Marco de la Ventana Hero con difuminado por máscara */
+    .mac-window-hero {
       position: relative;
-    }
-    .section-header {
-      display: flex; align-items: baseline; gap: 16px; margin-bottom: 48px;
-    }
-    .section-num {
-      font-family: var(--font-mono); font-size: 13px;
-      color: var(--text-muted); font-weight: 400;
-    }
-    .section-title {
-      font-size: clamp(26px, 4vw, 36px); font-weight: 700;
-      letter-spacing: -0.8px;
-    }
-    .section-line {
-      flex: 1; height: 1px; background: var(--border); margin-left: 8px;
-    }
-
-    /* ===== TIMELINE ===== */
-    .timeline { position: relative; padding-left: 32px; }
-    .timeline::before {
-      content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px;
-      width: 1.5px; background: var(--border); border-radius: 1px;
-    }
-    .timeline-item {
-      position: relative; margin-bottom: 40px; padding-left: 28px;
-      opacity: 0; transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .timeline-item.visible { opacity: 1; transform: translateY(0); }
-    .timeline-item::before {
-      content: ''; position: absolute; left: -28px; top: 6px;
-      width: 11px; height: 11px; border-radius: 50%;
-      background: var(--bg); border: 2px solid var(--border-hover);
-      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-    }
-    .timeline-item:hover::before { border-color: var(--text-muted); }
-    .timeline-item.current::before {
-      border-color: var(--success); background: var(--success);
-      box-shadow: 0 0 0 4px rgba(34,197,94,0.15);
-    }
-    .timeline-date {
-      font-family: var(--font-mono); font-size: 12px;
-      color: var(--text-muted); margin-bottom: 6px;
-    }
-    .timeline-role {
-      font-size: 18px; font-weight: 600; color: var(--text-primary);
-      margin-bottom: 4px; line-height: 1.3;
-    }
-    .timeline-org {
-      font-size: 14px; color: var(--text-secondary); margin-bottom: 10px;
-    }
-    .timeline-desc {
-      font-size: 14px; color: var(--text-muted); line-height: 1.7;
-      max-width: 560px; margin-bottom: 14px;
-    }
-    .tags { display: flex; gap: 8px; flex-wrap: wrap; }
-    .tag {
-      font-size: 12px; font-weight: 500; padding: 5px 12px;
-      border-radius: var(--radius-sm); background: var(--accent-soft);
-      color: var(--text-secondary); border: 1px solid var(--border);
-      transition: var(--transition-fast); cursor: default;
-    }
-    .tag:hover { border-color: var(--border-hover); color: var(--text-primary); }
-
-    /* ===== PROJECTS ===== */
-    .projects-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
-    }
-    .project-card {
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: var(--radius-lg); padding: 28px;
-      transition: var(--transition-normal); cursor: pointer;
-      position: relative; overflow: hidden; text-decoration: none; color: inherit;
-      display: block;
-    }
-    .project-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, var(--text-muted), transparent);
-      opacity: 0; transition: opacity var(--transition-normal);
-    }
-    .project-card:hover {
-      border-color: var(--border-hover); transform: translateY(-3px);
-      background: var(--bg-hover);
-    }
-    .project-card:hover::before { opacity: 1; }
-    .project-folder {
-      display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;
-    }
-    .project-folder svg { color: var(--text-muted); transition: var(--transition-fast); }
-    .project-card:hover .project-folder svg { color: var(--text-primary); }
-    .project-link-icon {
-      width: 32px; height: 32px; border-radius: var(--radius-sm);
-      display: flex; align-items: center; justify-content: center;
-      border: 1px solid var(--border); color: var(--text-muted);
-      transition: var(--transition-fast);
-    }
-    .project-card:hover .project-link-icon {
-      border-color: var(--border-hover); color: var(--text-primary); background: var(--accent-soft);
-    }
-    .project-name { font-size: 18px; font-weight: 600; margin-bottom: 6px; }
-    .project-tech {
-      font-family: var(--font-mono); font-size: 12px;
-      color: var(--text-muted); margin-bottom: 12px;
-    }
-    .project-desc {
-      font-size: 14px; color: var(--text-secondary); line-height: 1.6;
-    }
-    .project-tags { display: flex; gap: 8px; margin-top: 18px; flex-wrap: wrap; }
-
-    /* ===== STACK ===== */
-    .stack-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
-    }
-    .stack-item {
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: var(--radius-md); padding: 24px 16px;
-      text-align: center; transition: var(--transition-fast);
-      cursor: default;
-    }
-    .stack-item:hover {
-      border-color: var(--border-hover); background: var(--bg-hover);
-      transform: translateY(-2px);
-    }
-    .stack-icon {
-      width: 40px; height: 40px; margin: 0 auto 12px;
-      display: flex; align-items: center; justify-content: center;
-      border-radius: var(--radius-sm); background: var(--accent-soft);
-      font-size: 18px;
-    }
-    .stack-name { font-size: 14px; font-weight: 600; color: var(--text-primary); }
-    .stack-cat { font-size: 11px; color: var(--text-muted); margin-top: 4px; font-family: var(--font-mono); }
-
-    /* ===== CONTACT ===== */
-    .contact-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
-    }
-    .contact-text { font-size: 16px; color: var(--text-secondary); line-height: 1.7; }
-    .contact-text p { margin-bottom: 16px; }
-    .contact-links { display: flex; flex-direction: column; gap: 12px; }
-    .contact-link {
-      display: flex; align-items: center; gap: 14px;
-      padding: 16px 20px; border-radius: var(--radius-md);
-      border: 1px solid var(--border); text-decoration: none;
-      color: var(--text-secondary); font-size: 14px; font-weight: 500;
-      transition: var(--transition-fast); background: var(--bg-card);
-    }
-    .contact-link:hover {
-      border-color: var(--border-hover); color: var(--text-primary);
-      background: var(--bg-hover); transform: translateX(4px);
-    }
-    .contact-link-icon {
-      width: 36px; height: 36px; border-radius: var(--radius-sm);
-      display: flex; align-items: center; justify-content: center;
-      background: var(--accent-soft); color: var(--text-primary);
-      flex-shrink: 0;
+      background: #0f0f13;
+      border-radius: 22px 22px 0 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      border-left: 1px solid rgba(255, 255, 255, 0.12);
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
+      border-bottom: none;
+      box-shadow: 
+        0 45px 120px -20px rgba(0, 0, 0, 0.95),
+        inset 0 1px 0 rgba(255, 255, 255, 0.22);
+      
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 98%);
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 98%);
+      overflow: hidden;
     }
 
-    /* ===== FOOTER ===== */
-    .footer {
-      border-top: 1px solid var(--border); padding: 40px 24px;
-      text-align: center; color: var(--text-muted); font-size: 13px;
+    /* Difuminado suave exterior que rodea la ventana */
+    .hero-backlight {
+      position: absolute;
+      inset: -35px;
+      background: radial-gradient(circle at 50% 35%, rgba(150, 160, 195, 0.2) 0%, rgba(35, 40, 55, 0.05) 55%, transparent 70%);
+      filter: blur(75px);
+      z-index: -1;
+      pointer-events: none;
     }
-    .footer a { color: var(--text-secondary); text-decoration: none; }
-    .footer a:hover { color: var(--text-primary); }
 
-    /* ===== SCROLL REVEAL ===== */
-    .reveal {
-      opacity: 0; transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+    /* Resplandor tras las letras */
+    .perry-glow-layer {
+      position: absolute;
+      top: 40%;
+      left: 42%;
+      transform: translate(-50%, -50%);
+      width: 680px;
+      height: 320px;
+      background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.22) 0%, rgba(185, 205, 240, 0.12) 40%, transparent 72%);
+      filter: blur(55px);
+      pointer-events: none;
+      z-index: 1;
     }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 48px; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .stack-grid { grid-template-columns: repeat(3, 1fr); }
-      .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+    /* Barra superior ventana macOS */
+    .mac-titlebar {
+      height: 48px;
+      background: linear-gradient(180deg, #242429 0%, #1a1a1f 100%);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
     }
-    @media (max-width: 640px) {
-      .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0;
-        background: var(--bg-elevated); border-bottom: 1px solid var(--border);
-        flex-direction: column; padding: 12px 24px; gap: 4px;
-      }
-      .nav-links.open { display: flex; }
-      .nav-links a { padding: 10px 14px; width: 100%; }
-      .nav-toggle { display: block; }
-      .stack-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero h1 { font-size: 36px; }
-      .section { padding: 64px 20px; }
+
+    /* Ventana completa para proyectos */
+    .mac-window-closed {
+      position: relative;
+      background: #0f0f13;
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 45px 120px -20px rgba(0, 0, 0, 0.95);
+      overflow: hidden;
+    }
+
+    /* Animación flecha vertical */
+    @keyframes arrowBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(12px); }
+    }
+    .arrow-bounce {
+      animation: arrowBounce 1.8s ease-in-out infinite;
     }
   </style>
 </head>
-<body>
+<body class="selection:bg-neutral-800 selection:text-white relative min-h-screen pb-20">
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="navbar-inner">
-      <a href="#" class="nav-logo">RM</a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#trayectoria" class="nav-link">Trayectoria</a></li>
-        <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
-        <li><a href="#stack" class="nav-link">Stack</a></li>
-        <li><a href="#contacto" class="nav-link">Contacto</a></li>
-      </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="8" x2="20" y2="8"/><line x1="4" y1="16" x2="20" y2="16"/></svg>
+  <!-- Resplandor de fondo superior -->
+  <div class="hero-spotlight"></div>
+
+  <!-- HEADER AJUSTADO A LOS BORDES DE LA PANTALLA -->
+  <header class="relative z-10 w-full px-6 sm:px-12 md:px-16 pt-7 pb-8 flex items-center justify-between">
+    <div>
+      <a href="#" onclick="switchTab('work')" class="text-sm font-semibold tracking-tight text-white block">
+        Roberto Muñoz
+      </a>
+      <span class="text-xs text-[#808086] font-normal block">
+        Técnico Informático &bull; DAM
+      </span>
+    </div>
+
+    <!-- Conmutador Work / Info -->
+    <div class="relative pill-capsule rounded-full p-1 flex items-center">
+      <div id="notch-glow" class="pill-halo"></div>
+      <div id="notch" class="pill-notch pointer-events-none"></div>
+
+      <button id="btn-work" onclick="switchTab('work')" class="relative z-10 px-5 py-1.5 rounded-full text-xs font-medium text-white bg-[#2c2c33] shadow-sm transition-all duration-200">
+        Work
+      </button>
+      <button id="btn-info" onclick="switchTab('info')" class="relative z-10 px-5 py-1.5 rounded-full text-xs font-medium text-[#808086] hover:text-white transition-all duration-200">
+        Info
       </button>
     </div>
-  </nav>
 
-  <!-- HERO -->
-  <section class="hero" id="inicio">
-    <div class="hero-grid">
-      <div>
-        <div class="hero-badge"><span class="dot"></span>Disponible para proyectos</div>
-        <h1>Roberto <span>Muñoz</span></h1>
-        <p class="hero-subtitle">Desarrollador multiplataforma</p>
-        <p class="hero-desc">
-          Construyo aplicaciones robustas para web, móvil y sistemas. Especializado en arquitectura de software, 
-          bases de datos y ciberseguridad. Transformo ideas en código funcional y escalable.
-        </p>
-        <div class="hero-cta">
-          <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
-          <a href="https://github.com/roberttedt-jr" target="_blank" class="btn btn-secondary">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            GitHub
+    <!-- Enlaces Derecha -->
+    <div class="flex items-center gap-6 text-xs text-[#808086] font-medium">
+      <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1">
+        LinkedIn <span class="text-[10px]">↗</span>
+      </a>
+      <a href="https://github.com/roberttedt-jr" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1">
+        GitHub <span class="text-[10px]">↗</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ==================== VISTA 1: WORK ==================== -->
+  <main id="view-work" class="relative z-10 px-6 sm:px-12 md:px-16 mt-6 space-y-12">
+    
+    <!-- Hero Window Container con Mask Fade-out real -->
+    <section class="flex flex-col items-center relative">
+      <div class="w-full max-w-[1140px] relative">
+        <div class="hero-backlight"></div>
+
+        <!-- Ventana difuminada progresivamente hacia el fondo -->
+        <div class="mac-window-hero">
+          <!-- Titlebar macOS -->
+          <div class="mac-titlebar">
+            <div class="flex items-center gap-2">
+              <div class="w-3 h-3 rounded-full bg-[#ff5f56] border border-[#e0443e]"></div>
+              <div class="w-3 h-3 rounded-full bg-[#ffbd2e] border border-[#dea123]"></div>
+              <div class="w-3 h-3 rounded-full bg-[#27c93f] border border-[#1aab29]"></div>
+            </div>
+
+            <div class="text-[#55555c] hover:text-white text-xs font-light cursor-default select-none pr-1">
+              +
+            </div>
+          </div>
+
+          <!-- Cuerpo con halo interior y titular rotundo: I build software, interfaces & systems. -->
+          <div class="relative bg-[#0d0d10] p-8 sm:p-14 md:p-20 pb-36 overflow-hidden">
+            <div class="perry-glow-layer"></div>
+
+            <div class="relative z-10">
+              <h1 class="font-headline text-5xl sm:text-7xl md:text-[5.4rem] lg:text-[6.1rem] font-normal text-[#f4f4f6] leading-[1.05] tracking-tight max-w-4xl drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]">
+                I build <span class="font-italicHero italic font-normal text-white drop-shadow-[0_0_35px_rgba(255,255,255,0.45)]">software</span>,<br />interfaces &amp; systems.
+              </h1>
+
+              <!-- Subtítulo inferior derecho -->
+              <div class="mt-20 sm:mt-28 flex justify-end">
+                <div class="text-right">
+                  <p class="text-sm sm:text-base text-[#d8d8de] font-normal">
+                    Técnico de Sistemas &amp; DAM en formación. Based in Benidorm.
+                  </p>
+                  <p class="text-xs sm:text-sm text-[#7a7a82] mt-1 font-light">
+                    Formerly at Higher Education Barcelona.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flecha animada -->
+      <div class="mt-4 select-none cursor-pointer flex flex-col items-center">
+        <a href="#atmos-project" class="arrow-bounce text-2xl text-[#82828e] hover:text-white transition-colors inline-block">
+          ↓
+        </a>
+      </div>
+    </section>
+
+    <!-- PROYECTO DESTACADO: ATMOS CON TU FOTO REAL -->
+    <section id="atmos-project" class="w-full max-w-[1140px] mx-auto pt-6">
+      <div class="mac-window-closed p-6 sm:p-10 hover:border-[#35353d] transition-all">
+        
+        <!-- Cabecera del Proyecto -->
+        <div class="flex items-start justify-between gap-4 mb-6">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-semibold text-white tracking-tight">ATMOS</h2>
+            <p class="text-xs sm:text-sm text-[#7e7e86] mt-1">
+              UNIVERSAE, '25 — Aplicación del Tiempo PWA interactiva, estilo Liquid Glass.
+            </p>
+          </div>
+          <a href="https://roberttedt-jr.github.io/ATMOS./" target="_blank" rel="noopener noreferrer" class="text-white hover:text-[#888892] transition-colors text-xl">
+            →
           </a>
         </div>
-      </div>
-      <div class="terminal">
-        <div class="terminal-header">
-          <span class="terminal-btn tb-red"></span>
-          <span class="terminal-btn tb-yellow"></span>
-          <span class="terminal-btn tb-green"></span>
-          <span class="terminal-title">roberto@portfolio ~ zsh</span>
-        </div>
-        <div class="terminal-body" id="terminalBody">
-          <div class="terminal-line" style="animation-delay:0.2s"><span class="terminal-prompt">➜</span><span class="terminal-cmd"> whoami</span></div>
-          <div class="terminal-output" style="animation-delay:0.5s">Roberto Muñoz — Desarrollador Multiplataforma</div>
-          <div class="terminal-line" style="animation-delay:0.9s"><span class="terminal-prompt">➜</span><span class="terminal-cmd"> cat stack.txt</span></div>
-          <div class="terminal-output" style="animation-delay:1.2s">Java · Android · iOS · SQL · React · Python · Linux</div>
-          <div class="terminal-line" style="animation-delay:1.6s"><span class="terminal-prompt">➜</span><span class="terminal-cmd"> status --now</span></div>
-          <div class="terminal-output" style="animation-delay:1.9s">Estudiando DAM en UNIVERSAE · Disponible para colaborar</div>
-          <div class="terminal-line" style="animation-delay:2.3s"><span class="terminal-prompt">➜</span><span class="terminal-cmd"> _</span><span class="terminal-cursor"></span></div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- TRAYECTORIA -->
-  <section class="section" id="trayectoria">
-    <div class="section-header reveal">
-      <span class="section-num">01</span>
-      <h2 class="section-title">Trayectoria</h2>
-      <span class="section-line"></span>
-    </div>
-    <div class="timeline">
-      <div class="timeline-item current">
-        <div class="timeline-date">Feb 2025 — Actualidad</div>
-        <div class="timeline-role">DAM — Desarrollo de Aplicaciones Multiplataforma</div>
-        <div class="timeline-org">UNIVERSAE</div>
-        <div class="timeline-desc">
-          Especialización avanzada en arquitectura de software, desarrollo móvil nativo (Android/iOS) 
-          y gestión de bases de datos SQL. Enfoque en patrones de diseño, APIs REST y despliegue de apps.
-        </div>
-        <div class="tags">
-          <span class="tag">Java</span>
-          <span class="tag">SQL</span>
-          <span class="tag">Android</span>
-          <span class="tag">iOS</span>
-          <span class="tag">Arquitectura</span>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">Feb 2024 — Feb 2025</div>
-        <div class="timeline-role">Técnico SMR — Sistemas Microinformáticos y Redes</div>
-        <div class="timeline-org">UNIVERSAE</div>
-        <div class="timeline-desc">
-          Formación en administración de sistemas Linux, fundamentos de ciberseguridad y gestión 
-          de infraestructuras de red. Configuración de servidores, virtualización y hardening.
-        </div>
-        <div class="tags">
-          <span class="tag">Linux</span>
-          <span class="tag">Ciberseguridad</span>
-          <span class="tag">Redes</span>
-          <span class="tag">Virtualización</span>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">Sept 2024 — Dic 2024</div>
-        <div class="timeline-role">Técnico Informático — Prácticas</div>
-        <div class="timeline-org">Higher Education Barcelona</div>
-        <div class="timeline-desc">
-          Experiencia profesional gestionando incidencias, soporte técnico y mantenimiento de sistemas 
-          en un entorno corporativo real. Resolución de tickets y atención al usuario.
-        </div>
-        <div class="tags">
-          <span class="tag">Soporte remoto</span>
-          <span class="tag">Mantenimiento</span>
-          <span class="tag">Helpdesk</span>
-        </div>
-      </div>
-    </div>
-  </section>
+        <!-- Ventana interior con TU CAPTURA DE PANTALLA REAL -->
+        <a href="https://roberttedt-jr.github.io/ATMOS./" target="_blank" rel="noopener noreferrer" class="block group">
+          <div class="bg-[#09090c] border border-[#202026] rounded-xl overflow-hidden group-hover:border-[#3a3a44] transition-all">
+            
+            <!-- Barra superior con puntos de color -->
+            <div class="bg-[#141418] border-b border-[#202026] px-4 py-2.5 flex items-center justify-between">
+              <div class="flex items-center gap-1.5">
+                <div class="w-2.5 h-2.5 rounded-full bg-[#ff5f56] border border-[#e0443e]"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e] border border-[#dea123]"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-[#27c93f] border border-[#1aab29]"></div>
+              </div>
+              <span class="text-[11px] font-mono text-[#62626e]">roberttedt-jr.github.io/ATMOS./</span>
+              <div class="w-4"></div>
+            </div>
 
-  <!-- PROYECTOS -->
-  <section class="section" id="proyectos">
-    <div class="section-header reveal">
-      <span class="section-num">02</span>
-      <h2 class="section-title">Proyectos destacados</h2>
-      <span class="section-line"></span>
-    </div>
-    <div class="projects-grid">
-      <a href="https://github.com/roberttedt-jr" target="_blank" class="project-card reveal">
-        <div class="project-folder">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-          <span class="project-link-icon">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </span>
-        </div>
-        <div class="project-name">ATMOS.</div>
-        <div class="project-tech">JavaScript · API Fetch · Async/Await</div>
-        <div class="project-desc">
-          Aplicación meteorológica que consume una API pública para consultar el clima en tiempo real 
-          de cualquier ciudad del mundo. Interfaz limpia con datos precisos.
-        </div>
-        <div class="project-tags">
-          <span class="tag">JS</span>
-          <span class="tag">API REST</span>
-          <span class="tag">Async</span>
-        </div>
-      </a>
-      <a href="https://github.com/roberttedt-jr" target="_blank" class="project-card reveal">
-        <div class="project-folder">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-          <span class="project-link-icon">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </span>
-        </div>
-        <div class="project-name">Flicker</div>
-        <div class="project-tech">React · Web App · Media</div>
-        <div class="project-desc">
-          Plataforma interactiva de contenido visual. Interfaz moderna para exploración de medios 
-          digitales con componentes reutilizables y estado global.
-        </div>
-        <div class="project-tags">
-          <span class="tag">React</span>
-          <span class="tag">SPA</span>
-          <span class="tag">UI/UX</span>
-        </div>
-      </a>
-      <a href="https://github.com/roberttedt-jr" target="_blank" class="project-card reveal">
-        <div class="project-folder">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-          <span class="project-link-icon">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </span>
-        </div>
-        <div class="project-name">Done.</div>
-        <div class="project-tech">JavaScript · LocalStorage · DOM</div>
-        <div class="project-desc">
-          Gestor de tareas minimalista e intuitivo. Organiza pendientes con persistencia de datos 
-          local para no perder tu progreso entre sesiones.
-        </div>
-        <div class="project-tags">
-          <span class="tag">JS</span>
-          <span class="tag">CRUD</span>
-          <span class="tag">LocalStorage</span>
-        </div>
-      </a>
-      <a href="https://github.com/roberttedt-jr" target="_blank" class="project-card reveal">
-        <div class="project-folder">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-          <span class="project-link-icon">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </span>
-        </div>
-        <div class="project-name">Ejercicios & Labs</div>
-        <div class="project-tech">Java · Python · SQL · React</div>
-        <div class="project-desc">
-          Colección de prácticas de clase, algoritmos y scripts de automatización desarrollados 
-          durante la formación académica. Repositorio de aprendizaje continuo.
-        </div>
-        <div class="project-tags">
-          <span class="tag">Java</span>
-          <span class="tag">Python</span>
-          <span class="tag">SQL</span>
-          <span class="tag">React</span>
-        </div>
-      </a>
-    </div>
-  </section>
+            <!-- TU IMAGEN REAL INCRUSTADA (Guarda tu captura como atmos.jpg junto a este archivo) -->
+            <div class="relative w-full overflow-hidden bg-black flex justify-center">
+              <img 
+                src="atmos.jpg" 
+                alt="ATMOS App Interface" 
+                class="w-full h-auto object-cover object-top block transition-transform duration-500 group-hover:scale-[1.01]"
+              />
+            </div>
 
-  <!-- STACK -->
-  <section class="section" id="stack">
-    <div class="section-header reveal">
-      <span class="section-num">03</span>
-      <h2 class="section-title">Stack tecnológico</h2>
-      <span class="section-line"></span>
-    </div>
-    <div class="stack-grid">
-      <div class="stack-item reveal">
-        <div class="stack-icon">☕</div>
-        <div class="stack-name">Java</div>
-        <div class="stack-cat">Backend</div>
-      </div>
-      <div class="stack-item reveal">
-        <div class="stack-icon">📱</div>
-        <div class="stack-name">Android</div>
-        <div class="stack-cat">Mobile</div>
-      </div>
-      <div class="stack-item reveal">
-        <div class="stack-icon">🍎</div>
-        <div class="stack-name">iOS</div>
-        <div class="stack-cat">Mobile</div>
-      </div>
-      <div class="stack-item reveal">
-        <div class="stack-icon">🗄️</div>
-        <div class="stack-name">SQL</div>
-        <div class="stack-cat">Data</div>
-      </div>
-      <div class="stack-item reveal">
-        <div class="stack-icon">🐧</div>
-        <div class="stack-name">Linux</div>
-        <div class="stack-cat">Sistemas</div>
-      </div>
-      <div class="stack-item reveal">
-        <div class="stack-icon">🔒</div>
-        <div class="stack-name">Ciberseguridad</div>
-        <div class="stack-cat">Seguridad</div>
-      </div>
-      <div class="stack-item reveal">
-        <div class="stack-icon">🌐</div>
-        <div class="stack-name">Redes</div>
-        <div class="stack-cat">Infra</div>
-      </div>
-      <div class="stack-item reveal">
-        <div class="stack-icon">⚡</div>
-        <div class="stack-name">JavaScript</div>
-        <div class="stack-cat">Frontend</div>
-      </div>
-      <div class="stack-item reveal">
-        <div class="stack-icon">⚛️</div>
-        <div class="stack-name">React</div>
-        <div class="stack-cat">Frontend</div>
-      </div>
-      <div class="stack-item reveal">
-        <div class="stack-icon">🐍</div>
-        <div class="stack-name">Python</div>
-        <div class="stack-cat">Scripting</div>
-      </div>
-      <div class="stack-item reveal">
-        <div class="stack-icon">📦</div>
-        <div class="stack-name">Git</div>
-        <div class="stack-cat">DevOps</div>
-      </div>
-      <div class="stack-item reveal">
-        <div class="stack-icon">🔧</div>
-        <div class="stack-name">REST APIs</div>
-        <div class="stack-cat">Backend</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section class="section" id="contacto">
-    <div class="section-header reveal">
-      <span class="section-num">04</span>
-      <h2 class="section-title">Contacto</h2>
-      <span class="section-line"></span>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-text reveal">
-        <p>
-          ¿Tienes un proyecto en mente o quieres colaborar? Estoy abierto a oportunidades 
-          de desarrollo multiplataforma, prácticas profesionales y proyectos freelance.
-        </p>
-        <p style="color:var(--text-muted); font-size:14px;">
-          Respondo en menos de 24h. Si prefieres, también puedes encontrarme en GitHub 
-          viendo mi código y contribuciones abiertas.
-        </p>
-      </div>
-      <div class="contact-links reveal">
-        <a href="https://github.com/roberttedt-jr" target="_blank" class="contact-link">
-          <span class="contact-link-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          </span>
-          <div>
-            <div style="color:var(--text-primary); font-weight:600;">GitHub</div>
-            <div style="font-size:12px; color:var(--text-muted); margin-top:2px;">@roberttedt-jr</div>
           </div>
         </a>
-        <a href="mailto:roberto.munoz@email.com" class="contact-link">
-          <span class="contact-link-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          </span>
-          <div>
-            <div style="color:var(--text-primary); font-weight:600;">Email</div>
-            <div style="font-size:12px; color:var(--text-muted); margin-top:2px;">roberto.munoz@email.com</div>
-          </div>
-        </a>
-        <a href="https://roberttedt-jr.github.io/Portafolio/" target="_blank" class="contact-link">
-          <span class="contact-link-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          </span>
-          <div>
-            <div style="color:var(--text-primary); font-weight:600;">Web actual</div>
-            <div style="font-size:12px; color:var(--text-muted); margin-top:2px;">Portafolio anterior</div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>Desarrollado con <span style="color:var(--text-secondary)">código</span> por Roberto Muñoz · 2026</p>
-  </footer>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== VISTA 2: INFO ==================== -->
+  <main id="view-info" class="relative z-10 px-6 sm:px-12 md:px-16 mt-16 max-w-[1140px] mx-auto space-y-20 hidden">
+    
+    <!-- EXPERIENCE -->
+    <section class="border-t border-[#1e1e24] pt-10">
+      <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-10">
+        <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
+        <span>EXPERIENCE</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+        <div class="md:col-span-5">
+          <h2 class="text-2xl sm:text-3xl font-semibold text-white tracking-tight">
+            Higher Education Barcelona
+          </h2>
+        </div>
+        <div class="md:col-span-7 space-y-1">
+          <h3 class="text-base font-semibold text-white">Técnico informático</h3>
+          <p class="text-xs font-mono text-[#7a7a84]">09/'24 - 12/'24 &bull; En remoto</p>
+          <p class="text-sm text-[#a0a0a8] font-light leading-relaxed pt-3">
+            Soporte técnico, diagnóstico de incidencias, optimización de sistemas y gestión de infraestructuras IT corporativas en entorno remoto.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="border-t border-[#1e1e24] pt-10">
+      <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-10">
+        <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
+        <span>EDUCATION</span>
+      </div>
+
+      <div class="space-y-12">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+          <div class="md:col-span-5">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-white tracking-tight">UNIVERSAE</h2>
+          </div>
+          <div class="md:col-span-7 space-y-1">
+            <h3 class="text-base font-semibold text-white">Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
+            <p class="text-xs font-mono text-[#7a7a84]">02/'25 - 01/'27</p>
+            <p class="text-sm text-[#a0a0a8] font-light leading-relaxed pt-3">
+              Especialización en desarrollo multiplataforma, bases de datos relacionales, servicios y arquitecturas de aplicaciones modernas.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+          <div class="md:col-span-5">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-white tracking-tight">UNIVERSAE</h2>
+          </div>
+          <div class="md:col-span-7 space-y-1">
+            <h3 class="text-base font-semibold text-white">Técnico en Sistemas Microinformáticos y Redes (SMR)</h3>
+            <p class="text-xs font-mono text-[#7a7a84]">02/'24 - 02/'25</p>
+            <p class="text-sm text-[#a0a0a8] font-light leading-relaxed pt-3">
+              Instalación, configuración y mantenimiento de redes locales, hardware, servidores y protocolos de seguridad informática.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="border-t border-[#1e1e24] pt-10">
+      <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-10">
+        <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
+        <span>ABOUT</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+        <div class="md:col-span-5">
+          <h2 class="text-2xl sm:text-3xl font-semibold text-white tracking-tight">Bio</h2>
+        </div>
+        <div class="md:col-span-7">
+          <p class="text-base font-light text-[#d0d0d8] leading-relaxed">
+            Hola mi nombre es Roberto, soy Técnico en Sistemas Microinformáticos y Redes, y ahora estoy estudiando para ser Técnico de Desarrollo de Aplicaciones Multiplataforma (DAM), a la vez lo compagino trabajando los meses de verano y estudiando campos de la informática que me gustan desde casa.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LANGUAGES -->
+    <section class="border-t border-[#1e1e24] pt-10">
+      <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-10">
+        <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
+        <span>LANGUAGES</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+        <div class="md:col-span-5">
+          <h2 class="text-2xl sm:text-3xl font-semibold text-white tracking-tight">Idiomas</h2>
+        </div>
+        <div class="md:col-span-7 space-y-3 text-sm text-[#c4c4cc]">
+          <p><span class="text-white font-medium">Español</span> — Competencia bilingüe o nativa</p>
+          <p><span class="text-white font-medium">Valenciano</span> — Competencia bilingüe o nativa</p>
+          <p><span class="text-white font-medium">Inglés</span> — Competencia básica profesional</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="border-t border-[#1e1e24] pt-10 pb-12">
+      <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-10">
+        <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
+        <span>CONTACT</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+        <div class="md:col-span-5">
+          <h2 class="text-2xl sm:text-3xl font-semibold text-white tracking-tight">Get in touch</h2>
+        </div>
+        <div class="md:col-span-7 space-y-4">
+          <div>
+            <button onclick="copy('robertomrovira@gmail.com', 'Correo copiado')" class="text-sm font-mono text-white hover:text-[#8e8e98] transition-colors flex items-center gap-2 cursor-pointer">
+              <span>robertomrovira@gmail.com</span>
+              <span class="text-xs text-[#72727a] font-sans">(Click to copy)</span>
+            </button>
+          </div>
+          <div>
+            <button onclick="copy('654851836', 'Teléfono copiado')" class="text-sm font-mono text-white hover:text-[#8e8e98] transition-colors flex items-center gap-2 cursor-pointer">
+              <span>+34 654 85 18 36</span>
+              <span class="text-xs text-[#72727a] font-sans">(Click to copy)</span>
+            </button>
+          </div>
+          <div>
+            <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="text-sm text-[#9e9ea8] hover:text-white transition-colors inline-flex items-center gap-1">
+              LinkedIn Profile <span>↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Notificación Toast -->
+  <div id="toast" class="fixed bottom-6 right-6 bg-white text-black text-xs font-medium px-4 py-2 rounded-full shadow-2xl transition-all duration-300 opacity-0 pointer-events-none z-50">
+    Copiado al portapapeles
+  </div>
 
   <script>
-    // Mobile menu
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    function switchTab(tab) {
+      const viewWork = document.getElementById('view-work');
+      const viewInfo = document.getElementById('view-info');
+      const btnWork = document.getElementById('btn-work');
+      const btnInfo = document.getElementById('btn-info');
+      const notch = document.getElementById('notch');
+      const notchGlow = document.getElementById('notch-glow');
 
-    // Active nav link on scroll
-    const sections = document.querySelectorAll('section[id]');
-    const navItems = document.querySelectorAll('.nav-link');
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(sec => {
-        const top = sec.offsetTop - 100;
-        if (scrollY >= top) current = sec.getAttribute('id');
-      });
-      navItems.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
-      });
-      // Navbar background
-      document.querySelector('.navbar').style.background = scrollY > 50
-        ? 'rgba(10,10,10,0.95)' : 'rgba(10,10,10,0.8)';
-    });
+      if (tab === 'work') {
+        viewWork.classList.remove('hidden');
+        viewInfo.classList.add('hidden');
+        btnWork.className = "relative z-10 px-5 py-1.5 rounded-full text-xs font-medium text-white bg-[#2c2c33] shadow-sm transition-all duration-200";
+        btnInfo.className = "relative z-10 px-5 py-1.5 rounded-full text-xs font-medium text-[#808086] hover:text-white transition-all duration-200";
+        notch.classList.remove('info-active');
+        notchGlow.classList.remove('info-active');
+      } else {
+        viewWork.classList.add('hidden');
+        viewInfo.classList.remove('hidden');
+        btnInfo.className = "relative z-10 px-5 py-1.5 rounded-full text-xs font-medium text-white bg-[#2c2c33] shadow-sm transition-all duration-200";
+        btnWork.className = "relative z-10 px-5 py-1.5 rounded-full text-xs font-medium text-[#808086] hover:text-white transition-all duration-200";
+        notch.classList.add('info-active');
+        notchGlow.classList.add('info-active');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-    // Scroll reveal
-    const revealEls = document.querySelectorAll('.reveal, .timeline-item');
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
+    function copy(text, label) {
+      navigator.clipboard.writeText(text).then(() => {
+        const toast = document.getElementById('toast');
+        toast.textContent = label;
+        toast.classList.remove('opacity-0');
+        toast.classList.add('opacity-100');
+        setTimeout(() => {
+          toast.classList.remove('opacity-100');
+          toast.classList.add('opacity-0');
+        }, 2000);
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    revealEls.forEach(el => revealObserver.observe(el));
-
-    // Terminal typing effect reset on visibility
-    const terminalBody = document.getElementById('terminalBody');
-    const termObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const lines = terminalBody.querySelectorAll('.terminal-line, .terminal-output');
-          lines.forEach((line, i) => {
-            line.style.animation = 'none';
-            line.offsetHeight; // trigger reflow
-            line.style.animation = `typeIn 0.3s ease ${0.2 + i * 0.3}s forwards`;
-          });
-        }
-      });
-    }, { threshold: 0.3 });
-    termObserver.observe(terminalBody);
+    }
   </script>
-
 </body>
-</html>'''
-
-with open('/mnt/agents/output/index.html', 'w', encoding='utf-8') as f:
-    f.write(html_content)
-
-print("Archivo guardado correctamente. Tamaño:", len(html_content), "caracteres")
+</html>
