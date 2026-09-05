@@ -372,9 +372,59 @@
         </div>
 
         <div class="mt-4 select-none cursor-pointer flex flex-col items-center">
-          <a href="#atmos-project" class="arrow-bounce text-2xl text-[#82828e] hover:text-white transition-colors inline-block">
+          <a href="#pulse-project" class="arrow-bounce text-2xl text-[#82828e] hover:text-white transition-colors inline-block">
             ↓
           </a>
+        </div>
+      </section>
+
+      <section id="pulse-project" class="w-full pt-1">
+        <div onclick="openProject('pulse')" class="perry-project-card px-5 sm:px-10 md:px-12 pt-7 sm:pt-9 pb-0 group">
+          
+          <div class="relative z-10 flex items-start justify-between gap-4 mb-6 sm:mb-8">
+            <div>
+              <h2 class="text-lg sm:text-[22px] font-medium text-white tracking-tight">
+                PULSE
+              </h2>
+              <p class="text-xs sm:text-sm text-[#7e7e86] group-hover:text-[#a0b8d8] transition-colors mt-0.5 font-normal tracking-tight">
+                Proyecto Personal, '26 — Registro de entrenamientos, series y progresión de fuerza en tiempo real.
+              </p>
+            </div>
+            
+            <div class="text-[#7e7e86] group-hover:text-white text-xl transition-all duration-300 transform group-hover:translate-x-1.5">
+              →
+            </div>
+          </div>
+
+          <div class="perry-inner-window">
+            
+            <div class="browser-tabs-bar">
+              <div class="flex items-center gap-2 pb-2 pr-2">
+                <div class="w-3 h-3 rounded-full bg-[#ff5f56] border border-[#e0443e]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#ffbd2e] border border-[#dea123]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#27c93f] border border-[#1aab29]"></div>
+              </div>
+
+              <div class="browser-tab">
+                <svg class="w-3.5 h-3.5 text-[#2997ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 18h12M6 6h12M9 12h6M3 9v6M21 9v6M6 8v8M18 8v8"/>
+                </svg>
+                <span class="text-xs font-medium text-white tracking-tight">pulse-psi-blond.vercel.app</span>
+                <span class="text-[#62626e] hover:text-white text-xs ml-1 cursor-default">&times;</span>
+              </div>
+
+              <div class="text-[#55555e] text-xs pb-1.5 pl-1 select-none">+</div>
+            </div>
+
+            <div class="relative w-full h-[320px] sm:h-[500px] md:h-[620px] overflow-hidden bg-black flex justify-center">
+              <img 
+                src="pulse.jpg" 
+                alt="PULSE App Interface" 
+                class="w-full h-full object-cover object-top block"
+              />
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -570,7 +620,7 @@
       </button>
 
       <div class="flex items-center gap-6 text-sm text-[#95959e] font-normal">
-        <a href="https://roberttedt-jr.github.io/ATMOS./" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5 text-white font-medium">
+        <a id="project-live-btn" href="#" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5 text-white font-medium">
           <span>Live App</span>
           <svg class="w-2.5 h-2.5 text-current opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
         </a>
@@ -582,11 +632,11 @@
     </nav>
 
     <header class="text-center pt-8 pb-12 px-6">
-      <h1 class="font-headline text-5xl sm:text-7xl font-normal text-white tracking-tight drop-shadow-[0_0_30px_rgba(255,255,255,0.25)]">
-        ATMOS
+      <h1 id="project-title" class="font-headline text-5xl sm:text-7xl font-normal text-white tracking-tight drop-shadow-[0_0_30px_rgba(255,255,255,0.25)]">
+        PULSE
       </h1>
-      <p class="text-xs sm:text-sm text-[#7e7e86] font-mono mt-3">
-        UNIVERSAE &bull; November '25
+      <p id="project-subtitle" class="text-xs sm:text-sm text-[#7e7e86] font-mono mt-3">
+        Proyecto Personal &bull; Marzo '26
       </p>
     </header>
 
@@ -604,59 +654,33 @@
                 <div class="w-3 h-3 rounded-full bg-[#27c93f] border border-[#1aab29]"></div>
               </div>
               <div class="browser-tab">
-                <svg class="w-3.5 h-3.5 text-[#2997ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
-                </svg>
-                <span class="text-xs font-medium text-white tracking-tight">ATMOS — Weather Mode</span>
+                <span id="project-tab-icon">
+                  <svg class="w-3.5 h-3.5 text-[#2997ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 18h12M6 6h12M9 12h6M3 9v6M21 9v6M6 8v8M18 8v8"/>
+                  </svg>
+                </span>
+                <span id="project-tab-text" class="text-xs font-medium text-white tracking-tight">pulse-psi-blond.vercel.app</span>
               </div>
             </div>
 
             <div class="relative w-full overflow-hidden bg-black flex justify-center">
               <img 
-                src="atmos.jpg" 
-                alt="ATMOS App Case Study Screenshot" 
+                id="project-main-image"
+                src="pulse.jpg" 
+                alt="App Case Study Screenshot" 
                 class="w-full h-auto object-cover object-top block"
               />
             </div>
           </div>
         </div>
 
-        <article class="mt-20 max-w-3xl space-y-14 text-sm font-normal text-[#c4c4cc] leading-relaxed">
-          
-          <section id="overview">
-            <h2 class="text-xs font-mono uppercase tracking-widest text-[#7a7a84] mb-3">01 / OVERVIEW</h2>
-            <h3 class="text-2xl font-serif text-white mb-4">Reinventando la experiencia meteorológica en la web</h3>
-            <p>
-              ATMOS nació como un proyecto en UNIVERSAE orientado a explorar las capacidades de las aplicaciones web progresivas (PWA) de alto rendimiento. El propósito fue diseñar una herramienta climática que combinase una estética minimalista con datos hiperprecisos y visualización en tiempo real.
-            </p>
-          </section>
-
-          <section id="architecture">
-            <h2 class="text-xs font-mono uppercase tracking-widest text-[#7a7a84] mb-3">02 / ARCHITECTURE & TECH STACK</h2>
-            <h3 class="text-2xl font-serif text-white mb-4">Estructura moderna sin dependencias pesadas</h3>
-            <p>
-              La arquitectura se construyó sobre JavaScript puro (Vanilla), HTML5 semántico y CSS3 con técnicas avanzadas de desenfoque por capas. Se implementó una integración directa con la API pública de Windy para la recepción continua de variables de presión, viento y proyecciones térmicas.
-            </p>
-          </section>
-
-          <section id="ui-design">
-            <h2 class="text-xs font-mono uppercase tracking-widest text-[#7a7a84] mb-3">03 / LIQUID GLASS UI</h2>
-            <h3 class="text-2xl font-serif text-white mb-4">Inmersión visual reactiva al clima</h3>
-            <p>
-              La interfaz adopta un gradiente dinámico inspirado en la luminosidad del cielo mediterráneo. Cada tarjeta y gráfica vectorial SVG responde fluidamente al tamaño del dispositivo, manteniendo una legibilidad cristalina tanto en escritorio como en navegadores móviles.
-            </p>
-          </section>
-
+        <article id="project-article" class="mt-20 max-w-3xl space-y-14 text-sm font-normal text-[#c4c4cc] leading-relaxed">
         </article>
       </div>
 
       <aside class="hidden lg:block lg:col-span-2 sticky top-24 pl-4 border-l border-[#1f1f24] text-xs font-mono">
         <span class="text-[#55555c] uppercase tracking-widest block mb-4 text-[10px]">CONTENTS</span>
-        <ul class="space-y-3 text-[#7a7a84]">
-          <li><a href="#overview" class="hover:text-white transition-colors block">Overview</a></li>
-          <li><a href="#architecture" class="hover:text-white transition-colors block">Architecture</a></li>
-          <li><a href="#ui-design" class="hover:text-white transition-colors block">Liquid Glass UI</a></li>
-          <li><a href="https://roberttedt-jr.github.io/ATMOS./" target="_blank" class="text-white hover:text-neutral-300 transition-colors block pt-2">Live Demo ↗</a></li>
+        <ul id="project-contents-list" class="space-y-3 text-[#7a7a84]">
         </ul>
       </aside>
 
@@ -666,7 +690,7 @@
       <button onclick="closeProject()" class="text-white hover:underline cursor-pointer mb-3 inline-block">
         ← Return to all projects
       </button>
-      <p>&copy; Roberto Muñoz Rovira &bull; ATMOS Project</p>
+      <p id="project-footer-copy">&copy; Roberto Muñoz Rovira</p>
     </footer>
 
   </div>
@@ -676,6 +700,71 @@
   </div>
 
   <script>
+    const projectData = {
+      pulse: {
+        id: 'pulse-project',
+        title: 'PULSE',
+        subtitle: "Proyecto Personal • Marzo '26",
+        liveUrl: 'https://pulse-psi-blond.vercel.app/',
+        tabText: 'pulse-psi-blond.vercel.app',
+        tabIcon: '<svg class="w-3.5 h-3.5 text-[#2997ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h12M6 6h12M9 12h6M3 9v6M21 9v6M6 8v8M18 8v8"/></svg>',
+        image: 'pulse.jpg',
+        footer: '© Roberto Muñoz Rovira • PULSE Project',
+        sections: [
+          {
+            id: 'overview',
+            number: '01 / OVERVIEW',
+            title: 'Registro ágil de series, repeticiones y descansos',
+            body: 'PULSE es una aplicación web diseñada para monitorizar entrenamientos de fuerza, rutinas estructuradas e hipertrofia reduciendo al mínimo la interacción en pantalla. Permite registrar cargas, series efectivas y notas técnicas de forma rápida entre descansos para mantener el foco en la sesión.'
+          },
+          {
+            id: 'architecture',
+            number: '02 / ARCHITECTURE & TECH STACK',
+            title: 'Persistencia inmediata y analítica de progresión',
+            body: 'Construida con tecnologías web modernas y despliegue continuo en Vercel, optimizada para responder con fluidez instantánea en dispositivos móviles. Incluye control de volumen de carga por grupo muscular, cálculo dinámico de esfuerzo e historial reactivo de sesiones sin fricción.'
+          },
+          {
+            id: 'ui-design',
+            number: '03 / INTERFACE SYSTEM',
+            title: 'Ergonomía visual y contraste pensado para el gimnasio',
+            body: 'La interfaz utiliza paletas oscuras que maximizan la autonomía de la batería en pantallas OLED, tipografía clara de rápida lectura bajo focos intensos y botones de entrada directa diseñados para manejarse cómodamente con una sola mano.'
+          }
+        ]
+      },
+      atmos: {
+        id: 'atmos-project',
+        title: 'ATMOS',
+        subtitle: "UNIVERSAE • Noviembre '25",
+        liveUrl: 'https://roberttedt-jr.github.io/ATMOS./',
+        tabText: 'ATMOS — Weather Mode',
+        tabIcon: '<svg class="w-3.5 h-3.5 text-[#2997ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>',
+        image: 'atmos.jpg',
+        footer: '© Roberto Muñoz Rovira • ATMOS Project',
+        sections: [
+          {
+            id: 'overview',
+            number: '01 / OVERVIEW',
+            title: 'Reinventando la experiencia meteorológica en la web',
+            body: 'ATMOS nació como un proyecto en UNIVERSAE orientado a explorar las capacidades de las aplicaciones web progresivas (PWA) de alto rendimiento. El propósito fue diseñar una herramienta climática que combinase una estética minimalista con datos hiperprecisos y visualización en tiempo real.'
+          },
+          {
+            id: 'architecture',
+            number: '02 / ARCHITECTURE & TECH STACK',
+            title: 'Estructura moderna sin dependencias pesadas',
+            body: 'La arquitectura se construyó sobre JavaScript puro (Vanilla), HTML5 semántico y CSS3 con técnicas avanzadas de desenfoque por capas. Se implementó una integración directa con la API pública de Windy para la recepción continua de variables de presión, viento y proyecciones térmicas.'
+          },
+          {
+            id: 'ui-design',
+            number: '03 / LIQUID GLASS UI',
+            title: 'Inmersión visual reactiva al clima',
+            body: 'La interfaz adopta un gradiente dinámico inspirado en la luminosidad del cielo mediterráneo. Cada tarjeta y gráfica vectorial SVG responde fluidamente al tamaño del dispositivo, manteniendo una legibilidad cristalina tanto en escritorio como en navegadores móviles.'
+          }
+        ]
+      }
+    };
+
+    let activeProjectId = 'pulse';
+
     function switchTab(tab) {
       const viewWork = document.getElementById('view-work');
       const viewInfo = document.getElementById('view-info');
@@ -703,6 +792,44 @@
     }
 
     function openProject(projectId) {
+      activeProjectId = projectId;
+      const data = projectData[projectId];
+      if (!data) return;
+
+      document.getElementById('project-title').textContent = data.title;
+      document.getElementById('project-subtitle').innerHTML = data.subtitle;
+      document.getElementById('project-tab-text').textContent = data.tabText;
+      document.getElementById('project-tab-icon').innerHTML = data.tabIcon;
+      document.getElementById('project-main-image').src = data.image;
+      document.getElementById('project-live-btn').href = data.liveUrl;
+      document.getElementById('project-footer-copy').textContent = data.footer;
+
+      const articleEl = document.getElementById('project-article');
+      const contentsListEl = document.getElementById('project-contents-list');
+      articleEl.innerHTML = '';
+      contentsListEl.innerHTML = '';
+
+      data.sections.forEach(sec => {
+        const secEl = document.createElement('section');
+        secEl.id = sec.id;
+        secEl.innerHTML = `
+          <h2 class="text-xs font-mono uppercase tracking-widest text-[#7a7a84] mb-3">${sec.number}</h2>
+          <h3 class="text-2xl font-serif text-white mb-4">${sec.title}</h3>
+          <p>${sec.body}</p>
+        `;
+        articleEl.appendChild(secEl);
+
+        const liEl = document.createElement('li');
+        liEl.innerHTML = `<a href="#${sec.id}" class="hover:text-white transition-colors block">${sec.id.charAt(0).toUpperCase() + sec.id.slice(1)}</a>`;
+        contentsListEl.appendChild(liEl);
+      });
+
+      if (data.liveUrl !== '#') {
+        const liveLi = document.createElement('li');
+        liveLi.innerHTML = `<a href="${data.liveUrl}" target="_blank" class="text-white hover:text-neutral-300 transition-colors block pt-2">Live Demo ↗</a>`;
+        contentsListEl.appendChild(liveLi);
+      }
+
       document.getElementById('home-view').classList.add('hidden');
       document.getElementById('project-view').classList.remove('hidden');
       window.scrollTo({ top: 0, behavior: 'instant' });
@@ -712,9 +839,9 @@
       document.getElementById('project-view').classList.add('hidden');
       document.getElementById('home-view').classList.remove('hidden');
       
-      const atmosSec = document.getElementById('atmos-project');
-      if (atmosSec) {
-        atmosSec.scrollIntoView({ behavior: 'instant' });
+      const targetSec = document.getElementById(projectData[activeProjectId]?.id || 'view-work');
+      if (targetSec) {
+        targetSec.scrollIntoView({ behavior: 'instant' });
       }
     }
 
@@ -733,4 +860,3 @@
   </script>
 </body>
 </html>
-
