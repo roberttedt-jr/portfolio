@@ -159,11 +159,11 @@
 
   <div class="hero-spotlight"></div>
 
-  <!-- HEADER RESPONSIVE -->
-  <header class="relative z-20 w-full px-5 sm:px-12 md:px-16 pt-5 pb-6">
-    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+  <!-- HEADER OPTIMIZADO -->
+  <header class="relative z-20 w-full px-6 sm:px-12 md:px-16 pt-6 pb-6">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-4">
       
-      <!-- Fila superior en móvil / izquierda en desktop -->
+      <!-- Fila superior izquierda -->
       <div class="w-full sm:w-auto flex items-center justify-between">
         <div>
           <a href="#" onclick="switchTab('work')" class="text-sm font-semibold tracking-tight text-white block">
@@ -174,13 +174,15 @@
           </span>
         </div>
 
-        <!-- Enlaces en móvil a la derecha -->
-        <div class="flex sm:hidden items-center gap-4 text-xs text-[#808086]">
-          <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-0.5">
-            LinkedIn <span class="text-[10px]">↗</span>
+        <!-- Enlaces en móvil con iconos SVG idénticos a desktop -->
+        <div class="flex sm:hidden items-center gap-5 text-xs text-[#808086]">
+          <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
+            <span>LinkedIn</span>
+            <svg class="w-2.5 h-2.5 text-current opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
           </a>
-          <a href="https://github.com/roberttedt-jr" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-0.5">
-            GitHub <span class="text-[10px]">↗</span>
+          <a href="https://github.com/roberttedt-jr" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
+            <span>GitHub</span>
+            <svg class="w-2.5 h-2.5 text-current opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
           </a>
         </div>
       </div>
@@ -200,11 +202,13 @@
 
       <!-- Enlaces solo en Desktop -->
       <div class="hidden sm:flex items-center gap-6 text-xs text-[#808086] font-medium">
-        <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1">
-          LinkedIn <span class="text-[10px]">↗</span>
+        <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
+          <span>LinkedIn</span>
+          <svg class="w-2.5 h-2.5 text-current opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
         </a>
-        <a href="https://github.com/roberttedt-jr" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1">
-          GitHub <span class="text-[10px]">↗</span>
+        <a href="https://github.com/roberttedt-jr" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
+          <span>GitHub</span>
+          <svg class="w-2.5 h-2.5 text-current opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
         </a>
       </div>
 
@@ -212,7 +216,7 @@
   </header>
 
   <!-- VISTA 1: WORK -->
-  <main id="view-work" class="relative z-10 px-4 sm:px-12 md:px-16 mt-4 sm:mt-6 space-y-12">
+  <main id="view-work" class="relative z-10 px-4 sm:px-12 md:px-16 mt-3 sm:mt-6 space-y-12">
     
     <section class="flex flex-col items-center relative">
       <div class="w-full max-w-[1140px] relative">
@@ -430,8 +434,9 @@
             </button>
           </div>
           <div>
-            <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="text-xs sm:text-sm text-[#9e9ea8] hover:text-white transition-colors inline-flex items-center gap-1">
-              LinkedIn Profile <span>↗</span>
+            <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="text-xs sm:text-sm text-[#9e9ea8] hover:text-white transition-colors inline-flex items-center gap-1.5">
+              <span>LinkedIn Profile</span>
+              <svg class="w-2.5 h-2.5 text-current opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
             </a>
           </div>
         </div>
