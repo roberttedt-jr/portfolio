@@ -40,9 +40,9 @@
       left: 50%;
       transform: translateX(-50%);
       width: 100%;
-      max-width: 1200px;
-      height: 600px;
-      background: radial-gradient(ellipse at 50% 15%, rgba(140, 148, 170, 0.18) 0%, rgba(20, 22, 28, 0.04) 55%, transparent 75%);
+      max-width: 1400px;
+      height: 650px;
+      background: radial-gradient(ellipse at 50% 15%, rgba(140, 148, 170, 0.18) 0%, rgba(20, 22, 28, 0.03) 55%, transparent 75%);
       filter: blur(80px);
       pointer-events: none;
       z-index: 0;
@@ -60,8 +60,8 @@
       top: -16px;
       left: 28%;
       transform: translateX(-50%);
-      width: 48px;
-      height: 22px;
+      width: 52px;
+      height: 24px;
       background: radial-gradient(ellipse, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 70%);
       filter: blur(4px);
       pointer-events: none;
@@ -76,8 +76,8 @@
       top: -1px;
       left: 28%;
       transform: translateX(-50%);
-      width: 24px;
-      height: 2px;
+      width: 26px;
+      height: 2.5px;
       background: #ffffff;
       border-radius: 9999px;
       box-shadow: 0 0 12px 2px rgba(255, 255, 255, 0.9);
@@ -90,7 +90,7 @@
     .mac-window-hero {
       position: relative;
       background: #0f0f13;
-      border-radius: 18px 18px 0 0;
+      border-radius: 20px 20px 0 0;
       border-top: 1px solid rgba(255, 255, 255, 0.15);
       border-left: 1px solid rgba(255, 255, 255, 0.12);
       border-right: 1px solid rgba(255, 255, 255, 0.12);
@@ -98,8 +98,8 @@
       box-shadow: 
         0 45px 120px -20px rgba(0, 0, 0, 0.95),
         inset 0 1px 0 rgba(255, 255, 255, 0.22);
-      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 98%);
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 98%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 62%, rgba(0,0,0,0) 98%);
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 62%, rgba(0,0,0,0) 98%);
       overflow: hidden;
     }
 
@@ -114,13 +114,13 @@
 
     .perry-glow-layer {
       position: absolute;
-      top: 40%;
+      top: 42%;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 100%;
-      max-width: 680px;
+      max-width: 700px;
       height: 320px;
-      background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.2) 0%, rgba(185, 205, 240, 0.1) 40%, transparent 70%);
+      background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.18) 0%, rgba(185, 205, 240, 0.08) 40%, transparent 70%);
       filter: blur(50px);
       pointer-events: none;
       z-index: 1;
@@ -137,13 +137,106 @@
       padding: 0 16px;
     }
 
-    .mac-window-closed {
+    .perry-project-card {
       position: relative;
-      background: #0f0f13;
-      border-radius: 18px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 45px 120px -20px rgba(0, 0, 0, 0.95);
+      background-color: #141416;
+      border-radius: 28px;
+      border: 1px solid #1f1f23;
+      box-shadow: 0 35px 90px -20px rgba(0, 0, 0, 0.9);
+      cursor: pointer;
       overflow: hidden;
+      transition: border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .perry-project-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 65%, rgba(18, 48, 85, 0.55) 0%, rgba(12, 28, 50, 0.2) 50%, transparent 75%);
+      opacity: 0;
+      transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .perry-project-card:hover {
+      border-color: #263e5c;
+      background-color: #111419;
+    }
+
+    .perry-project-card:hover::before {
+      opacity: 1;
+    }
+
+    .perry-inner-window {
+      position: relative;
+      z-index: 10;
+      background: #0d0d10;
+      border: 1px solid #202026;
+      border-bottom: none;
+      border-radius: 16px 16px 0 0;
+      overflow: hidden;
+      transform: translateY(28px);
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @media (max-width: 640px) {
+      .perry-inner-window {
+        transform: translateY(12px);
+      }
+    }
+
+    .perry-project-card:hover .perry-inner-window {
+      transform: translateY(0px);
+      border-color: #2e3e52;
+      box-shadow: 0 -12px 40px -10px rgba(0, 0, 0, 0.85);
+    }
+
+    .browser-tabs-bar {
+      height: 42px;
+      background: #17171a;
+      border-bottom: 1px solid #202025;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 16px;
+      gap: 12px;
+    }
+
+    .browser-tab {
+      height: 32px;
+      background: #222227;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: none;
+      border-radius: 8px 8px 0 0;
+      padding: 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .laptop-frame {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(18, 18, 22, 0.35);
+      border-radius: 28px;
+      padding: 16px;
+      box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.9);
+      position: relative;
+    }
+    .laptop-notch {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 140px;
+      height: 14px;
+      background: #0c0c0e;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-top: none;
     }
 
     @keyframes arrowBounce {
@@ -155,55 +248,316 @@
     }
   </style>
 </head>
-<body class="selection:bg-neutral-800 selection:text-white relative min-h-screen pb-20">
+<body class="selection:bg-neutral-800 selection:text-white relative min-h-screen pb-24">
 
   <div class="hero-spotlight"></div>
 
-  <!-- HEADER OPTIMIZADO -->
-  <header class="relative z-20 w-full px-6 sm:px-12 md:px-16 pt-6 pb-6">
-    <div class="flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-4">
-      
-      <!-- Fila superior izquierda -->
-      <div class="w-full sm:w-auto flex items-center justify-between">
-        <div>
-          <a href="#" onclick="switchTab('work')" class="text-sm font-semibold tracking-tight text-white block">
-            Roberto Muñoz
-          </a>
-          <span class="text-[11px] text-[#808086] font-normal block">
-            Técnico Informático &bull; DAM
-          </span>
+  <!-- VISTA PRINCIPAL (HOME) -->
+  <div id="home-view">
+    
+    <!-- HEADER AJUSTADO A LOS EXTREMOS DE LA PANTALLA Y CON FUENTES MÁS GRANDES -->
+    <header class="relative z-20 w-full px-6 sm:px-12 md:px-16 lg:px-20 pt-7 pb-6">
+      <div class="w-full flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-4">
+        
+        <!-- Extremo Izquierdo: Identidad con mayor tamaño tipográfico -->
+        <div class="w-full sm:w-auto flex items-center justify-between">
+          <div>
+            <a href="#" onclick="switchTab('work')" class="text-base sm:text-lg font-semibold tracking-tight text-white block hover:text-neutral-200 transition-colors">
+              Roberto Muñoz
+            </a>
+            <span class="text-xs sm:text-[13px] text-[#95959e] font-normal block mt-0.5">
+              Técnico Informático &bull; DAM
+            </span>
+          </div>
+
+          <!-- Móvil: Enlaces visibles a la derecha de la primera fila -->
+          <div class="flex sm:hidden items-center gap-5 text-sm text-[#95959e]">
+            <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
+              <span>LinkedIn</span>
+              <svg class="w-3 h-3 text-current opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
+            <a href="https://github.com/roberttedt-jr" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
+              <span>GitHub</span>
+              <svg class="w-3 h-3 text-current opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
+          </div>
         </div>
 
-        <!-- Enlaces en móvil con iconos SVG idénticos a desktop -->
-        <div class="flex sm:hidden items-center gap-5 text-xs text-[#808086]">
+        <!-- Centro: Selector Work / Info -->
+        <div class="relative pill-capsule rounded-full p-1 flex items-center shrink-0">
+          <div id="notch-glow" class="pill-halo"></div>
+          <div id="notch" class="pill-notch pointer-events-none"></div>
+
+          <button id="btn-work" onclick="switchTab('work')" class="relative z-10 px-6 py-2 rounded-full text-sm font-medium text-white bg-[#2c2c33] shadow-sm transition-all duration-200">
+            Work
+          </button>
+          <button id="btn-info" onclick="switchTab('info')" class="relative z-10 px-6 py-2 rounded-full text-sm font-medium text-[#8c8c94] hover:text-white transition-all duration-200">
+            Info
+          </button>
+        </div>
+
+        <!-- Extremo Derecho: Enlaces en Desktop con mayor tamaño -->
+        <div class="hidden sm:flex items-center gap-7 text-sm text-[#95959e] font-medium">
           <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
             <span>LinkedIn</span>
-            <svg class="w-2.5 h-2.5 text-current opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            <svg class="w-3 h-3 text-current opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
           </a>
           <a href="https://github.com/roberttedt-jr" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
             <span>GitHub</span>
-            <svg class="w-2.5 h-2.5 text-current opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            <svg class="w-3 h-3 text-current opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
           </a>
         </div>
+
       </div>
+    </header>
 
-      <!-- Selector Central Work / Info -->
-      <div class="relative pill-capsule rounded-full p-1 flex items-center shrink-0">
-        <div id="notch-glow" class="pill-halo"></div>
-        <div id="notch" class="pill-notch pointer-events-none"></div>
+    <!-- SUB-VISTA 1: WORK -->
+    <main id="view-work" class="relative z-10 px-4 sm:px-8 md:px-12 mt-2 sm:mt-5 space-y-16 max-w-[1360px] mx-auto">
+      
+      <!-- HERO WINDOW -->
+      <section class="flex flex-col items-center relative">
+        <div class="w-full relative">
+          <div class="hero-backlight"></div>
 
-        <button id="btn-work" onclick="switchTab('work')" class="relative z-10 px-5 py-1.5 rounded-full text-xs font-medium text-white bg-[#2c2c33] shadow-sm transition-all duration-200">
-          Work
-        </button>
-        <button id="btn-info" onclick="switchTab('info')" class="relative z-10 px-5 py-1.5 rounded-full text-xs font-medium text-[#808086] hover:text-white transition-all duration-200">
-          Info
-        </button>
-      </div>
+          <div class="mac-window-hero">
+            <div class="mac-titlebar">
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 rounded-full bg-[#ff5f56] border border-[#e0443e]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#ffbd2e] border border-[#dea123]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#27c93f] border border-[#1aab29]"></div>
+              </div>
+              <div class="text-[#55555c] hover:text-white text-xs font-light cursor-default select-none pr-1">
+                +
+              </div>
+            </div>
 
-      <!-- Enlaces solo en Desktop -->
-      <div class="hidden sm:flex items-center gap-6 text-xs text-[#808086] font-medium">
-        <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
-          <span>LinkedIn</span>
+            <div class="relative bg-[#0d0d10] p-6 sm:p-14 md:p-20 pb-28 sm:pb-36 overflow-hidden">
+              <div class="perry-glow-layer"></div>
+
+              <div class="relative z-10">
+                <h1 class="font-headline text-[2.6rem] leading-[1.05] sm:text-7xl md:text-[5.5rem] lg:text-[6.3rem] font-normal text-[#f4f4f6] tracking-tight max-w-5xl drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]">
+                  I build <span class="font-italicHero italic font-normal text-white drop-shadow-[0_0_35px_rgba(255,255,255,0.45)]">software</span>,<br />interfaces &amp; systems.
+                </h1>
+
+                <div class="mt-14 sm:mt-28 flex justify-end">
+                  <div class="text-right">
+                    <p class="text-xs sm:text-[15px] md:text-base text-[#d8d8de] font-normal">
+                      Técnico de Sistemas &amp; DAM en formación. Based in Benidorm.
+                    </p>
+                    <p class="text-[11px] sm:text-xs text-[#7a7a82] mt-1 font-light">
+                      Formerly at Higher Education Barcelona.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 select-none cursor-pointer flex flex-col items-center">
+          <a href="#atmos-project" class="arrow-bounce text-2xl text-[#82828e] hover:text-white transition-colors inline-block">
+            ↓
+          </a>
+        </div>
+      </section>
+
+      <!-- TARJETA DEL PROYECTO -->
+      <section id="atmos-project" class="w-full pt-1">
+        <div onclick="openProject('atmos')" class="perry-project-card px-5 sm:px-10 md:px-12 pt-7 sm:pt-9 pb-0 group">
+          
+          <div class="relative z-10 flex items-start justify-between gap-4 mb-6 sm:mb-8">
+            <div>
+              <h2 class="text-lg sm:text-[22px] font-semibold text-white tracking-tight">
+                ATMOS
+              </h2>
+              <p class="text-xs sm:text-sm text-[#7e7e86] group-hover:text-[#a0b8d8] transition-colors mt-0.5 font-light">
+                UNIVERSAE, '25 — Aplicación del Tiempo PWA interactiva, estilo Liquid Glass.
+              </p>
+            </div>
+            
+            <div class="text-[#7e7e86] group-hover:text-white text-xl transition-all duration-300 transform group-hover:translate-x-1.5">
+              →
+            </div>
+          </div>
+
+          <div class="perry-inner-window">
+            
+            <div class="browser-tabs-bar">
+              <div class="flex items-center gap-2 pb-2 pr-2">
+                <div class="w-3 h-3 rounded-full bg-[#ff5f56] border border-[#e0443e]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#ffbd2e] border border-[#dea123]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#27c93f] border border-[#1aab29]"></div>
+              </div>
+
+              <div class="browser-tab">
+                <svg class="w-3.5 h-3.5 text-[#2997ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+                </svg>
+                <span class="text-xs font-medium text-white tracking-tight">ATMOS — Weather Mode</span>
+                <span class="text-[#62626e] hover:text-white text-xs ml-1 cursor-default">&times;</span>
+              </div>
+
+              <div class="text-[#55555e] text-xs pb-1.5 pl-1 select-none">+</div>
+            </div>
+
+            <div class="relative w-full h-[320px] sm:h-[500px] md:h-[620px] overflow-hidden bg-black flex justify-center">
+              <img 
+                src="atmos.jpg" 
+                alt="ATMOS App Interface" 
+                class="w-full h-full object-cover object-top block"
+              />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- SUB-VISTA 2: INFO -->
+    <main id="view-info" class="relative z-10 px-5 sm:px-8 md:px-12 mt-10 sm:mt-16 max-w-[1360px] mx-auto space-y-14 sm:space-y-20 hidden">
+      
+      <section class="border-t border-[#1e1e24] pt-8 sm:pt-10">
+        <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-6 sm:mb-10">
+          <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
+          <span>EXPERIENCE</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
+          <div class="md:col-span-5">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-white tracking-tight">
+              Higher Education Barcelona
+            </h2>
+          </div>
+          <div class="md:col-span-7 space-y-1">
+            <h3 class="text-sm sm:text-base font-semibold text-white">Técnico informático</h3>
+            <p class="text-xs font-mono text-[#7a7a84]">09/'24 - 12/'24 &bull; En remoto</p>
+            <p class="text-xs sm:text-sm text-[#a0a0a8] font-light leading-relaxed pt-2">
+              Soporte técnico, diagnóstico de incidencias, optimización de sistemas y gestión de infraestructuras IT corporativas en entorno remoto.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="border-t border-[#1e1e24] pt-8 sm:pt-10">
+        <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-6 sm:mb-10">
+          <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
+          <span>EDUCATION</span>
+        </div>
+
+        <div class="space-y-8 sm:space-y-12">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
+            <div class="md:col-span-5">
+              <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-white tracking-tight">UNIVERSAE</h2>
+            </div>
+            <div class="md:col-span-7 space-y-1">
+              <h3 class="text-sm sm:text-base font-semibold text-white">Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
+              <p class="text-xs font-mono text-[#7a7a84]">02/'25 - 01/'27</p>
+              <p class="text-xs sm:text-sm text-[#a0a0a8] font-light leading-relaxed pt-2">
+                Especialización en desarrollo multiplataforma, bases de datos relacionales, servicios y arquitecturas de aplicaciones modernas.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
+            <div class="md:col-span-5">
+              <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-white tracking-tight">UNIVERSAE</h2>
+            </div>
+            <div class="md:col-span-7 space-y-1">
+              <h3 class="text-sm sm:text-base font-semibold text-white">Técnico en Sistemas Microinformáticos y Redes (SMR)</h3>
+              <p class="text-xs font-mono text-[#7a7a84]">02/'24 - 02/'25</p>
+              <p class="text-xs sm:text-sm text-[#a0a0a8] font-light leading-relaxed pt-2">
+                Instalación, configuración y mantenimiento de redes locales, hardware, servidores y protocolos de seguridad informática.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="border-t border-[#1e1e24] pt-8 sm:pt-10">
+        <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-6 sm:mb-10">
+          <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
+          <span>ABOUT</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
+          <div class="md:col-span-5">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-white tracking-tight">Bio</h2>
+          </div>
+          <div class="md:col-span-7">
+            <p class="text-sm sm:text-base font-light text-[#d0d0d8] leading-relaxed">
+              Hola mi nombre es Roberto, soy Técnico en Sistemas Microinformáticos y Redes, y ahora estoy estudiando para ser Técnico de Desarrollo de Aplicaciones Multiplataforma (DAM), a la vez lo compagino trabajando los meses de verano y estudiando campos de la informática que me gustan desde casa.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="border-t border-[#1e1e24] pt-8 sm:pt-10">
+        <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-6 sm:mb-10">
+          <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
+          <span>LANGUAGES</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
+          <div class="md:col-span-5">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-white tracking-tight">Idiomas</h2>
+          </div>
+          <div class="md:col-span-7 space-y-2 sm:space-y-3 text-xs sm:text-sm text-[#c4c4cc]">
+            <p><span class="text-white font-medium">Español</span> — Competencia bilingüe o nativa</p>
+            <p><span class="text-white font-medium">Valenciano</span> — Competencia bilingüe o nativa</p>
+            <p><span class="text-white font-medium">Inglés</span> — Competencia básica profesional</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="border-t border-[#1e1e24] pt-8 sm:pt-10 pb-8 sm:pb-12">
+        <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-6 sm:mb-10">
+          <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
+          <span>CONTACT</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
+          <div class="md:col-span-5">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-white tracking-tight">Get in touch</h2>
+          </div>
+          <div class="md:col-span-7 space-y-3 sm:space-y-4">
+            <div>
+              <button onclick="copy('robertomrovira@gmail.com', 'Correo copiado')" class="text-xs sm:text-sm font-mono text-white hover:text-[#8e8e98] transition-colors flex items-center gap-2 cursor-pointer">
+                <span>robertomrovira@gmail.com</span>
+                <span class="text-[11px] sm:text-xs text-[#72727a] font-sans">(Click to copy)</span>
+              </button>
+            </div>
+            <div>
+              <button onclick="copy('654851836', 'Teléfono copiado')" class="text-xs sm:text-sm font-mono text-white hover:text-[#8e8e98] transition-colors flex items-center gap-2 cursor-pointer">
+                <span>+34 654 85 18 36</span>
+                <span class="text-[11px] sm:text-xs text-[#72727a] font-sans">(Click to copy)</span>
+              </button>
+            </div>
+            <div>
+              <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="text-xs sm:text-sm text-[#9e9ea8] hover:text-white transition-colors inline-flex items-center gap-1.5">
+                <span>LinkedIn Profile</span>
+                <svg class="w-2.5 h-2.5 text-current opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- VISTA DE PROYECTO (ATMOS CASE STUDY) -->
+  <div id="project-view" class="hidden relative z-20 min-h-screen">
+    
+    <nav class="w-full px-6 sm:px-12 md:px-16 lg:px-20 pt-7 pb-4 flex items-center justify-between max-w-[1360px] mx-auto">
+      <button onclick="closeProject()" class="pill-capsule px-4 py-2 rounded-full text-xs font-medium text-white hover:text-neutral-300 transition-colors flex items-center gap-2 cursor-pointer shadow-lg">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        <span>Back</span>
+      </button>
+
+      <div class="flex items-center gap-6 text-sm text-[#95959e]">
+        <a href="https://roberttedt-jr.github.io/ATMOS./" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5 text-white font-medium">
+          <span>Live App</span>
           <svg class="w-2.5 h-2.5 text-current opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
         </a>
         <a href="https://github.com/roberttedt-jr" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
@@ -211,239 +565,97 @@
           <svg class="w-2.5 h-2.5 text-current opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
         </a>
       </div>
+    </nav>
 
-    </div>
-  </header>
+    <header class="text-center pt-8 pb-12 px-6">
+      <h1 class="font-headline text-5xl sm:text-7xl font-normal text-white tracking-tight drop-shadow-[0_0_30px_rgba(255,255,255,0.25)]">
+        ATMOS
+      </h1>
+      <p class="text-xs sm:text-sm text-[#7e7e86] font-mono mt-3">
+        UNIVERSAE &bull; November '25
+      </p>
+    </header>
 
-  <!-- VISTA 1: WORK -->
-  <main id="view-work" class="relative z-10 px-4 sm:px-12 md:px-16 mt-3 sm:mt-6 space-y-12">
-    
-    <section class="flex flex-col items-center relative">
-      <div class="w-full max-w-[1140px] relative">
-        <div class="hero-backlight"></div>
+    <section class="max-w-[1360px] mx-auto px-5 sm:px-8 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <div class="lg:col-span-10">
+        <div class="laptop-frame">
+          <div class="laptop-notch"></div>
 
-        <div class="mac-window-hero">
-          <div class="mac-titlebar">
-            <div class="flex items-center gap-2">
-              <div class="w-3 h-3 rounded-full bg-[#ff5f56] border border-[#e0443e]"></div>
-              <div class="w-3 h-3 rounded-full bg-[#ffbd2e] border border-[#dea123]"></div>
-              <div class="w-3 h-3 rounded-full bg-[#27c93f] border border-[#1aab29]"></div>
-            </div>
-            <div class="text-[#55555c] hover:text-white text-xs font-light cursor-default select-none pr-1">
-              +
-            </div>
-          </div>
-
-          <div class="relative bg-[#0d0d10] p-6 sm:p-14 md:p-20 pb-28 sm:pb-36 overflow-hidden">
-            <div class="perry-glow-layer"></div>
-
-            <div class="relative z-10">
-              <h1 class="font-headline text-[2.5rem] leading-[1.08] sm:text-7xl md:text-[5.4rem] lg:text-[6.1rem] font-normal text-[#f4f4f6] tracking-tight max-w-4xl drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]">
-                I build <span class="font-italicHero italic font-normal text-white drop-shadow-[0_0_35px_rgba(255,255,255,0.45)]">software</span>,<br />interfaces &amp; systems.
-              </h1>
-
-              <div class="mt-14 sm:mt-28 flex justify-end">
-                <div class="text-right">
-                  <p class="text-xs sm:text-base text-[#d8d8de] font-normal">
-                    Técnico de Sistemas &amp; DAM en formación. Based in Benidorm.
-                  </p>
-                  <p class="text-[11px] sm:text-sm text-[#7a7a82] mt-1 font-light">
-                    Formerly at Higher Education Barcelona.
-                  </p>
-                </div>
+          <div class="bg-[#0b0b0e] border border-neutral-800/80 rounded-xl overflow-hidden shadow-2xl">
+            <div class="browser-tabs-bar">
+              <div class="flex items-center gap-2 pb-2 pr-2">
+                <div class="w-3 h-3 rounded-full bg-[#ff5f56] border border-[#e0443e]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#ffbd2e] border border-[#dea123]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#27c93f] border border-[#1aab29]"></div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-4 select-none cursor-pointer flex flex-col items-center">
-        <a href="#atmos-project" class="arrow-bounce text-2xl text-[#82828e] hover:text-white transition-colors inline-block">
-          ↓
-        </a>
-      </div>
-    </section>
-
-    <!-- PROYECTO ATMOS -->
-    <section id="atmos-project" class="w-full max-w-[1140px] mx-auto pt-4 sm:pt-6">
-      <div class="mac-window-closed p-5 sm:p-10 hover:border-[#35353d] transition-all">
-        
-        <div class="flex items-start justify-between gap-4 mb-5">
-          <div>
-            <h2 class="text-lg sm:text-2xl font-semibold text-white tracking-tight">ATMOS</h2>
-            <p class="text-xs sm:text-sm text-[#7e7e86] mt-0.5 sm:mt-1">
-              UNIVERSAE, '25 — Aplicación del Tiempo PWA interactiva, estilo Liquid Glass.
-            </p>
-          </div>
-          <a href="https://roberttedt-jr.github.io/ATMOS./" target="_blank" rel="noopener noreferrer" class="text-white hover:text-[#888892] transition-colors text-xl">
-            →
-          </a>
-        </div>
-
-        <a href="https://roberttedt-jr.github.io/ATMOS./" target="_blank" rel="noopener noreferrer" class="block group">
-          <div class="bg-[#09090c] border border-[#202026] rounded-xl overflow-hidden group-hover:border-[#3a3a44] transition-all">
-            
-            <div class="bg-[#141418] border-b border-[#202026] px-3 sm:px-4 py-2 sm:py-2.5 flex items-center justify-between">
-              <div class="flex items-center gap-1.5">
-                <div class="w-2.5 h-2.5 rounded-full bg-[#ff5f56] border border-[#e0443e]"></div>
-                <div class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e] border border-[#dea123]"></div>
-                <div class="w-2.5 h-2.5 rounded-full bg-[#27c93f] border border-[#1aab29]"></div>
+              <div class="browser-tab">
+                <svg class="w-3.5 h-3.5 text-[#2997ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+                </svg>
+                <span class="text-xs font-medium text-white tracking-tight">ATMOS — Weather Mode</span>
               </div>
-              <span class="text-[10px] sm:text-[11px] font-mono text-[#62626e] truncate max-w-[200px] sm:max-w-none">roberttedt-jr.github.io/ATMOS./</span>
-              <div class="w-4"></div>
             </div>
 
             <div class="relative w-full overflow-hidden bg-black flex justify-center">
               <img 
                 src="atmos.jpg" 
-                alt="ATMOS App Interface" 
-                class="w-full h-auto object-cover object-top block transition-transform duration-500 group-hover:scale-[1.01]"
+                alt="ATMOS App Case Study Screenshot" 
+                class="w-full h-auto object-cover object-top block"
               />
             </div>
-
           </div>
-        </a>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- VISTA 2: INFO -->
-  <main id="view-info" class="relative z-10 px-5 sm:px-12 md:px-16 mt-10 sm:mt-16 max-w-[1140px] mx-auto space-y-14 sm:space-y-20 hidden">
-    
-    <!-- EXPERIENCE -->
-    <section class="border-t border-[#1e1e24] pt-8 sm:pt-10">
-      <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-6 sm:mb-10">
-        <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
-        <span>EXPERIENCE</span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
-        <div class="md:col-span-5">
-          <h2 class="text-xl sm:text-3xl font-semibold text-white tracking-tight">
-            Higher Education Barcelona
-          </h2>
         </div>
-        <div class="md:col-span-7 space-y-1">
-          <h3 class="text-sm sm:text-base font-semibold text-white">Técnico informático</h3>
-          <p class="text-xs font-mono text-[#7a7a84]">09/'24 - 12/'24 &bull; En remoto</p>
-          <p class="text-xs sm:text-sm text-[#a0a0a8] font-light leading-relaxed pt-2">
-            Soporte técnico, diagnóstico de incidencias, optimización de sistemas y gestión de infraestructuras IT corporativas en entorno remoto.
-          </p>
-        </div>
-      </div>
-    </section>
 
-    <!-- EDUCATION -->
-    <section class="border-t border-[#1e1e24] pt-8 sm:pt-10">
-      <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-6 sm:mb-10">
-        <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
-        <span>EDUCATION</span>
-      </div>
-
-      <div class="space-y-8 sm:space-y-12">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
-          <div class="md:col-span-5">
-            <h2 class="text-xl sm:text-3xl font-semibold text-white tracking-tight">UNIVERSAE</h2>
-          </div>
-          <div class="md:col-span-7 space-y-1">
-            <h3 class="text-sm sm:text-base font-semibold text-white">Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
-            <p class="text-xs font-mono text-[#7a7a84]">02/'25 - 01/'27</p>
-            <p class="text-xs sm:text-sm text-[#a0a0a8] font-light leading-relaxed pt-2">
-              Especialización en desarrollo multiplataforma, bases de datos relacionales, servicios y arquitecturas de aplicaciones modernas.
+        <article class="mt-20 max-w-3xl space-y-14 text-sm font-light text-[#c4c4cc] leading-relaxed">
+          
+          <section id="overview">
+            <h2 class="text-xs font-mono uppercase tracking-widest text-[#7a7a84] mb-3">01 / OVERVIEW</h2>
+            <h3 class="text-2xl font-serif text-white mb-4">Reinventando la experiencia meteorológica en la web</h3>
+            <p>
+              ATMOS nació como un proyecto en UNIVERSAE orientado a explorar las capacidades de las aplicaciones web progresivas (PWA) de alto rendimiento. El propósito fue diseñar una herramienta climática que combinase una estética minimalista con datos hiperprecisos y visualización en tiempo real.
             </p>
-          </div>
-        </div>
+          </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
-          <div class="md:col-span-5">
-            <h2 class="text-xl sm:text-3xl font-semibold text-white tracking-tight">UNIVERSAE</h2>
-          </div>
-          <div class="md:col-span-7 space-y-1">
-            <h3 class="text-sm sm:text-base font-semibold text-white">Técnico en Sistemas Microinformáticos y Redes (SMR)</h3>
-            <p class="text-xs font-mono text-[#7a7a84]">02/'24 - 02/'25</p>
-            <p class="text-xs sm:text-sm text-[#a0a0a8] font-light leading-relaxed pt-2">
-              Instalación, configuración y mantenimiento de redes locales, hardware, servidores y protocolos de seguridad informática.
+          <section id="architecture">
+            <h2 class="text-xs font-mono uppercase tracking-widest text-[#7a7a84] mb-3">02 / ARCHITECTURE & TECH STACK</h2>
+            <h3 class="text-2xl font-serif text-white mb-4">Estructura moderna sin dependencias pesadas</h3>
+            <p>
+              La arquitectura se construyó sobre JavaScript puro (Vanilla), HTML5 semántico y CSS3 con técnicas avanzadas de desenfoque por capas. Se implementó una integración directa con la API pública de Windy para la recepción continua de variables de presión, viento y proyecciones térmicas.
             </p>
-          </div>
-        </div>
+          </section>
+
+          <section id="ui-design">
+            <h2 class="text-xs font-mono uppercase tracking-widest text-[#7a7a84] mb-3">03 / LIQUID GLASS UI</h2>
+            <h3 class="text-2xl font-serif text-white mb-4">Inmersión visual reactiva al clima</h3>
+            <p>
+              La interfaz adopta un gradiente dinámico inspirado en la luminosidad del cielo mediterráneo. Cada tarjeta y gráfica vectorial SVG responde fluidamente al tamaño del dispositivo, manteniendo una legibilidad cristalina tanto en escritorio como en navegadores móviles.
+            </p>
+          </section>
+
+        </article>
       </div>
+
+      <aside class="hidden lg:block lg:col-span-2 sticky top-24 pl-4 border-l border-[#1f1f24] text-xs font-mono">
+        <span class="text-[#55555c] uppercase tracking-widest block mb-4 text-[10px]">CONTENTS</span>
+        <ul class="space-y-3 text-[#7a7a84]">
+          <li><a href="#overview" class="hover:text-white transition-colors block">Overview</a></li>
+          <li><a href="#architecture" class="hover:text-white transition-colors block">Architecture</a></li>
+          <li><a href="#ui-design" class="hover:text-white transition-colors block">Liquid Glass UI</a></li>
+          <li><a href="https://roberttedt-jr.github.io/ATMOS./" target="_blank" class="text-white hover:text-neutral-300 transition-colors block pt-2">Live Demo ↗</a></li>
+        </ul>
+      </aside>
+
     </section>
 
-    <!-- ABOUT -->
-    <section class="border-t border-[#1e1e24] pt-8 sm:pt-10">
-      <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-6 sm:mb-10">
-        <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
-        <span>ABOUT</span>
-      </div>
+    <footer class="mt-28 py-8 border-t border-white/5 text-center text-xs text-[#6e6e76]">
+      <button onclick="closeProject()" class="text-white hover:underline cursor-pointer mb-3 inline-block">
+        ← Return to all projects
+      </button>
+      <p>&copy; Roberto Muñoz Rovira &bull; ATMOS Project</p>
+    </footer>
 
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
-        <div class="md:col-span-5">
-          <h2 class="text-xl sm:text-3xl font-semibold text-white tracking-tight">Bio</h2>
-        </div>
-        <div class="md:col-span-7">
-          <p class="text-sm sm:text-base font-light text-[#d0d0d8] leading-relaxed">
-            Hola mi nombre es Roberto, soy Técnico en Sistemas Microinformáticos y Redes, y ahora estoy estudiando para ser Técnico de Desarrollo de Aplicaciones Multiplataforma (DAM), a la vez lo compagino trabajando los meses de verano y estudiando campos de la informática que me gustan desde casa.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- LANGUAGES -->
-    <section class="border-t border-[#1e1e24] pt-8 sm:pt-10">
-      <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-6 sm:mb-10">
-        <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
-        <span>LANGUAGES</span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
-        <div class="md:col-span-5">
-          <h2 class="text-xl sm:text-3xl font-semibold text-white tracking-tight">Idiomas</h2>
-        </div>
-        <div class="md:col-span-7 space-y-2 sm:space-y-3 text-xs sm:text-sm text-[#c4c4cc]">
-          <p><span class="text-white font-medium">Español</span> — Competencia bilingüe o nativa</p>
-          <p><span class="text-white font-medium">Valenciano</span> — Competencia bilingüe o nativa</p>
-          <p><span class="text-white font-medium">Inglés</span> — Competencia básica profesional</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="border-t border-[#1e1e24] pt-8 sm:pt-10 pb-8 sm:pb-12">
-      <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-6 sm:mb-10">
-        <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
-        <span>CONTACT</span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
-        <div class="md:col-span-5">
-          <h2 class="text-xl sm:text-3xl font-semibold text-white tracking-tight">Get in touch</h2>
-        </div>
-        <div class="md:col-span-7 space-y-3 sm:space-y-4">
-          <div>
-            <button onclick="copy('robertomrovira@gmail.com', 'Correo copiado')" class="text-xs sm:text-sm font-mono text-white hover:text-[#8e8e98] transition-colors flex items-center gap-2 cursor-pointer">
-              <span>robertomrovira@gmail.com</span>
-              <span class="text-[11px] sm:text-xs text-[#72727a] font-sans">(Click to copy)</span>
-            </button>
-          </div>
-          <div>
-            <button onclick="copy('654851836', 'Teléfono copiado')" class="text-xs sm:text-sm font-mono text-white hover:text-[#8e8e98] transition-colors flex items-center gap-2 cursor-pointer">
-              <span>+34 654 85 18 36</span>
-              <span class="text-[11px] sm:text-xs text-[#72727a] font-sans">(Click to copy)</span>
-            </button>
-          </div>
-          <div>
-            <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="text-xs sm:text-sm text-[#9e9ea8] hover:text-white transition-colors inline-flex items-center gap-1.5">
-              <span>LinkedIn Profile</span>
-              <svg class="w-2.5 h-2.5 text-current opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
+  </div>
 
   <div id="toast" class="fixed bottom-6 right-6 bg-white text-black text-xs font-medium px-4 py-2 rounded-full shadow-2xl transition-all duration-300 opacity-0 pointer-events-none z-50">
     Copiado al portapapeles
@@ -461,19 +673,35 @@
       if (tab === 'work') {
         viewWork.classList.remove('hidden');
         viewInfo.classList.add('hidden');
-        btnWork.className = "relative z-10 px-5 py-1.5 rounded-full text-xs font-medium text-white bg-[#2c2c33] shadow-sm transition-all duration-200";
-        btnInfo.className = "relative z-10 px-5 py-1.5 rounded-full text-xs font-medium text-[#808086] hover:text-white transition-all duration-200";
+        btnWork.className = "relative z-10 px-6 py-2 rounded-full text-sm font-medium text-white bg-[#2c2c33] shadow-sm transition-all duration-200";
+        btnInfo.className = "relative z-10 px-6 py-2 rounded-full text-sm font-medium text-[#8c8c94] hover:text-white transition-all duration-200";
         notch.classList.remove('info-active');
         notchGlow.classList.remove('info-active');
       } else {
         viewWork.classList.add('hidden');
         viewInfo.classList.remove('hidden');
-        btnInfo.className = "relative z-10 px-5 py-1.5 rounded-full text-xs font-medium text-white bg-[#2c2c33] shadow-sm transition-all duration-200";
-        btnWork.className = "relative z-10 px-5 py-1.5 rounded-full text-xs font-medium text-[#808086] hover:text-white transition-all duration-200";
+        btnInfo.className = "relative z-10 px-6 py-2 rounded-full text-sm font-medium text-white bg-[#2c2c33] shadow-sm transition-all duration-200";
+        btnWork.className = "relative z-10 px-6 py-2 rounded-full text-sm font-medium text-[#8c8c94] hover:text-white transition-all duration-200";
         notch.classList.add('info-active');
         notchGlow.classList.add('info-active');
       }
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function openProject(projectId) {
+      document.getElementById('home-view').classList.add('hidden');
+      document.getElementById('project-view').classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+
+    function closeProject() {
+      document.getElementById('project-view').classList.add('hidden');
+      document.getElementById('home-view').classList.remove('hidden');
+      
+      const atmosSec = document.getElementById('atmos-project');
+      if (atmosSec) {
+        atmosSec.scrollIntoView({ behavior: 'instant' });
+      }
     }
 
     function copy(text, label) {
