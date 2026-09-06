@@ -416,7 +416,7 @@
               <div class="text-[#55555e] text-xs pb-1.5 pl-1 select-none">+</div>
             </div>
 
-            <div class="relative w-full h-[320px] sm:h-[500px] md:h-[620px] overflow-hidden bg-black flex justify-center">
+            <div class="relative w-full h-[360px] sm:h-[520px] md:h-[600px] overflow-hidden bg-black flex items-center justify-center">
               <img 
                 src="pulse.jpg" 
                 alt="PULSE App Interface" 
@@ -466,7 +466,7 @@
               <div class="text-[#55555e] text-xs pb-1.5 pl-1 select-none">+</div>
             </div>
 
-            <div class="relative w-full h-[320px] sm:h-[500px] md:h-[620px] overflow-hidden bg-black flex justify-center">
+            <div class="relative w-full h-[360px] sm:h-[520px] md:h-[600px] overflow-hidden bg-black flex items-center justify-center">
               <img 
                 src="atmos.jpg" 
                 alt="ATMOS App Interface" 
@@ -663,12 +663,12 @@
               </div>
             </div>
 
-            <div class="relative w-full overflow-hidden bg-black flex justify-center">
+            <div class="relative w-full aspect-[16/10] overflow-hidden bg-black flex items-center justify-center">
               <img 
                 id="project-main-image"
                 src="pulse.jpg" 
                 alt="App Case Study Screenshot" 
-                class="w-full h-auto object-cover object-top block"
+                class="w-full h-full object-cover object-top block"
               />
             </div>
           </div>
@@ -713,21 +713,21 @@
         sections: [
           {
             id: 'overview',
-            number: '01 / OVERVIEW',
-            title: 'Registro ágil de series, repeticiones y descansos',
-            body: 'PULSE es una aplicación web diseñada para monitorizar entrenamientos de fuerza, rutinas estructuradas e hipertrofia reduciendo al mínimo la interacción en pantalla. Permite registrar cargas, series efectivas y notas técnicas de forma rápida entre descansos para mantener el foco en la sesión.'
+            number: '01 / RESUMEN',
+            title: 'Control intuitivo de entrenamientos y rutinas personalizadas',
+            body: 'PULSE es una plataforma web desarrollada para gestionar sesiones de entrenamiento con foco en la comodidad y la inmediatez. Ofrece una vista principal personalizada con accesos directos al entrenamiento del día (como rutinas Push/Pull/Legs), anillos interactivos de cumplimiento semanal, contador de rachas y distribución de volumen por grupos musculares.'
           },
           {
-            id: 'architecture',
-            number: '02 / ARCHITECTURE & TECH STACK',
-            title: 'Persistencia inmediata y analítica de progresión',
-            body: 'Construida con tecnologías web modernas y despliegue continuo en Vercel, optimizada para responder con fluidez instantánea en dispositivos móviles. Incluye control de volumen de carga por grupo muscular, cálculo dinámico de esfuerzo e historial reactivo de sesiones sin fricción.'
+            id: 'features',
+            number: '02 / FUNCIONALIDADES',
+            title: 'Seguimiento integral del rendimiento',
+            body: 'La aplicación estructura el flujo de trabajo mediante módulos dedicados a la ejecución de sesiones activas, biblioteca organizada de ejercicios, panel analítico de progreso con curvas de sobrecarga progresiva, historial exhaustivo de entrenamientos completados y gestión de perfil atlético adaptado.'
           },
           {
             id: 'ui-design',
-            number: '03 / INTERFACE SYSTEM',
-            title: 'Ergonomía visual y contraste pensado para el gimnasio',
-            body: 'La interfaz utiliza paletas oscuras que maximizan la autonomía de la batería en pantallas OLED, tipografía clara de rápida lectura bajo focos intensos y botones de entrada directa diseñados para manejarse cómodamente con una sola mano.'
+            number: '03 / DISEÑO Y ARQUITECTURA',
+            title: 'Interfaz oscura con acentos carmesí y despliegue reactivo',
+            body: 'Desplegada en Vercel, PULSE combina una base cromática en negro profundo con degradados sutiles y botones de acción en tonos carmesí de alto contraste. Su interfaz modular permite registrar series, pesos y notas técnicas con mínima interacción para mantener la concentración durante el entrenamiento.'
           }
         ]
       },
@@ -743,19 +743,19 @@
         sections: [
           {
             id: 'overview',
-            number: '01 / OVERVIEW',
+            number: '01 / RESUMEN',
             title: 'Reinventando la experiencia meteorológica en la web',
             body: 'ATMOS nació como un proyecto en UNIVERSAE orientado a explorar las capacidades de las aplicaciones web progresivas (PWA) de alto rendimiento. El propósito fue diseñar una herramienta climática que combinase una estética minimalista con datos hiperprecisos y visualización en tiempo real.'
           },
           {
             id: 'architecture',
-            number: '02 / ARCHITECTURE & TECH STACK',
+            number: '02 / ARQUITECTURA TÉCNICA',
             title: 'Estructura moderna sin dependencias pesadas',
             body: 'La arquitectura se construyó sobre JavaScript puro (Vanilla), HTML5 semántico y CSS3 con técnicas avanzadas de desenfoque por capas. Se implementó una integración directa con la API pública de Windy para la recepción continua de variables de presión, viento y proyecciones térmicas.'
           },
           {
             id: 'ui-design',
-            number: '03 / LIQUID GLASS UI',
+            number: '03 / INTERFAZ LIQUID GLASS',
             title: 'Inmersión visual reactiva al clima',
             body: 'La interfaz adopta un gradiente dinámico inspirado en la luminosidad del cielo mediterráneo. Cada tarjeta y gráfica vectorial SVG responde fluidamente al tamaño del dispositivo, manteniendo una legibilidad cristalina tanto en escritorio como en navegadores móviles.'
           }
@@ -820,7 +820,7 @@
         articleEl.appendChild(secEl);
 
         const liEl = document.createElement('li');
-        liEl.innerHTML = `<a href="#${sec.id}" class="hover:text-white transition-colors block">${sec.id.charAt(0).toUpperCase() + sec.id.slice(1)}</a>`;
+        liEl.innerHTML = `<a href="#${sec.id}" class="hover:text-white transition-colors block">${sec.title.split(' ')[0]}</a>`;
         contentsListEl.appendChild(liEl);
       });
 
