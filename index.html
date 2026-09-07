@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Roberto Muñoz Rovira</title>
+  <title>Roberto Muñoz Rovira | Portfolio</title>
+  <meta name="description" id="meta-desc" content="Portfolio de Roberto Muñoz Rovira. Técnico en Sistemas Microinformáticos y Redes, estudiante de DAM y creador de proyectos digitales en Benidorm, España." />
 
   <script src="https://cdn.tailwindcss.com"></script>
   
@@ -180,74 +181,112 @@
       opacity: 1;
     }
 
-    .perry-inner-window {
+    .iphone-device {
       position: relative;
-      z-index: 10;
-      background: #0d0d10;
-      border: 1px solid #202026;
-      border-bottom: none;
-      border-radius: 16px 16px 0 0;
-      overflow: hidden;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 330px;
+      height: auto;
+      background: #09090b;
+      border-radius: 54px;
+      padding: 10px;
+      box-shadow: 
+        0 0 0 1px rgba(255, 255, 255, 0.16),
+        0 0 0 4px #26262b,
+        0 0 0 5px rgba(255, 255, 255, 0.08),
+        0 35px 80px -15px rgba(0, 0, 0, 0.95);
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
       transform: translateY(28px);
-      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-                  border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-                  box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 10;
+    }
+
+    @media (min-width: 768px) {
+      .iphone-device {
+        max-width: 360px;
+      }
     }
 
     @media (max-width: 640px) {
-      .perry-inner-window {
+      .iphone-device {
+        max-width: 290px;
+        border-radius: 46px;
+        padding: 8px;
         transform: translateY(12px);
       }
     }
 
-    .perry-project-card:hover .perry-inner-window {
+    .perry-project-card:hover .iphone-device {
       transform: translateY(0px);
-      border-color: #2e3e52;
-      box-shadow: 0 -12px 40px -10px rgba(0, 0, 0, 0.85);
+      box-shadow: 
+        0 0 0 1px rgba(100, 160, 240, 0.4),
+        0 0 0 4px #2b3848,
+        0 0 0 5px rgba(255, 255, 255, 0.12),
+        0 40px 90px -10px rgba(0, 0, 0, 0.98);
     }
 
-    .browser-tabs-bar {
-      height: 42px;
-      background: #17171a;
-      border-bottom: 1px solid #202025;
-      display: flex;
-      align-items: flex-end;
-      padding: 0 16px;
-      gap: 12px;
-    }
-
-    .browser-tab {
-      height: 32px;
-      background: #222227;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-bottom: none;
-      border-radius: 8px 8px 0 0;
-      padding: 0 14px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .laptop-frame {
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      background: rgba(18, 18, 22, 0.35);
-      border-radius: 28px;
-      padding: 16px;
-      box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.9);
+    .iphone-screen {
       position: relative;
+      width: 100%;
+      height: auto;
+      background: #000000;
+      border-radius: 44px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      border: 1px solid rgba(255, 255, 255, 0.06);
     }
-    .laptop-notch {
+
+    .iphone-screen img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    @media (max-width: 640px) {
+      .iphone-screen {
+        border-radius: 38px;
+      }
+    }
+
+    .dynamic-island {
       position: absolute;
-      top: 0;
+      top: 13px;
       left: 50%;
       transform: translateX(-50%);
-      width: 140px;
-      height: 14px;
-      background: #0c0c0e;
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
+      width: 105px;
+      height: 27px;
+      background: #000000;
+      border-radius: 20px;
+      z-index: 30;
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-top: none;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 9px;
+    }
+
+    .dynamic-island-lens {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #0a0f1d;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .iphone-glare {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 60%);
+      pointer-events: none;
+      z-index: 25;
+    }
+
+    .iphone-detail-view {
+      transform: translateY(0px) !important;
+      margin: 0 auto;
     }
 
     @keyframes arrowBounce {
@@ -287,44 +326,59 @@
             <a href="#" onclick="switchTab('work')" class="text-base sm:text-lg font-medium tracking-tight text-white block hover:text-neutral-200 transition-colors">
               Roberto Muñoz
             </a>
-            <span class="text-xs sm:text-[13px] text-[#95959e] font-normal block mt-0.5 tracking-tight">
-              Técnico Informático &bull; DAM
+            <span data-i18n="header-role" class="text-xs sm:text-[13px] text-[#95959e] font-normal block mt-0.5 tracking-tight">
+              Técnico en Sistemas &bull; Estudiante DAM &bull; Creador Digital
             </span>
           </div>
 
-          <div class="flex sm:hidden items-center gap-5 text-sm text-[#95959e]">
-            <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5 font-normal">
-              <span>LinkedIn</span>
-              <svg class="w-3 h-3 text-current opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          <div class="flex sm:hidden items-center gap-3">
+            <div class="relative pill-capsule rounded-full p-0.5 flex items-center shrink-0 text-xs font-mono" role="group" aria-label="Selector de idioma móvil">
+              <button id="lang-es-mobile" onclick="setLanguage('es')" aria-label="Cambiar idioma a Español" class="px-2.5 py-1 rounded-full text-white bg-[#2c2c33] transition-all duration-200">
+                ES
+              </button>
+              <button id="lang-en-mobile" onclick="setLanguage('en')" aria-label="Switch language to English" class="px-2.5 py-1 rounded-full text-[#8c8c94] hover:text-white transition-all duration-200">
+                EN
+              </button>
+            </div>
+            <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="hover:text-white text-[#95959e] transition-colors inline-flex items-center p-1" aria-label="LinkedIn">
+              <svg class="w-4 h-4 text-current opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
             </a>
-            <a href="https://github.com/roberttedt-jr" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5 font-normal">
-              <span>GitHub</span>
-              <svg class="w-3 h-3 text-current opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            <a href="https://github.com/roberttedt-jr" target="_blank" rel="noopener noreferrer" class="hover:text-white text-[#95959e] transition-colors inline-flex items-center p-1" aria-label="GitHub">
+              <svg class="w-4 h-4 text-current opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
             </a>
           </div>
         </div>
 
-        <div class="relative pill-capsule rounded-full p-1 flex items-center shrink-0">
+        <div class="relative pill-capsule rounded-full p-1 flex items-center shrink-0" role="tablist" aria-label="Navegación principal">
           <div id="notch-glow" class="pill-halo"></div>
           <div id="notch" class="pill-notch pointer-events-none"></div>
 
-          <button id="btn-work" onclick="switchTab('work')" class="relative z-10 px-6 py-2 rounded-full text-sm font-medium text-white bg-[#2c2c33] shadow-sm transition-all duration-200 tracking-tight">
-            Work
+          <button id="btn-work" onclick="switchTab('work')" role="tab" aria-selected="true" class="relative z-10 px-6 py-2 rounded-full text-sm font-medium text-white bg-[#2c2c33] shadow-sm transition-all duration-200 tracking-tight">
+            <span data-i18n="nav-work">Trabajo</span>
           </button>
-          <button id="btn-info" onclick="switchTab('info')" class="relative z-10 px-6 py-2 rounded-full text-sm font-medium text-[#8c8c94] hover:text-white transition-all duration-200 tracking-tight">
-            Info
+          <button id="btn-info" onclick="switchTab('info')" role="tab" aria-selected="false" class="relative z-10 px-6 py-2 rounded-full text-sm font-medium text-[#8c8c94] hover:text-white transition-all duration-200 tracking-tight">
+            <span data-i18n="nav-info">Información</span>
           </button>
         </div>
 
-        <div class="hidden sm:flex items-center gap-7 text-sm text-[#95959e] font-normal tracking-tight">
-          <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
+        <div class="hidden sm:flex items-center gap-6 text-sm text-[#95959e] font-normal tracking-tight">
+          <a href="https://www.linkedin.com/in/robertomu%C3%B1ozrovira/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5" aria-label="Perfil de LinkedIn de Roberto Muñoz">
             <span>LinkedIn</span>
             <svg class="w-3 h-3 text-current opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
           </a>
-          <a href="https://github.com/roberttedt-jr" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
+          <a href="https://github.com/roberttedt-jr" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5" aria-label="Perfil de GitHub de Roberto Muñoz">
             <span>GitHub</span>
             <svg class="w-3 h-3 text-current opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
           </a>
+          
+          <div class="relative pill-capsule rounded-full p-1 flex items-center shrink-0 text-xs font-mono ml-1" role="group" aria-label="Selector de idioma">
+            <button id="lang-es" onclick="setLanguage('es')" aria-label="Cambiar idioma a Español" class="px-3 py-1 rounded-full text-white bg-[#2c2c33] shadow-sm transition-all duration-200">
+              ES
+            </button>
+            <button id="lang-en" onclick="setLanguage('en')" aria-label="Switch language to English" class="px-3 py-1 rounded-full text-[#8c8c94] hover:text-white transition-all duration-200">
+              EN
+            </button>
+          </div>
         </div>
 
       </div>
@@ -352,17 +406,17 @@
               <div class="perry-glow-layer"></div>
 
               <div class="relative z-10">
-                <h1 class="font-headline text-[2.6rem] leading-[1.05] sm:text-7xl md:text-[5.5rem] lg:text-[6.3rem] font-normal text-[#f4f4f6] tracking-tight max-w-5xl drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]">
-                  I build <span class="font-italicHero italic font-normal text-white drop-shadow-[0_0_35px_rgba(255,255,255,0.45)]">software</span>,<br />interfaces &amp; systems.
+                <h1 data-i18n-html="hero-title" class="font-headline text-[2.6rem] leading-[1.05] sm:text-7xl md:text-[5.5rem] lg:text-[6.3rem] font-normal text-[#f4f4f6] tracking-tight max-w-5xl drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]">
+                  Creo <span class="font-italicHero italic font-normal text-white drop-shadow-[0_0_35px_rgba(255,255,255,0.45)]">proyectos</span>,<br />interfaces y sistemas.
                 </h1>
 
                 <div class="mt-14 sm:mt-28 flex justify-end">
                   <div class="text-right">
-                    <p class="text-xs sm:text-[15px] md:text-base text-[#d8d8de] font-normal tracking-tight">
-                      Técnico de Sistemas &amp; DAM en formación. Based in Benidorm.
+                    <p data-i18n="hero-desc" class="text-xs sm:text-[15px] md:text-base text-[#d8d8de] font-normal tracking-tight">
+                      Técnico de Sistemas &amp; estudiante de DAM. Creando productos digitales y experiencias creativas desde Benidorm.
                     </p>
-                    <p class="text-[11px] sm:text-xs text-[#7a7a82] mt-1 font-light">
-                      Formerly at Higher Education Barcelona.
+                    <p data-i18n="hero-sub" class="text-[11px] sm:text-xs text-[#7a7a82] mt-1 font-light">
+                      Explorando desarrollo web, ingeniería de sistemas, medios digitales y tecnología de videojuegos.
                     </p>
                   </div>
                 </div>
@@ -372,7 +426,7 @@
         </div>
 
         <div class="mt-4 select-none cursor-pointer flex flex-col items-center">
-          <a href="#pulse-project" class="arrow-bounce text-2xl text-[#82828e] hover:text-white transition-colors inline-block">
+          <a href="#pulse-project" class="arrow-bounce text-2xl text-[#82828e] hover:text-white transition-colors inline-block" aria-label="Desplazarse a los proyectos destacados">
             ↓
           </a>
         </div>
@@ -381,47 +435,40 @@
       <section id="pulse-project" class="w-full pt-1">
         <div onclick="openProject('pulse')" class="perry-project-card px-5 sm:px-10 md:px-12 pt-7 sm:pt-9 pb-0 group">
           
-          <div class="relative z-10 flex items-start justify-between gap-4 mb-6 sm:mb-8">
-            <div>
-              <h2 class="text-lg sm:text-[22px] font-medium text-white tracking-tight">
-                PULSE
-              </h2>
-              <p class="text-xs sm:text-sm text-[#7e7e86] group-hover:text-[#a0b8d8] transition-colors mt-0.5 font-normal tracking-tight">
-                Proyecto Personal, '26 — Registro de entrenamientos, series y progresión de fuerza en tiempo real.
-              </p>
-            </div>
+          <div class="relative w-full max-w-3xl mx-auto text-center mb-6 sm:mb-8">
+            <h2 class="text-lg sm:text-[22px] font-medium text-white tracking-tight">
+              PULSE
+            </h2>
+            <p data-i18n="pulse-card-desc" class="text-xs sm:text-sm text-[#7e7e86] group-hover:text-[#a0b8d8] transition-colors mt-0.5 font-normal tracking-tight max-w-2xl mx-auto">
+              Proyecto Personal, Septiembre '26 — Registro ágil de sesiones, volumen de entrenamiento y control de progresión física.
+            </p>
             
-            <div class="text-[#7e7e86] group-hover:text-white text-xl transition-all duration-300 transform group-hover:translate-x-1.5">
+            <div class="flex flex-wrap justify-center gap-2 mt-4">
+              <span data-i18n="tag-pulse-1" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-[#a1a1aa] border border-white/[0.08]">Aplicación de entrenamiento</span>
+              <span data-i18n="tag-pulse-2" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-[#a1a1aa] border border-white/[0.08]">Registro de sesiones y progresión</span>
+              <span data-i18n="tag-pulse-3" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-[#a1a1aa] border border-white/[0.08]">Interfaz móvil</span>
+              <span data-i18n="tag-pulse-4" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-[#a1a1aa] border border-white/[0.08]">Gestión de rutinas y datos</span>
+              <span data-i18n="tag-pulse-5" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-[#a1a1aa] border border-white/[0.08]">Red social</span>
+            </div>
+
+            <div class="absolute right-0 top-0 text-[#7e7e86] group-hover:text-white text-xl transition-all duration-300 transform group-hover:translate-x-1.5" aria-hidden="true">
               →
             </div>
           </div>
 
-          <div class="perry-inner-window">
-            
-            <div class="browser-tabs-bar">
-              <div class="flex items-center gap-2 pb-2 pr-2">
-                <div class="w-3 h-3 rounded-full bg-[#ff5f56] border border-[#e0443e]"></div>
-                <div class="w-3 h-3 rounded-full bg-[#ffbd2e] border border-[#dea123]"></div>
-                <div class="w-3 h-3 rounded-full bg-[#27c93f] border border-[#1aab29]"></div>
+          <div class="flex justify-center w-full">
+            <div class="iphone-device">
+              <div class="iphone-screen">
+                <div class="dynamic-island">
+                  <div class="dynamic-island-lens"></div>
+                </div>
+                <div class="iphone-glare"></div>
+                <img 
+                  src="pulse-mobile.jpg" 
+                  alt="Interfaz de la app de entrenamiento PULSE en iPhone 17 Pro" 
+                  class="select-none"
+                />
               </div>
-
-              <div class="browser-tab">
-                <svg class="w-3.5 h-3.5 text-[#2997ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M6 18h12M6 6h12M9 12h6M3 9v6M21 9v6M6 8v8M18 8v8"/>
-                </svg>
-                <span class="text-xs font-medium text-white tracking-tight">pulse-psi-blond.vercel.app</span>
-                <span class="text-[#62626e] hover:text-white text-xs ml-1 cursor-default">&times;</span>
-              </div>
-
-              <div class="text-[#55555e] text-xs pb-1.5 pl-1 select-none">+</div>
-            </div>
-
-            <div class="relative w-full h-[360px] sm:h-[520px] md:h-[600px] overflow-hidden bg-black flex items-center justify-center">
-              <img 
-                src="pulse.jpg" 
-                alt="PULSE App Interface" 
-                class="w-full h-full object-cover object-top block"
-              />
             </div>
           </div>
 
@@ -431,47 +478,40 @@
       <section id="atmos-project" class="w-full pt-1">
         <div onclick="openProject('atmos')" class="perry-project-card px-5 sm:px-10 md:px-12 pt-7 sm:pt-9 pb-0 group">
           
-          <div class="relative z-10 flex items-start justify-between gap-4 mb-6 sm:mb-8">
-            <div>
-              <h2 class="text-lg sm:text-[22px] font-medium text-white tracking-tight">
-                ATMOS
-              </h2>
-              <p class="text-xs sm:text-sm text-[#7e7e86] group-hover:text-[#a0b8d8] transition-colors mt-0.5 font-normal tracking-tight">
-                UNIVERSAE, '25 — Aplicación del Tiempo PWA interactiva, estilo Liquid Glass.
-              </p>
+          <div class="relative w-full max-w-3xl mx-auto text-center mb-6 sm:mb-8">
+            <h2 class="text-lg sm:text-[22px] font-medium text-white tracking-tight">
+              ATMOS
+            </h2>
+            <p data-i18n="atmos-card-desc" class="text-xs sm:text-sm text-[#7e7e86] group-hover:text-[#a0b8d8] transition-colors mt-0.5 font-normal tracking-tight max-w-2xl mx-auto">
+              UNIVERSAE, '25 — Aplicación meteorológica interactiva PWA con estilo Liquid Glass y datos climáticos en tiempo real.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-2 mt-4">
+              <span data-i18n="tag-atmos-1" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-[#a1a1aa] border border-white/[0.08]">Aplicación meteorológica</span>
+              <span data-i18n="tag-atmos-2" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-[#a1a1aa] border border-white/[0.08]">Diseño responsive</span>
+              <span data-i18n="tag-atmos-3" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-[#a1a1aa] border border-white/[0.08]">Datos meteorológicos</span>
+              <span data-i18n="tag-atmos-4" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-[#a1a1aa] border border-white/[0.08]">Interfaz Liquid Glass</span>
+              <span data-i18n="tag-atmos-5" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-[#a1a1aa] border border-white/[0.08]">Experiencia adaptada a móviles</span>
             </div>
-            
-            <div class="text-[#7e7e86] group-hover:text-white text-xl transition-all duration-300 transform group-hover:translate-x-1.5">
+
+            <div class="absolute right-0 top-0 text-[#7e7e86] group-hover:text-white text-xl transition-all duration-300 transform group-hover:translate-x-1.5" aria-hidden="true">
               →
             </div>
           </div>
 
-          <div class="perry-inner-window">
-            
-            <div class="browser-tabs-bar">
-              <div class="flex items-center gap-2 pb-2 pr-2">
-                <div class="w-3 h-3 rounded-full bg-[#ff5f56] border border-[#e0443e]"></div>
-                <div class="w-3 h-3 rounded-full bg-[#ffbd2e] border border-[#dea123]"></div>
-                <div class="w-3 h-3 rounded-full bg-[#27c93f] border border-[#1aab29]"></div>
+          <div class="flex justify-center w-full">
+            <div class="iphone-device">
+              <div class="iphone-screen">
+                <div class="dynamic-island">
+                  <div class="dynamic-island-lens"></div>
+                </div>
+                <div class="iphone-glare"></div>
+                <img 
+                  src="atmos-mobile.jpg" 
+                  alt="Interfaz de la app climática ATMOS en iPhone 17 Pro" 
+                  class="select-none"
+                />
               </div>
-
-              <div class="browser-tab">
-                <svg class="w-3.5 h-3.5 text-[#2997ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
-                </svg>
-                <span class="text-xs font-medium text-white tracking-tight">ATMOS — Weather Mode</span>
-                <span class="text-[#62626e] hover:text-white text-xs ml-1 cursor-default">&times;</span>
-              </div>
-
-              <div class="text-[#55555e] text-xs pb-1.5 pl-1 select-none">+</div>
-            </div>
-
-            <div class="relative w-full h-[360px] sm:h-[520px] md:h-[600px] overflow-hidden bg-black flex items-center justify-center">
-              <img 
-                src="atmos.jpg" 
-                alt="ATMOS App Interface" 
-                class="w-full h-full object-cover object-top block"
-              />
             </div>
           </div>
 
@@ -485,7 +525,7 @@
       <section class="border-t border-[#1e1e24] pt-8 sm:pt-10">
         <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-6 sm:mb-10">
           <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
-          <span>EXPERIENCE</span>
+          <span data-i18n="sec-experience">EXPERIENCIA</span>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
@@ -495,9 +535,9 @@
             </h2>
           </div>
           <div class="md:col-span-7 space-y-1">
-            <h3 class="text-sm sm:text-base font-medium text-white tracking-tight">Técnico informático</h3>
-            <p class="text-xs font-mono text-[#7a7a84]">09/'24 - 12/'24 &bull; En remoto</p>
-            <p class="text-xs sm:text-sm text-[#a0a0a8] font-normal leading-relaxed pt-2">
+            <h3 data-i18n="exp-role" class="text-sm sm:text-base font-medium text-white tracking-tight">Técnico informático</h3>
+            <p data-i18n="exp-meta" class="text-xs font-mono text-[#7a7a84]">09/'24 - 12/'24 &bull; En remoto</p>
+            <p data-i18n="exp-desc" class="text-xs sm:text-sm text-[#a0a0a8] font-normal leading-relaxed pt-2">
               Soporte técnico, diagnóstico de incidencias, optimización de sistemas y gestión de infraestructuras IT corporativas en entorno remoto.
             </p>
           </div>
@@ -507,7 +547,7 @@
       <section class="border-t border-[#1e1e24] pt-8 sm:pt-10">
         <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-6 sm:mb-10">
           <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
-          <span>EDUCATION</span>
+          <span data-i18n="sec-education">EDUCACIÓN</span>
         </div>
 
         <div class="space-y-8 sm:space-y-12">
@@ -516,9 +556,9 @@
               <h2 class="text-xl sm:text-2xl md:text-3xl font-medium text-white tracking-tight">UNIVERSAE</h2>
             </div>
             <div class="md:col-span-7 space-y-1">
-              <h3 class="text-sm sm:text-base font-medium text-white tracking-tight">Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
+              <h3 data-i18n="edu-dam-title" class="text-sm sm:text-base font-medium text-white tracking-tight">Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
               <p class="text-xs font-mono text-[#7a7a84]">02/'25 - 01/'27</p>
-              <p class="text-xs sm:text-sm text-[#a0a0a8] font-normal leading-relaxed pt-2">
+              <p data-i18n="edu-dam-desc" class="text-xs sm:text-sm text-[#a0a0a8] font-normal leading-relaxed pt-2">
                 Especialización en desarrollo multiplataforma, bases de datos relacionales, servicios y arquitecturas de aplicaciones modernas.
               </p>
             </div>
@@ -529,9 +569,9 @@
               <h2 class="text-xl sm:text-2xl md:text-3xl font-medium text-white tracking-tight">UNIVERSAE</h2>
             </div>
             <div class="md:col-span-7 space-y-1">
-              <h3 class="text-sm sm:text-base font-medium text-white tracking-tight">Técnico en Sistemas Microinformáticos y Redes (SMR)</h3>
+              <h3 data-i18n="edu-smr-title" class="text-sm sm:text-base font-medium text-white tracking-tight">Técnico en Sistemas Microinformáticos y Redes (SMR)</h3>
               <p class="text-xs font-mono text-[#7a7a84]">02/'24 - 02/'25</p>
-              <p class="text-xs sm:text-sm text-[#a0a0a8] font-normal leading-relaxed pt-2">
+              <p data-i18n="edu-smr-desc" class="text-xs sm:text-sm text-[#a0a0a8] font-normal leading-relaxed pt-2">
                 Instalación, configuración y mantenimiento de redes locales, hardware, servidores y protocolos de seguridad informática.
               </p>
             </div>
@@ -542,16 +582,75 @@
       <section class="border-t border-[#1e1e24] pt-8 sm:pt-10">
         <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-6 sm:mb-10">
           <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
-          <span>ABOUT</span>
+          <span data-i18n="sec-skills">HABILIDADES & STACK</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-start">
+          <div class="md:col-span-5">
+            <h2 data-i18n="skills-title" class="text-xl sm:text-2xl md:text-3xl font-medium text-white tracking-tight">
+              Competencias técnicas
+            </h2>
+            <p data-i18n="skills-desc" class="text-xs sm:text-sm text-[#8c8c94] mt-2 font-normal">
+              Perfil multidisciplinar orientado a la implementación de software, soporte de sistemas e interfaces interactivas.
+            </p>
+          </div>
+          <div class="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="p-5 rounded-2xl bg-[#141417] border border-[#202026]">
+              <span data-i18n="skill-grp-1" class="text-xs font-mono text-[#8c8c94] uppercase tracking-wider block mb-3">01 / Desarrollo</span>
+              <ul class="space-y-2 text-sm text-[#d4d4d8]">
+                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span><span data-i18n="skill-1-1">HTML5 &amp; CSS3 semántico</span></li>
+                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>JavaScript (ES6+)</li>
+                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span><span data-i18n="skill-1-3">Java &amp; POO</span></li>
+                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span><span data-i18n="skill-1-4">Desarrollo de aplicaciones PWA</span></li>
+              </ul>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-[#141417] border border-[#202026]">
+              <span data-i18n="skill-grp-2" class="text-xs font-mono text-[#8c8c94] uppercase tracking-wider block mb-3">02 / Sistemas & Redes</span>
+              <ul class="space-y-2 text-sm text-[#d4d4d8]">
+                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span><span data-i18n="skill-2-1">Windows &amp; Entornos corporativos</span></li>
+                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span><span data-i18n="skill-2-2">Diagnóstico y montaje de hardware</span></li>
+                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span><span data-i18n="skill-2-3">Redes locales, routing y switching</span></li>
+                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span><span data-i18n="skill-2-4">Mantenimiento IT y soporte técnico</span></li>
+              </ul>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-[#141417] border border-[#202026]">
+              <span data-i18n="skill-grp-3" class="text-xs font-mono text-[#8c8c94] uppercase tracking-wider block mb-3">03 / Herramientas</span>
+              <ul class="space-y-2 text-sm text-[#d4d4d8]">
+                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Git &amp; GitHub</li>
+                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Visual Studio Code</li>
+                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span><span data-i18n="skill-3-3">Despliegue continuo en Vercel</span></li>
+                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span><span data-i18n="skill-3-4">Consumo e integración de APIs REST</span></li>
+              </ul>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-[#141417] border border-[#202026]">
+              <span data-i18n="skill-grp-4" class="text-xs font-mono text-[#8c8c94] uppercase tracking-wider block mb-3">04 / Diseño & Contenido</span>
+              <ul class="space-y-2 text-sm text-[#d4d4d8]">
+                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span><span data-i18n="skill-4-1">Edición de vídeo y narrativa visual</span></li>
+                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span><span data-i18n="skill-4-2">Diseño de interfaces UI/UX</span></li>
+                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span><span data-i18n="skill-4-3">Creación de contenido digital & gaming</span></li>
+                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span><span data-i18n="skill-4-4">Herramientas de IA aplicadas a flujos IT</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="border-t border-[#1e1e24] pt-8 sm:pt-10">
+        <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-6 sm:mb-10">
+          <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
+          <span data-i18n="sec-bio">BIOGRAFÍA</span>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
           <div class="md:col-span-5">
-            <h2 class="text-xl sm:text-2xl md:text-3xl font-medium text-white tracking-tight">Bio</h2>
+            <h2 data-i18n="bio-title" class="text-xl sm:text-2xl md:text-3xl font-medium text-white tracking-tight">Bio</h2>
           </div>
           <div class="md:col-span-7">
-            <p class="text-sm sm:text-base font-normal text-[#d0d0d8] leading-relaxed">
-              Hola mi nombre es Roberto, soy Técnico en Sistemas Microinformáticos y Redes, y ahora estoy estudiando para ser Técnico de Desarrollo de Aplicaciones Multiplataforma (DAM), a la vez lo compagino trabajando los meses de verano y estudiando campos de la informática que me gustan desde casa.
+            <p data-i18n="bio-desc" class="text-sm sm:text-base font-normal text-[#d0d0d8] leading-relaxed">
+              Hola, soy Roberto Muñoz, Técnico en Sistemas Microinformáticos y Redes y estudiante de Desarrollo de Aplicaciones Multiplataforma (DAM). Combino una base sólida en infraestructura informática y resolución técnica de incidencias con pasión por la programación, el diseño de software interactivo, el sector de los videojuegos y la creación de contenido digital. Compagino mi formación continua en Benidorm con el desarrollo constante de proyectos prácticos que unen técnica, usabilidad y rendimiento.
             </p>
           </div>
         </div>
@@ -560,17 +659,17 @@
       <section class="border-t border-[#1e1e24] pt-8 sm:pt-10">
         <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-6 sm:mb-10">
           <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
-          <span>LANGUAGES</span>
+          <span data-i18n="sec-languages">IDIOMAS</span>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
           <div class="md:col-span-5">
-            <h2 class="text-xl sm:text-2xl md:text-3xl font-medium text-white tracking-tight">Idiomas</h2>
+            <h2 data-i18n="languages-title" class="text-xl sm:text-2xl md:text-3xl font-medium text-white tracking-tight">Idiomas</h2>
           </div>
           <div class="md:col-span-7 space-y-2 sm:space-y-3 text-xs sm:text-sm text-[#c4c4cc]">
-            <p><span class="text-white font-medium">Español</span> — Competencia bilingüe o nativa</p>
-            <p><span class="text-white font-medium">Valenciano</span> — Competencia bilingüe o nativa</p>
-            <p><span class="text-white font-medium">Inglés</span> — Competencia básica profesional</p>
+            <p><span data-i18n="lang-es-name" class="text-white font-medium">Español</span> — <span data-i18n="lang-native">Competencia bilingüe o nativa</span></p>
+            <p><span data-i18n="lang-va-name" class="text-white font-medium">Valenciano</span> — <span data-i18n="lang-native">Competencia bilingüe o nativa</span></p>
+            <p><span data-i18n="lang-en-name" class="text-white font-medium">Inglés</span> — <span data-i18n="lang-en-level">Competencia básica profesional</span></p>
           </div>
         </div>
       </section>
@@ -578,24 +677,30 @@
       <section class="border-t border-[#1e1e24] pt-8 sm:pt-10 pb-8 sm:pb-12">
         <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#7a7a84] mb-6 sm:mb-10">
           <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
-          <span>CONTACT</span>
+          <span data-i18n="sec-contact">CONTACTO</span>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start">
           <div class="md:col-span-5">
-            <h2 class="text-xl sm:text-2xl md:text-3xl font-medium text-white tracking-tight">Get in touch</h2>
+            <h2 data-i18n="contact-title" class="text-xl sm:text-2xl md:text-3xl font-medium text-white tracking-tight">Get in touch</h2>
           </div>
-          <div class="md:col-span-7 space-y-3 sm:space-y-4">
+          <div class="md:col-span-7 space-y-4">
             <div>
-              <button onclick="copy('robertomrovira@gmail.com', 'Correo copiado')" class="text-xs sm:text-sm font-mono text-white hover:text-[#8e8e98] transition-colors flex items-center gap-2 cursor-pointer">
+              <a href="cv-roberto-munoz.pdf" download="cv-roberto-munoz.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-black text-xs sm:text-sm font-medium hover:bg-neutral-200 transition-colors shadow-lg">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span data-i18n="btn-download-cv">Descargar CV</span>
+              </a>
+            </div>
+            <div>
+              <button onclick="copy('robertomrovira@gmail.com', 'email')" class="text-xs sm:text-sm font-mono text-white hover:text-[#8e8e98] transition-colors flex items-center gap-2 cursor-pointer">
                 <span>robertomrovira@gmail.com</span>
-                <span class="text-[11px] sm:text-xs text-[#72727a] font-sans">(Click to copy)</span>
+                <span data-i18n="copy-email-hint" class="text-[11px] sm:text-xs text-[#72727a] font-sans">(Copiar correo)</span>
               </button>
             </div>
             <div>
-              <button onclick="copy('654851836', 'Teléfono copiado')" class="text-xs sm:text-sm font-mono text-white hover:text-[#8e8e98] transition-colors flex items-center gap-2 cursor-pointer">
+              <button onclick="copy('654851836', 'phone')" class="text-xs sm:text-sm font-mono text-white hover:text-[#8e8e98] transition-colors flex items-center gap-2 cursor-pointer">
                 <span>+34 654 85 18 36</span>
-                <span class="text-[11px] sm:text-xs text-[#72727a] font-sans">(Click to copy)</span>
+                <span data-i18n="copy-phone-hint" class="text-[11px] sm:text-xs text-[#72727a] font-sans">(Copiar teléfono)</span>
               </button>
             </div>
             <div>
@@ -614,14 +719,14 @@
   <div id="project-view" class="hidden relative z-20 min-h-screen">
     
     <nav class="w-full px-6 sm:px-12 md:px-16 lg:px-20 pt-7 pb-4 flex items-center justify-between max-w-[1360px] mx-auto">
-      <button onclick="closeProject()" class="pill-capsule px-4 py-2 rounded-full text-xs font-medium text-white hover:text-neutral-300 transition-colors flex items-center gap-2 cursor-pointer shadow-lg">
+      <button onclick="closeProject()" class="pill-capsule px-4 py-2 rounded-full text-xs font-medium text-white hover:text-neutral-300 transition-colors flex items-center gap-2 cursor-pointer shadow-lg" aria-label="Volver a la lista de proyectos">
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
-        <span>Back</span>
+        <span data-i18n="btn-back">Volver</span>
       </button>
 
       <div class="flex items-center gap-6 text-sm text-[#95959e] font-normal">
         <a id="project-live-btn" href="#" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5 text-white font-medium">
-          <span>Live App</span>
+          <span data-i18n="btn-live-demo">Demo en vivo</span>
           <svg class="w-2.5 h-2.5 text-current opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
         </a>
         <a href="https://github.com/roberttedt-jr" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
@@ -631,55 +736,39 @@
       </div>
     </nav>
 
-    <header class="text-center pt-8 pb-12 px-6">
-      <h1 id="project-title" class="font-headline text-5xl sm:text-7xl font-normal text-white tracking-tight drop-shadow-[0_0_30px_rgba(255,255,255,0.25)]">
-        PULSE
-      </h1>
-      <p id="project-subtitle" class="text-xs sm:text-sm text-[#7e7e86] font-mono mt-3">
-        Proyecto Personal &bull; Marzo '26
-      </p>
-    </header>
-
-    <section class="max-w-[1360px] mx-auto px-5 sm:px-8 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+    <section class="max-w-[1360px] mx-auto px-5 sm:px-8 md:px-12 pt-6 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
       
-      <div class="lg:col-span-10">
-        <div class="laptop-frame">
-          <div class="laptop-notch"></div>
+      <div class="lg:col-span-10 flex flex-col items-center">
+        <header class="text-center pb-10 px-6 w-full">
+          <h1 id="project-title" class="font-headline text-5xl sm:text-7xl font-normal text-white tracking-tight drop-shadow-[0_0_30px_rgba(255,255,255,0.25)]">
+            PULSE
+          </h1>
+          <p id="project-subtitle" class="text-xs sm:text-sm text-[#7e7e86] font-mono mt-3">
+            Proyecto Personal &bull; Septiembre '26
+          </p>
+        </header>
 
-          <div class="bg-[#0b0b0e] border border-neutral-800/80 rounded-xl overflow-hidden shadow-2xl">
-            <div class="browser-tabs-bar">
-              <div class="flex items-center gap-2 pb-2 pr-2">
-                <div class="w-3 h-3 rounded-full bg-[#ff5f56] border border-[#e0443e]"></div>
-                <div class="w-3 h-3 rounded-full bg-[#ffbd2e] border border-[#dea123]"></div>
-                <div class="w-3 h-3 rounded-full bg-[#27c93f] border border-[#1aab29]"></div>
-              </div>
-              <div class="browser-tab">
-                <span id="project-tab-icon">
-                  <svg class="w-3.5 h-3.5 text-[#2997ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M6 18h12M6 6h12M9 12h6M3 9v6M21 9v6M6 8v8M18 8v8"/>
-                  </svg>
-                </span>
-                <span id="project-tab-text" class="text-xs font-medium text-white tracking-tight">pulse-psi-blond.vercel.app</span>
-              </div>
+        <div class="iphone-device iphone-detail-view">
+          <div class="iphone-screen">
+            <div class="dynamic-island">
+              <div class="dynamic-island-lens"></div>
             </div>
-
-            <div class="relative w-full aspect-[16/10] overflow-hidden bg-black flex items-center justify-center">
-              <img 
-                id="project-main-image"
-                src="pulse.jpg" 
-                alt="App Case Study Screenshot" 
-                class="w-full h-full object-cover object-top block"
-              />
-            </div>
+            <div class="iphone-glare"></div>
+            <img 
+              id="project-main-image"
+              src="pulse-mobile.jpg" 
+              alt="Detalle de la aplicación móvil mostrada en iPhone 17 Pro" 
+              class="select-none"
+            />
           </div>
         </div>
 
-        <article id="project-article" class="mt-20 max-w-3xl space-y-14 text-sm font-normal text-[#c4c4cc] leading-relaxed">
+        <article id="project-article" class="mt-16 w-full max-w-3xl space-y-14 text-sm font-normal text-[#c4c4cc] leading-relaxed text-left">
         </article>
       </div>
 
       <aside class="hidden lg:block lg:col-span-2 sticky top-24 pl-4 border-l border-[#1f1f24] text-xs font-mono">
-        <span class="text-[#55555c] uppercase tracking-widest block mb-4 text-[10px]">CONTENTS</span>
+        <span data-i18n="aside-contents" class="text-[#55555c] uppercase tracking-widest block mb-4 text-[10px]">CONTENIDOS</span>
         <ul id="project-contents-list" class="space-y-3 text-[#7a7a84]">
         </ul>
       </aside>
@@ -688,118 +777,367 @@
 
     <footer class="mt-28 py-8 border-t border-white/5 text-center text-xs text-[#6e6e76]">
       <button onclick="closeProject()" class="text-white hover:underline cursor-pointer mb-3 inline-block">
-        ← Return to all projects
+        <span data-i18n="footer-back-all">&larr; Volver a todos los proyectos</span>
       </button>
       <p id="project-footer-copy">&copy; Roberto Muñoz Rovira</p>
     </footer>
 
   </div>
 
-  <div id="toast" class="fixed bottom-6 right-6 bg-white text-black text-xs font-medium px-4 py-2 rounded-full shadow-2xl transition-all duration-300 opacity-0 pointer-events-none z-50">
-    Copiado al portapapeles
+  <div id="toast" class="fixed bottom-6 right-6 bg-white text-black text-xs font-medium px-4 py-2 rounded-full shadow-2xl transition-all duration-300 opacity-0 pointer-events-none z-50" role="status" aria-live="polite">
+    Correo copiado
   </div>
 
   <script>
-    const projectData = {
-      pulse: {
-        id: 'pulse-project',
-        title: 'PULSE',
-        subtitle: "Proyecto Personal • Marzo '26",
-        liveUrl: 'https://pulse-psi-blond.vercel.app/',
-        tabText: 'pulse-psi-blond.vercel.app',
-        tabIcon: '<svg class="w-3.5 h-3.5 text-[#2997ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h12M6 6h12M9 12h6M3 9v6M21 9v6M6 8v8M18 8v8"/></svg>',
-        image: 'pulse.jpg',
-        footer: '© Roberto Muñoz Rovira • PULSE Project',
-        sections: [
-          {
-            id: 'overview',
-            number: '01 / RESUMEN',
-            title: 'Control intuitivo de entrenamientos y rutinas personalizadas',
-            body: 'PULSE es una plataforma web desarrollada para gestionar sesiones de entrenamiento con foco en la comodidad y la inmediatez. Ofrece una vista principal personalizada con accesos directos al entrenamiento del día (como rutinas Push/Pull/Legs), anillos interactivos de cumplimiento semanal, contador de rachas y distribución de volumen por grupos musculares.'
-          },
-          {
-            id: 'features',
-            number: '02 / FUNCIONALIDADES',
-            title: 'Seguimiento integral del rendimiento',
-            body: 'La aplicación estructura el flujo de trabajo mediante módulos dedicados a la ejecución de sesiones activas, biblioteca organizada de ejercicios, panel analítico de progreso con curvas de sobrecarga progresiva, historial exhaustivo de entrenamientos completados y gestión de perfil atlético adaptado.'
-          },
-          {
-            id: 'ui-design',
-            number: '03 / DISEÑO Y ARQUITECTURA',
-            title: 'Interfaz oscura con acentos carmesí y despliegue reactivo',
-            body: 'Desplegada en Vercel, PULSE combina una base cromática en negro profundo con degradados sutiles y botones de acción en tonos carmesí de alto contraste. Su interfaz modular permite registrar series, pesos y notas técnicas con mínima interacción para mantener la concentración durante el entrenamiento.'
-          }
-        ]
+    const translations = {
+      es: {
+        metaDesc: "Portfolio de Roberto Muñoz Rovira. Técnico en Sistemas Microinformáticos y Redes, estudiante de DAM y creador de proyectos digitales en Benidorm, España.",
+        "header-role": "Técnico en Sistemas • Estudiante DAM • Creador Digital",
+        "nav-work": "Trabajo",
+        "nav-info": "Información",
+        "hero-title": 'Creo <span class="font-italicHero italic font-normal text-white drop-shadow-[0_0_35px_rgba(255,255,255,0.45)]">proyectos</span>,<br />interfaces y sistemas.',
+        "hero-desc": "Técnico de Sistemas & estudiante de DAM. Creando productos digitales y experiencias creativas desde Benidorm.",
+        "hero-sub": "Explorando desarrollo web, ingeniería de sistemas, medios digitales y tecnología de videojuegos.",
+        "pulse-card-desc": "Proyecto Personal, Septiembre '26 — Registro ágil de sesiones, volumen de entrenamiento y control de progresión física.",
+        "tag-pulse-1": "Aplicación de entrenamiento",
+        "tag-pulse-2": "Registro de sesiones y progresión",
+        "tag-pulse-3": "Interfaz móvil",
+        "tag-pulse-4": "Gestión de rutinas y datos",
+        "tag-pulse-5": "Red social",
+        "atmos-card-desc": "UNIVERSAE, '25 — Aplicación meteorológica interactiva PWA con estilo Liquid Glass y datos climáticos en tiempo real.",
+        "tag-atmos-1": "Aplicación meteorológica",
+        "tag-atmos-2": "Diseño responsive",
+        "tag-atmos-3": "Datos meteorológicos",
+        "tag-atmos-4": "Interfaz Liquid Glass",
+        "tag-atmos-5": "Experiencia adaptada a móviles",
+        "sec-experience": "EXPERIENCIA",
+        "exp-role": "Técnico informático",
+        "exp-meta": "09/'24 - 12/'24 • En remoto",
+        "exp-desc": "Soporte técnico, diagnóstico de incidencias, optimización de sistemas y gestión de infraestructuras IT corporativas en entorno remoto.",
+        "sec-education": "EDUCACIÓN",
+        "edu-dam-title": "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)",
+        "edu-dam-desc": "Especialización en desarrollo multiplataforma, bases de datos relacionales, servicios y arquitecturas de aplicaciones modernas.",
+        "edu-smr-title": "Técnico en Sistemas Microinformáticos y Redes (SMR)",
+        "edu-smr-desc": "Instalación, configuración y mantenimiento de redes locales, hardware, servidores y protocolos de seguridad informática.",
+        "sec-skills": "HABILIDADES & STACK",
+        "skills-title": "Competencias técnicas",
+        "skills-desc": "Perfil multidisciplinar orientado a la implementación de software, soporte de sistemas e interfaces interactivas.",
+        "skill-grp-1": "01 / Desarrollo",
+        "skill-1-1": "HTML5 & CSS3 semántico",
+        "skill-1-3": "Java & POO",
+        "skill-1-4": "Desarrollo de aplicaciones PWA",
+        "skill-grp-2": "02 / Sistemas & Redes",
+        "skill-2-1": "Windows & Entornos corporativos",
+        "skill-2-2": "Diagnóstico y montaje de hardware",
+        "skill-2-3": "Redes locales, routing y switching",
+        "skill-2-4": "Mantenimiento IT y soporte técnico",
+        "skill-grp-3": "03 / Herramientas",
+        "skill-3-3": "Despliegue continuo en Vercel",
+        "skill-3-4": "Consumo e integración de APIs REST",
+        "skill-grp-4": "04 / Diseño & Contenido",
+        "skill-4-1": "Edición de vídeo y narrativa visual",
+        "skill-4-2": "Diseño de interfaces UI/UX",
+        "skill-4-3": "Creación de contenido digital & gaming",
+        "skill-4-4": "Herramientas de IA aplicadas a flujos IT",
+        "sec-bio": "BIOGRAFÍA",
+        "bio-title": "Bio",
+        "bio-desc": "Hola, soy Roberto Muñoz, Técnico en Sistemas Microinformáticos y Redes y estudiante de Desarrollo de Aplicaciones Multiplataforma (DAM). Combino una base sólida en infraestructura informática y resolución técnica de incidencias con pasión por la programación, el diseño de software interactivo, el sector de los videojuegos y la creación de contenido digital. Compagino mi formación continua en Benidorm con el desarrollo constante de proyectos prácticos que unen técnica, usabilidad y rendimiento.",
+        "sec-languages": "IDIOMAS",
+        "languages-title": "Idiomas",
+        "lang-es-name": "Español",
+        "lang-va-name": "Valenciano",
+        "lang-en-name": "Inglés",
+        "lang-native": "Competencia bilingüe o nativa",
+        "lang-en-level": "Competencia básica profesional",
+        "sec-contact": "CONTACTO",
+        "contact-title": "Get in touch",
+        "btn-download-cv": "Descargar CV",
+        "copy-email-hint": "(Copiar correo)",
+        "copy-phone-hint": "(Copiar teléfono)",
+        "toast-email": "Correo copiado",
+        "toast-phone": "Teléfono copiado",
+        "btn-back": "Volver",
+        "btn-live-demo": "Demo en vivo",
+        "aside-contents": "CONTENIDOS",
+        "footer-back-all": "← Volver a todos los proyectos"
       },
-      atmos: {
-        id: 'atmos-project',
-        title: 'ATMOS',
-        subtitle: "UNIVERSAE • Noviembre '25",
-        liveUrl: 'https://roberttedt-jr.github.io/ATMOS./',
-        tabText: 'ATMOS — Weather Mode',
-        tabIcon: '<svg class="w-3.5 h-3.5 text-[#2997ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>',
-        image: 'atmos.jpg',
-        footer: '© Roberto Muñoz Rovira • ATMOS Project',
-        sections: [
-          {
-            id: 'overview',
-            number: '01 / RESUMEN',
-            title: 'Reinventando la experiencia meteorológica en la web',
-            body: 'ATMOS nació como un proyecto en UNIVERSAE orientado a explorar las capacidades de las aplicaciones web progresivas (PWA) de alto rendimiento. El propósito fue diseñar una herramienta climática que combinase una estética minimalista con datos hiperprecisos y visualización en tiempo real.'
-          },
-          {
-            id: 'architecture',
-            number: '02 / ARQUITECTURA TÉCNICA',
-            title: 'Estructura moderna sin dependencias pesadas',
-            body: 'La arquitectura se construyó sobre JavaScript puro (Vanilla), HTML5 semántico y CSS3 con técnicas avanzadas de desenfoque por capas. Se implementó una integración directa con la API pública de Windy para la recepción continua de variables de presión, viento y proyecciones térmicas.'
-          },
-          {
-            id: 'ui-design',
-            number: '03 / INTERFAZ LIQUID GLASS',
-            title: 'Inmersión visual reactiva al clima',
-            body: 'La interfaz adopta un gradiente dinámico inspirado en la luminosidad del cielo mediterráneo. Cada tarjeta y gráfica vectorial SVG responde fluidamente al tamaño del dispositivo, manteniendo una legibilidad cristalina tanto en escritorio como en navegadores móviles.'
-          }
-        ]
+      en: {
+        metaDesc: "Portfolio of Roberto Muñoz Rovira. IT Systems Technician, multiplatform software development student and digital creator in Benidorm, Spain.",
+        "header-role": "Systems Technician • Multiplatform Dev Student • Digital Creator",
+        "nav-work": "Work",
+        "nav-info": "Info",
+        "hero-title": 'I build <span class="font-italicHero italic font-normal text-white drop-shadow-[0_0_35px_rgba(255,255,255,0.45)]">software</span>,<br />interfaces &amp; systems.',
+        "hero-desc": "IT Technician & DAM student. Building digital products and creative experiences from Benidorm.",
+        "hero-sub": "Exploring web development, systems engineering, digital media and gaming technologies.",
+        "pulse-card-desc": "Personal Project, September '26 — Streamlined workout tracking, training volume and strength progression analytics.",
+        "tag-pulse-1": "Training app",
+        "tag-pulse-2": "Session tracking & progression",
+        "tag-pulse-3": "Mobile interface",
+        "tag-pulse-4": "Routine & data management",
+        "tag-pulse-5": "Social network",
+        "atmos-card-desc": "UNIVERSAE, '25 — Interactive weather PWA featuring a Liquid Glass interface and real-time climate data.",
+        "tag-atmos-1": "Weather app",
+        "tag-atmos-2": "Responsive design",
+        "tag-atmos-3": "Weather data",
+        "tag-atmos-4": "Liquid Glass interface",
+        "tag-atmos-5": "Mobile-first experience",
+        "sec-experience": "EXPERIENCE",
+        "exp-role": "IT Technician",
+        "exp-meta": "09/'24 - 12/'24 • Remote",
+        "exp-desc": "Technical support, incident diagnosis, systems optimization, and corporate IT infrastructure maintenance in remote environments.",
+        "sec-education": "EDUCATION",
+        "edu-dam-title": "Higher National Diploma in Multi-platform Application Development (DAM)",
+        "edu-dam-desc": "Specializing in multiplatform application development, relational databases, web services and modern software architectures.",
+        "edu-smr-title": "Vocational Degree in Microcomputer Systems and Networks (SMR)",
+        "edu-smr-desc": "Deployment, configuration and maintenance of local network infrastructure, computing hardware, servers and security protocols.",
+        "sec-skills": "SKILLS & TECH STACK",
+        "skills-title": "Technical Competencies",
+        "skills-desc": "Versatile technical profile focused on software implementation, systems support, and interactive interfaces.",
+        "skill-grp-1": "01 / Development",
+        "skill-1-1": "Semantic HTML5 & CSS3",
+        "skill-1-3": "Java & OOP",
+        "skill-1-4": "PWA Application Development",
+        "skill-grp-2": "02 / Systems & Networks",
+        "skill-2-1": "Windows & Enterprise Environments",
+        "skill-2-2": "Hardware Assembly & Diagnosis",
+        "skill-2-3": "Local Area Networks, Routing & Switching",
+        "skill-2-4": "IT Maintenance & Technical Support",
+        "skill-grp-3": "03 / Tools",
+        "skill-3-3": "Continuous Deployment on Vercel",
+        "skill-3-4": "REST API Consumption & Integration",
+        "skill-grp-4": "04 / Design & Media",
+        "skill-4-1": "Video Editing & Visual Storytelling",
+        "skill-4-2": "UI/UX Interface Design",
+        "skill-4-3": "Digital Media Creation & Gaming",
+        "skill-4-4": "AI Workflow Integration for IT",
+        "sec-bio": "BIO",
+        "bio-title": "Bio",
+        "bio-desc": "Hello, I am Roberto Muñoz, an IT Systems and Networks Technician and currently studying Multiplatform Application Development (DAM). I combine a solid foundation in computer infrastructure and technical problem-solving with a passion for programming, interactive software design, the gaming sector, and digital media production. Based in Benidorm, Spain, I develop practical projects uniting engineering discipline, usability, and speed.",
+        "sec-languages": "LANGUAGES",
+        "languages-title": "Languages",
+        "lang-es-name": "Spanish",
+        "lang-va-name": "Valencian",
+        "lang-en-name": "English",
+        "lang-native": "Native or bilingual proficiency",
+        "lang-en-level": "Professional working proficiency",
+        "sec-contact": "CONTACT",
+        "contact-title": "Get in touch",
+        "btn-download-cv": "Download CV",
+        "copy-email-hint": "(Copy email)",
+        "copy-phone-hint": "(Copy phone)",
+        "toast-email": "Email copied",
+        "toast-phone": "Phone copied",
+        "btn-back": "Back",
+        "btn-live-demo": "Live Demo",
+        "aside-contents": "CONTENTS",
+        "footer-back-all": "← Return to all projects"
       }
     };
 
+    const projectDataI18n = {
+      es: {
+        pulse: {
+          id: 'pulse-project',
+          title: 'PULSE',
+          subtitle: "Proyecto Personal &bull; Septiembre '26",
+          liveUrl: 'https://pulse-psi-blond.vercel.app/',
+          image: 'pulse-mobile.jpg',
+          footer: '© Roberto Muñoz Rovira • PULSE Project',
+          sections: [
+            {
+              id: 'overview',
+              number: '01 / RESUMEN',
+              title: 'Control intuitivo de entrenamientos y rutinas personalizadas',
+              body: 'PULSE resuelve el problema de la excesiva fricción que tienen muchas aplicaciones de entrenamiento durante la sesión. Ofrece una vista principal con accesos directos al entrenamiento del día (como rutinas Push/Pull/Legs), anillos interactivos de cumplimiento semanal, contador de rachas y control de volumen por grupos musculares sin distracciones.'
+            },
+            {
+              id: 'features',
+              number: '02 / FUNCIONALIDADES',
+              title: 'Seguimiento integral del rendimiento y progresión',
+              body: 'La aplicación estructura el flujo de trabajo mediante módulos dedicados a la ejecución de sesiones activas, biblioteca organizada de ejercicios, panel analítico de progreso con curvas de sobrecarga progresiva, historial exhaustivo de entrenamientos completados y gestión de perfil atlético adaptado.'
+            },
+            {
+              id: 'architecture',
+              number: '03 / ARQUITECTURA TÉCNICA',
+              title: 'Despliegue ágil y persistencia de datos',
+              body: 'Desplegada en Vercel con integración continua, la aplicación combina JavaScript para la gestión de estados y cálculos dinámicos de volumen de carga. Su arquitectura modular permite registrar series, pesos y notas técnicas con mínima interacción para mantener la concentración durante el entrenamiento.'
+            },
+            {
+              id: 'learnings',
+              number: '04 / APRENDIZAJES',
+              title: 'Optimización de experiencia de usuario en entornos deportivos',
+              body: 'El desarrollo de PULSE consolidó conocimientos clave en el diseño de interfaces ergonómicas para uso con una sola mano, la reducción de latencia en la interacción táctil en caliente y la estructuración coherente de datos de rendimiento para visualizaciones claras.'
+            }
+          ]
+        },
+        atmos: {
+          id: 'atmos-project',
+          title: 'ATMOS',
+          subtitle: "UNIVERSAE &bull; Noviembre '25",
+          liveUrl: 'https://roberttedt-jr.github.io/ATMOS./',
+          image: 'atmos-mobile.jpg',
+          footer: '© Roberto Muñoz Rovira • ATMOS Project',
+          sections: [
+            {
+              id: 'overview',
+              number: '01 / RESUMEN',
+              title: 'Reinventando la experiencia meteorológica en la web',
+              body: 'ATMOS nació como un proyecto en UNIVERSAE para resolver la saturación publicitaria y visual de los servicios meteorológicos tradicionales, ofreciendo una experiencia climática minimalista, fluida y con datos de alta precisión en tiempo real adaptados a dispositivos móviles.'
+            },
+            {
+              id: 'features',
+              number: '02 / FUNCIONALIDADES',
+              title: 'Previsión dinámica y métricas climáticas avanzadas',
+              body: 'Permite consultar pronósticos térmicos por horas, niveles de presión, velocidad y dirección del viento, humedad y alertas climáticas con transiciones visuales interactivas acordes a las condiciones meteorológicas del momento.'
+            },
+            {
+              id: 'architecture',
+              number: '03 / ARQUITECTURA TÉCNICA',
+              title: 'Integración de API meteorológica y Progressive Web App',
+              body: 'Construida con JavaScript puro (Vanilla), HTML5 semántico y CSS3 con técnicas de desenfoque por capas (Liquid Glass). Se implementó conexión directa con la API pública de Windy para el flujo continuo de variables climáticas y soporte PWA para instalación en pantalla de inicio.'
+            },
+            {
+              id: 'learnings',
+              number: '04 / APRENDIZAJES',
+              title: 'Consumo asíncrono y diseño responsivo sin frameworks pesados',
+              body: 'El proyecto permitió dominar el manejo asíncrono de peticiones fetch y tratamiento de payloads JSON, la optimización de animaciones mediante CSS transform/opacity y la creación de un sistema de diseño propio completamente adaptado a móviles.'
+            }
+          ]
+        }
+      },
+      en: {
+        pulse: {
+          id: 'pulse-project',
+          title: 'PULSE',
+          subtitle: "Personal Project &bull; September '26",
+          liveUrl: 'https://pulse-psi-blond.vercel.app/',
+          image: 'pulse-mobile.jpg',
+          footer: '© Roberto Muñoz Rovira • PULSE Project',
+          sections: [
+            {
+              id: 'overview',
+              number: '01 / OVERVIEW',
+              title: 'Seamless workout tracking & custom workout routines',
+              body: 'PULSE eliminates the friction commonly found in sports logging apps during active gym workouts. It features quick shortcuts for daily workout regimens (Push/Pull/Legs), interactive weekly goal rings, streak counters, and per-muscle-group volume management.'
+            },
+            {
+              id: 'features',
+              number: '02 / FEATURES',
+              title: 'End-to-end performance and progression monitoring',
+              body: 'The app structures training workflows into dedicated active workout execution, an organized exercise library, an analytics dashboard displaying progressive overload curves, full workout history logs, and personalized athlete profiles.'
+            },
+            {
+              id: 'architecture',
+              number: '03 / TECHNICAL ARCHITECTURE',
+              title: 'Agile deployment and persistent state management',
+              body: 'Deployed on Vercel via continuous integration, the application utilizes modern JavaScript for state management and dynamic load calculation. Its modular design allows logging sets, weights, and technical notes with two taps to preserve gym focus.'
+            },
+            {
+              id: 'learnings',
+              number: '04 / KEY TAKEAWAYS',
+              title: 'UX optimization for active athletic environments',
+              body: 'Developing PULSE deepened insights into one-handed ergonomical UI design, zero-latency touch responses during workouts, and structured data handling for performance visualization.'
+            }
+          ]
+        },
+        atmos: {
+          id: 'atmos-project',
+          title: 'ATMOS',
+          subtitle: "UNIVERSAE &bull; November '25",
+          liveUrl: 'https://roberttedt-jr.github.io/ATMOS./',
+          image: 'atmos-mobile.jpg',
+          footer: '© Roberto Muñoz Rovira • ATMOS Project',
+          sections: [
+            {
+              id: 'overview',
+              number: '01 / OVERVIEW',
+              title: 'Reimagining the weather experience on the web',
+              body: 'ATMOS was conceived as a project at UNIVERSAE to overcome the visual clutter and ad saturation of mainstream weather utilities, providing a minimalist, responsive, and high-precision weather dashboard built for mobile screens.'
+            },
+            {
+              id: 'features',
+              number: '02 / FEATURES',
+              title: 'Dynamic forecasting & advanced meteorological metrics',
+              body: 'Enables real-time hourly temperature forecasts, atmospheric pressure readings, wind direction and velocity, humidity, and weather alerts with reactive visual transitions matching outdoor climate conditions.'
+            },
+            {
+              id: 'architecture',
+              number: '03 / TECHNICAL ARCHITECTURE',
+              title: 'Meteorological API integration & Progressive Web App',
+              body: 'Built with Vanilla JavaScript, semantic HTML5, and CSS3 featuring layered Liquid Glass blurs. Directly integrates Windy API for climate metrics alongside PWA capabilities for home screen installation.'
+            },
+            {
+              id: 'learnings',
+              number: '04 / KEY TAKEAWAYS',
+              title: 'Asynchronous consumption & framework-free responsive UI',
+              body: 'The project reinforced expertise in asynchronous fetch patterns, complex JSON payload parsing, hardware-accelerated CSS animations, and lightweight mobile-first design systems.'
+            }
+          ]
+        }
+      }
+    };
+
+    let currentLang = 'es';
     let activeProjectId = 'pulse';
 
-    function switchTab(tab) {
-      const viewWork = document.getElementById('view-work');
-      const viewInfo = document.getElementById('view-info');
-      const btnWork = document.getElementById('btn-work');
-      const btnInfo = document.getElementById('btn-info');
-      const notch = document.getElementById('notch');
-      const notchGlow = document.getElementById('notch-glow');
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('portfolio_lang', lang);
+      document.documentElement.lang = lang;
 
-      if (tab === 'work') {
-        viewWork.classList.remove('hidden');
-        viewInfo.classList.add('hidden');
-        btnWork.className = "relative z-10 px-6 py-2 rounded-full text-sm font-medium text-white bg-[#2c2c33] shadow-sm transition-all duration-200 tracking-tight";
-        btnInfo.className = "relative z-10 px-6 py-2 rounded-full text-sm font-medium text-[#8c8c94] hover:text-white transition-all duration-200 tracking-tight";
-        notch.classList.remove('info-active');
-        notchGlow.classList.remove('info-active');
-      } else {
-        viewWork.classList.add('hidden');
-        viewInfo.classList.remove('hidden');
-        btnInfo.className = "relative z-10 px-6 py-2 rounded-full text-sm font-medium text-white bg-[#2c2c33] shadow-sm transition-all duration-200 tracking-tight";
-        btnWork.className = "relative z-10 px-6 py-2 rounded-full text-sm font-medium text-[#8c8c94] hover:text-white transition-all duration-200 tracking-tight";
-        notch.classList.add('info-active');
-        notchGlow.classList.add('info-active');
+      const metaEl = document.getElementById('meta-desc');
+      if (metaEl && translations[lang].metaDesc) {
+        metaEl.setAttribute('content', translations[lang].metaDesc);
       }
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key] !== undefined) {
+          el.textContent = translations[lang][key];
+        }
+      });
+
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.getAttribute('data-i18n-html');
+        if (translations[lang] && translations[lang][key] !== undefined) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+
+      const btnEsDesktop = document.getElementById('lang-es');
+      const btnEnDesktop = document.getElementById('lang-en');
+      const btnEsMobile = document.getElementById('lang-es-mobile');
+      const btnEnMobile = document.getElementById('lang-en-mobile');
+
+      const activeClass = "px-3 py-1 rounded-full text-white bg-[#2c2c33] shadow-sm transition-all duration-200";
+      const inactiveClass = "px-3 py-1 rounded-full text-[#8c8c94] hover:text-white transition-all duration-200";
+      const activeMobileClass = "px-2.5 py-1 rounded-full text-white bg-[#2c2c33] transition-all duration-200";
+      const inactiveMobileClass = "px-2.5 py-1 rounded-full text-[#8c8c94] hover:text-white transition-all duration-200";
+
+      if (lang === 'es') {
+        if (btnEsDesktop) btnEsDesktop.className = activeClass;
+        if (btnEnDesktop) btnEnDesktop.className = inactiveClass;
+        if (btnEsMobile) btnEsMobile.className = activeMobileClass;
+        if (btnEnMobile) btnEnMobile.className = inactiveMobileClass;
+      } else {
+        if (btnEsDesktop) btnEsDesktop.className = inactiveClass;
+        if (btnEnDesktop) btnEnDesktop.className = activeClass;
+        if (btnEsMobile) btnEsMobile.className = inactiveMobileClass;
+        if (btnEnMobile) btnEnMobile.className = activeMobileClass;
+      }
+
+      const projectView = document.getElementById('project-view');
+      if (projectView && !projectView.classList.contains('hidden')) {
+        renderProjectDetail(activeProjectId);
+      }
     }
 
-    function openProject(projectId) {
-      activeProjectId = projectId;
-      const data = projectData[projectId];
+    function renderProjectDetail(projectId) {
+      const data = projectDataI18n[currentLang][projectId];
       if (!data) return;
 
       document.getElementById('project-title').textContent = data.title;
       document.getElementById('project-subtitle').innerHTML = data.subtitle;
-      document.getElementById('project-tab-text').textContent = data.tabText;
-      document.getElementById('project-tab-icon').innerHTML = data.tabIcon;
       document.getElementById('project-main-image').src = data.image;
       document.getElementById('project-live-btn').href = data.liveUrl;
       document.getElementById('project-footer-copy').textContent = data.footer;
@@ -824,12 +1162,47 @@
         contentsListEl.appendChild(liEl);
       });
 
-      if (data.liveUrl !== '#') {
+      if (data.liveUrl && data.liveUrl !== '#') {
         const liveLi = document.createElement('li');
-        liveLi.innerHTML = `<a href="${data.liveUrl}" target="_blank" class="text-white hover:text-neutral-300 transition-colors block pt-2">Live Demo ↗</a>`;
+        const liveText = translations[currentLang]["btn-live-demo"];
+        liveLi.innerHTML = `<a href="${data.liveUrl}" target="_blank" class="text-white hover:text-neutral-300 transition-colors block pt-2">${liveText} ↗</a>`;
         contentsListEl.appendChild(liveLi);
       }
+    }
 
+    function switchTab(tab) {
+      const viewWork = document.getElementById('view-work');
+      const viewInfo = document.getElementById('view-info');
+      const btnWork = document.getElementById('btn-work');
+      const btnInfo = document.getElementById('btn-info');
+      const notch = document.getElementById('notch');
+      const notchGlow = document.getElementById('notch-glow');
+
+      if (tab === 'work') {
+        viewWork.classList.remove('hidden');
+        viewInfo.classList.add('hidden');
+        btnWork.className = "relative z-10 px-6 py-2 rounded-full text-sm font-medium text-white bg-[#2c2c33] shadow-sm transition-all duration-200 tracking-tight";
+        btnInfo.className = "relative z-10 px-6 py-2 rounded-full text-sm font-medium text-[#8c8c94] hover:text-white transition-all duration-200 tracking-tight";
+        btnWork.setAttribute('aria-selected', 'true');
+        btnInfo.setAttribute('aria-selected', 'false');
+        notch.classList.remove('info-active');
+        notchGlow.classList.remove('info-active');
+      } else {
+        viewWork.classList.add('hidden');
+        viewInfo.classList.remove('hidden');
+        btnInfo.className = "relative z-10 px-6 py-2 rounded-full text-sm font-medium text-white bg-[#2c2c33] shadow-sm transition-all duration-200 tracking-tight";
+        btnWork.className = "relative z-10 px-6 py-2 rounded-full text-sm font-medium text-[#8c8c94] hover:text-white transition-all duration-200 tracking-tight";
+        btnWork.setAttribute('aria-selected', 'false');
+        btnInfo.setAttribute('aria-selected', 'true');
+        notch.classList.add('info-active');
+        notchGlow.classList.add('info-active');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function openProject(projectId) {
+      activeProjectId = projectId;
+      renderProjectDetail(projectId);
       document.getElementById('home-view').classList.add('hidden');
       document.getElementById('project-view').classList.remove('hidden');
       window.scrollTo({ top: 0, behavior: 'instant' });
@@ -839,16 +1212,17 @@
       document.getElementById('project-view').classList.add('hidden');
       document.getElementById('home-view').classList.remove('hidden');
       
-      const targetSec = document.getElementById(projectData[activeProjectId]?.id || 'view-work');
+      const targetSec = document.getElementById(projectDataI18n[currentLang][activeProjectId]?.id || 'view-work');
       if (targetSec) {
         targetSec.scrollIntoView({ behavior: 'instant' });
       }
     }
 
-    function copy(text, label) {
+    function copy(text, type) {
       navigator.clipboard.writeText(text).then(() => {
         const toast = document.getElementById('toast');
-        toast.textContent = label;
+        const key = type === 'email' ? 'toast-email' : 'toast-phone';
+        toast.textContent = translations[currentLang][key] || (type === 'email' ? 'Correo copiado' : 'Teléfono copiado');
         toast.classList.remove('opacity-0');
         toast.classList.add('opacity-100');
         setTimeout(() => {
@@ -857,6 +1231,11 @@
         }, 2000);
       });
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('portfolio_lang') || 'es';
+      setLanguage(savedLang);
+    });
   </script>
 </body>
 </html>
