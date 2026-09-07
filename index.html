@@ -181,43 +181,44 @@
       opacity: 1;
     }
 
-    /* MOCKUP IPHONE */
+    /* MOCKUP IPHONE AJUSTADO (MÁS COMPACTO Y HUNDIDO EN LA TARJETA) */
     .iphone-device {
       position: relative;
       margin: 0 auto;
       width: 100%;
-      max-width: 330px;
+      max-width: 280px;
       height: auto;
       background: #09090b;
-      border-radius: 54px;
-      padding: 10px;
+      border-radius: 48px;
+      padding: 9px;
       box-shadow: 
         0 0 0 1px rgba(255, 255, 255, 0.16),
         0 0 0 4px #26262b,
         0 0 0 5px rgba(255, 255, 255, 0.08),
         0 35px 80px -15px rgba(0, 0, 0, 0.95);
       transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-      transform: translateY(28px);
+      transform: translateY(95px);
       z-index: 10;
     }
 
     @media (min-width: 768px) {
       .iphone-device {
-        max-width: 360px;
+        max-width: 305px;
+        transform: translateY(110px);
       }
     }
 
     @media (max-width: 640px) {
       .iphone-device {
-        max-width: 290px;
-        border-radius: 46px;
-        padding: 8px;
-        transform: translateY(12px);
+        max-width: 250px;
+        border-radius: 40px;
+        padding: 7px;
+        transform: translateY(70px);
       }
     }
 
     .perry-project-card:hover .iphone-device {
-      transform: translateY(0px);
+      transform: translateY(40px);
       box-shadow: 
         0 0 0 1px rgba(100, 160, 240, 0.4),
         0 0 0 4px #2b3848,
@@ -230,7 +231,7 @@
       width: 100%;
       height: auto;
       background: #000000;
-      border-radius: 44px;
+      border-radius: 40px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -248,17 +249,17 @@
 
     @media (max-width: 640px) {
       .iphone-screen {
-        border-radius: 38px;
+        border-radius: 34px;
       }
     }
 
     .dynamic-island {
       position: absolute;
-      top: 13px;
+      top: 12px;
       left: 50%;
       transform: translateX(-50%);
-      width: 105px;
-      height: 27px;
+      width: 95px;
+      height: 25px;
       background: #000000;
       border-radius: 20px;
       z-index: 30;
@@ -266,12 +267,12 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      padding-right: 9px;
+      padding-right: 8px;
     }
 
     .dynamic-island-lens {
-      width: 10px;
-      height: 10px;
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
       background: #0a0f1d;
       border: 1px solid rgba(255, 255, 255, 0.15);
@@ -285,12 +286,14 @@
       z-index: 25;
     }
 
+    /* EN LA VISTA DETALLADA EL MÓVIL SE MUESTRA COMPLETO SIN DESPLAZAR */
     .iphone-detail-view {
       transform: translateY(0px) !important;
       margin: 0 auto;
+      max-width: 320px;
     }
 
-    /* MOCKUP MACBOOK / VENTANA DE ESCRITORIO */
+    /* MOCKUP MACBOOK / VENTANA DE ESCRITORIO (BEACON) */
     .mac-device {
       position: relative;
       margin: 0 auto;
@@ -1124,7 +1127,7 @@
           id: 'beacon-project',
           title: 'BEACON',
           subtitle: "Proyecto Personal &bull; Septiembre '26",
-          liveUrl: 'https://beacon-780c.onrender.com', // Sustituye con tu URL exacta de Render si difiere
+          liveUrl: 'https://beacon-780c.onrender.com',
           deviceType: 'mac',
           image: 'beacon.png',
           footer: '© Roberto Muñoz Rovira • BEACON Telemetry System',
