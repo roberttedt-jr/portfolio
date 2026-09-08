@@ -4,13 +4,13 @@
 
 ### **Desarrollador de Software • Sistemas Microinformáticos y Redes • DAM**
 
-[![Live Portfolio](https://img.shields.io/badge/Demo-GitHub_Pages-22c55e?style=for-the-badge&logo=github&logoColor=white)](https://roberttedt-jr.github.io/portfolio/)
+[![Live Portfolio](https://img.shields.io/badge/Demo-Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://robertomunoz.onrender.com/)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/es/docs/Web/HTML)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![JavaScript ES6+](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/es/docs/Web/JavaScript)
-[![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub_Pages-blue?style=for-the-badge&logo=github-pages&logoColor=white)](https://pages.github.com/)
+[![Render Deploy](https://img.shields.io/badge/Deploy-Render-black?style=for-the-badge&logo=render&logoColor=white)](https://robertomunoz.onrender.com/)
 
-**🌐 Sitio Web en Producción:** [https://roberttedt-jr.github.io/portfolio/](https://roberttedt-jr.github.io/portfolio/)
+**🌐 Sitio Web en Producción:** [https://robertomunoz.onrender.com/](https://robertomunoz.onrender.com/)
 
 [Proyectos Destacados](#-proyectos-destacados) • [Diseño y Estética](#-diseño-y-estética) • [Estructura del Proyecto](#-estructura-del-repositorio) • [Visualización Local](#-ejecución-y-visualización-local) • [Contacto](#-contacto)
 
@@ -91,11 +91,10 @@ Visita [http://localhost:3000](http://localhost:3000).
 
 ---
 
-## 🌐 Despliegue Continuo (GitHub Pages)
+## 🌐 Despliegue en Producción (Render)
 
-El despliegue está automatizado con **GitHub Pages**:
-- Cada cambio en la rama principal `main` se publica instantáneamente en el entorno de producción.
-- La URL oficial de acceso es: [https://roberttedt-jr.github.io/portfolio/](https://roberttedt-jr.github.io/portfolio/)
+El sitio web se encuentra alojado y disponible públicamente en **Render**:
+- La URL oficial de acceso es: [https://robertomunoz.onrender.com/](https://robertomunoz.onrender.com/)
 
 ---
 
