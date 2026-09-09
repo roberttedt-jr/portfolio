@@ -56,7 +56,7 @@ El portfolio está concebido con un estándar visual contemporáneo y tipografí
 portfolio/
 ├── index.html                # Código fuente principal de la web (HTML5, Tailwind, JS ES6+)
 ├── cv-roberto-munoz.pdf      # Curriculum Vitae oficial para descarga directa
-├── streamsync.jpg            # Captura de pantalla de StreamSync
+├── streamsync.png            # Captura de pantalla de StreamSync en Mac desktop mockup
 ├── pulse.jpg                 # Captura de pantalla de Pulse en escritorio
 ├── pulse-mobile.jpg          # Captura de pantalla de Pulse en smartphone
 ├── beacon.png                # Captura del dashboard de monitorización de BEACON
