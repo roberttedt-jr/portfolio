@@ -512,30 +512,30 @@
         </div>
 
         <div class="mt-4 select-none cursor-pointer flex flex-col items-center">
-          <a href="#beacon-project" class="arrow-bounce text-2xl text-[#82828e] hover:text-white transition-colors inline-block" aria-label="Desplazarse a los proyectos destacados">
+          <a href="#streamsync-project" class="arrow-bounce text-2xl text-[#82828e] hover:text-white transition-colors inline-block" aria-label="Desplazarse a los proyectos destacados">
             ↓
           </a>
         </div>
       </section>
 
-      <!-- PROYECTO 1: BEACON -->
-      <section id="beacon-project" class="w-full pt-1">
-        <div onclick="openProject('beacon')" class="perry-project-card px-5 sm:px-10 md:px-12 pt-7 sm:pt-9 pb-0 group">
+      <!-- PROYECTO 1: STREAMSYNC -->
+      <section id="streamsync-project" class="w-full pt-1">
+        <div onclick="openProject('streamsync')" class="perry-project-card px-5 sm:px-10 md:px-12 pt-7 sm:pt-9 pb-0 group">
           
           <div class="relative w-full max-w-3xl mx-auto text-center mb-6 sm:mb-8">
             <h2 class="text-lg sm:text-[22px] font-medium text-white tracking-tight">
-              BEACON
+              StreamSync
             </h2>
-            <p data-i18n="beacon-card-desc" class="text-xs sm:text-sm text-[#7e7e86] group-hover:text-[#a0b8d8] transition-colors mt-0.5 font-normal tracking-tight max-w-2xl mx-auto">
-              Proyecto Personal, Septiembre '26 — Motor de observabilidad y telemetría de red con Spring Boot 3, concurrencia y despliegue Docker.
+            <p data-i18n="streamsync-card-desc" class="text-xs sm:text-sm text-[#7e7e86] group-hover:text-[#a0b8d8] transition-colors mt-0.5 font-normal tracking-tight max-w-2xl mx-auto">
+              Proyecto Personal, Septiembre '26 — Plataforma de Watch Parties de Twitch con sincronización en tiempo real, salas WebRTC y presencia compartida.
             </p>
             
             <div class="flex flex-wrap justify-center gap-2 mt-4">
-              <span data-i18n="tag-beacon-1" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-[#a1a1aa] border border-white/[0.08]">Java 17 &amp; Spring Boot 3</span>
-              <span data-i18n="tag-beacon-2" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-[#a1a1aa] border border-white/[0.08]">PostgreSQL &amp; JPA</span>
-              <span data-i18n="tag-beacon-3" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-[#a1a1aa] border border-white/[0.08]">Sondeo Concurrente Asíncrono</span>
-              <span data-i18n="tag-beacon-4" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-[#a1a1aa] border border-white/[0.08]">Docker &amp; Cloud Render</span>
-              <span data-i18n="tag-beacon-5" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-[#a1a1aa] border border-white/[0.08]">Status Page Cyber-Ops</span>
+              <span data-i18n="tag-streamsync-1" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-[#a1a1aa] border border-white/[0.08]">Next.js 14 &amp; TypeScript</span>
+              <span data-i18n="tag-streamsync-2" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-[#a1a1aa] border border-white/[0.08]">Twitch Everywhere Embed</span>
+              <span data-i18n="tag-streamsync-3" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-[#a1a1aa] border border-white/[0.08]">WebRTC Mesh Audio/Vídeo</span>
+              <span data-i18n="tag-streamsync-4" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-[#a1a1aa] border border-white/[0.08]">Neon PostgreSQL &amp; Heartbeat</span>
+              <span data-i18n="tag-streamsync-5" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-[#a1a1aa] border border-white/[0.08]">Arquitectura PWA iOS Standalone</span>
             </div>
 
             <div class="absolute right-0 top-0 text-[#7e7e86] group-hover:text-white text-xl transition-all duration-300 transform group-hover:translate-x-1.5" aria-hidden="true">
@@ -550,13 +550,13 @@
                 <div class="mac-dot yellow"></div>
                 <div class="mac-dot green"></div>
                 <div class="mac-address-bar">
-                  beacon-telemetry.ops/command
+                  streamsync-livid.vercel.app/room/demo
                 </div>
               </div>
               <div class="mac-screen">
                 <img 
-                  src="beacon.png" 
-                  alt="Centro de mando y telemetría de BEACON en pantalla Mac" 
+                  src="streamsync.png" 
+                  alt="Plataforma de Watch Party StreamSync en pantalla Mac" 
                   class="select-none"
                 />
               </div>
@@ -610,7 +610,55 @@
         </div>
       </section>
 
-      <!-- PROYECTO 3: ATMOS -->
+      <!-- PROYECTO 3: BEACON -->
+      <section id="beacon-project" class="w-full pt-1">
+        <div onclick="openProject('beacon')" class="perry-project-card px-5 sm:px-10 md:px-12 pt-7 sm:pt-9 pb-0 group">
+          
+          <div class="relative w-full max-w-3xl mx-auto text-center mb-6 sm:mb-8">
+            <h2 class="text-lg sm:text-[22px] font-medium text-white tracking-tight">
+              BEACON
+            </h2>
+            <p data-i18n="beacon-card-desc" class="text-xs sm:text-sm text-[#7e7e86] group-hover:text-[#a0b8d8] transition-colors mt-0.5 font-normal tracking-tight max-w-2xl mx-auto">
+              Proyecto Personal, Septiembre '26 — Motor de observabilidad y telemetría de red con Spring Boot 3, concurrencia y despliegue Docker.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-2 mt-4">
+              <span data-i18n="tag-beacon-1" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-[#a1a1aa] border border-white/[0.08]">Java 17 &amp; Spring Boot 3</span>
+              <span data-i18n="tag-beacon-2" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-[#a1a1aa] border border-white/[0.08]">PostgreSQL &amp; JPA</span>
+              <span data-i18n="tag-beacon-3" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-[#a1a1aa] border border-white/[0.08]">Sondeo Concurrente Asíncrono</span>
+              <span data-i18n="tag-beacon-4" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-[#a1a1aa] border border-white/[0.08]">Docker &amp; Cloud Render</span>
+              <span data-i18n="tag-beacon-5" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-[#a1a1aa] border border-white/[0.08]">Status Page Cyber-Ops</span>
+            </div>
+
+            <div class="absolute right-0 top-0 text-[#7e7e86] group-hover:text-white text-xl transition-all duration-300 transform group-hover:translate-x-1.5" aria-hidden="true">
+              →
+            </div>
+          </div>
+
+          <div class="flex justify-center w-full">
+            <div class="mac-device">
+              <div class="mac-device-titlebar">
+                <div class="mac-dot red"></div>
+                <div class="mac-dot yellow"></div>
+                <div class="mac-dot green"></div>
+                <div class="mac-address-bar">
+                  beacon-telemetry.ops/command
+                </div>
+              </div>
+              <div class="mac-screen">
+                <img 
+                  src="beacon.png" 
+                  alt="Centro de mando y telemetría de BEACON en pantalla Mac" 
+                  class="select-none"
+                />
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- PROYECTO 4: ATMOS -->
       <section id="atmos-project" class="w-full pt-1">
         <div onclick="openProject('atmos')" class="perry-project-card px-5 sm:px-10 md:px-12 pt-7 sm:pt-9 pb-0 group">
           
@@ -971,6 +1019,14 @@
         "tag-beacon-4": "Docker & Cloud Render",
         "tag-beacon-5": "Status Page Cyber-Ops",
 
+        // STREAMSYNC
+        "streamsync-card-desc": "Proyecto Personal, Septiembre '26 — Plataforma de Watch Parties de Twitch con sincronización en tiempo real, salas WebRTC y presencia compartida.",
+        "tag-streamsync-1": "Next.js 14 & TypeScript",
+        "tag-streamsync-2": "Twitch Everywhere Embed",
+        "tag-streamsync-3": "WebRTC Mesh Audio/Vídeo",
+        "tag-streamsync-4": "Neon PostgreSQL & Heartbeat",
+        "tag-streamsync-5": "Arquitectura PWA iOS Standalone",
+
         // PULSE
         "pulse-card-desc": "Proyecto Personal, Septiembre '26 — Registro ágil de sesiones, volumen de entrenamiento y control de progresión física.",
         "tag-pulse-1": "Next.js & React",
@@ -1050,6 +1106,14 @@
         "tag-beacon-4": "Docker & Render Cloud",
         "tag-beacon-5": "Cyber-Ops Status Page",
 
+        // STREAMSYNC
+        "streamsync-card-desc": "Personal Project, September '26 — Real-time Twitch Watch Party platform featuring synchronized playback, WebRTC mesh calling, and room presence.",
+        "tag-streamsync-1": "Next.js 14 & TypeScript",
+        "tag-streamsync-2": "Twitch Everywhere Embed",
+        "tag-streamsync-3": "WebRTC Audio/Video Mesh",
+        "tag-streamsync-4": "Neon PostgreSQL & Heartbeat",
+        "tag-streamsync-5": "Standalone iOS PWA Architecture",
+
         // PULSE
         "pulse-card-desc": "Personal Project, September '26 — Streamlined workout tracking, training volume and strength progression analytics.",
         "tag-pulse-1": "Next.js & React",
@@ -1116,6 +1180,42 @@
 
     const projectDataI18n = {
       es: {
+        streamsync: {
+          id: 'streamsync-project',
+          title: 'StreamSync',
+          subtitle: "Proyecto Personal &bull; Septiembre '26",
+          liveUrl: 'https://streamsync-livid.vercel.app',
+          repoUrl: 'https://github.com/roberttedt-jr/streamsync',
+          deviceType: 'mac',
+          image: 'streamsync.png',
+          footer: '© Roberto Muñoz Rovira • StreamSync Watch Parties',
+          sections: [
+            {
+              id: 'overview',
+              number: '01 / RESUMEN',
+              title: 'Watch Parties sincronizadas de Twitch con presencia y comunicación en vivo',
+              body: 'StreamSync es una plataforma web reactiva concebida para disfrutar de directos y clips de Twitch de forma comunitaria y coordinada. Permite a dos o más participantes conectarse a una misma sala privada o pública, compartir presencia en tiempo real, chatear bidireccionalmente y comunicarse por voz y vídeo sin intermediarios centralizados pesados.'
+            },
+            {
+              id: 'features',
+              number: '02 / FUNCIONALIDADES',
+              title: 'Presencia heartbeat, chat reactivo, control de anfitrión y malla WebRTC',
+              body: 'El anfitrión dispone de control exclusivo sobre el canal activo, modo teatro y gestión de la sala. Incorpora un canal de chat optimizado con auto-scroll inteligente y burbujas de mensaje, llamada de audio/vídeo mesh entre pares (WebRTC peer-to-peer) con conmutadores de micro y cámara, lista de participantes en vivo con latidos periódicos de presencia y soporte integral PWA standalone adaptado a safe areas de iOS.'
+            },
+            {
+              id: 'architecture',
+              number: '03 / ARQUITECTURA TÉCNICA',
+              title: 'Next.js 14 App Router, Neon PostgreSQL serverless y Twitch Everywhere',
+              body: 'Desarrollado con Next.js 14 y TypeScript sobre Vercel Edge/Serverless. Para garantizar fiabilidad en entornos serverless sin requerir WebSockets persistentes de alto coste, el motor de sincronización y presencia implementa polling reactivo con backoff sobre Neon Serverless PostgreSQL. La señalización WebRTC intercambia SDP offers/answers y candidatos ICE de forma segura a través de endpoints API REST transaccionales.'
+            },
+            {
+              id: 'learnings',
+              number: '04 / APRENDIZAJES',
+              title: 'Topologías WebRTC mesh, sincronización serverless y UX móvil de precisión',
+              body: 'El proyecto supuso dominar la orquestación de llamadas WebRTC multipunto, el manejo de streams audiovisuales en navegadores modernos, la integración oficial de iframes Twitch respetando políticas CSP y parent domains, así como la eliminación de latencias y bloqueos de zoom en dispositivos táctiles iOS Safari.'
+            }
+          ]
+        },
         beacon: {
           id: 'beacon-project',
           title: 'BEACON',
@@ -1226,6 +1326,42 @@
         }
       },
       en: {
+        streamsync: {
+          id: 'streamsync-project',
+          title: 'StreamSync',
+          subtitle: "Personal Project &bull; September '26",
+          liveUrl: 'https://streamsync-livid.vercel.app',
+          repoUrl: 'https://github.com/roberttedt-jr/streamsync',
+          deviceType: 'mac',
+          image: 'streamsync.png',
+          footer: '© Roberto Muñoz Rovira • StreamSync Watch Parties',
+          sections: [
+            {
+              id: 'overview',
+              number: '01 / OVERVIEW',
+              title: 'Synchronized Twitch Watch Parties with real-time room presence and live calling',
+              body: 'StreamSync is a high-performance web platform designed for communal Twitch viewing experiences. Multiple participants can join synchronized public or private rooms, monitor real-time participant presence, participate in a live low-latency chat, and connect via peer-to-peer voice and video.'
+            },
+            {
+              id: 'features',
+              number: '02 / FEATURES',
+              title: 'Heartbeat presence, reactive chat, host controls & WebRTC mesh calling',
+              body: 'Features comprehensive host room management, active channel switching, theater mode, live chat with smart auto-scroll, real-time peer-to-peer WebRTC voice/video mesh with mic/cam toggles, participant presence with automatic timeout cleanup, and a standalone PWA experience tailored for iOS safe areas.'
+            },
+            {
+              id: 'architecture',
+              number: '03 / TECHNICAL ARCHITECTURE',
+              title: 'Next.js 14 App Router, Neon PostgreSQL serverless & Twitch Everywhere',
+              body: 'Built using Next.js 14 and TypeScript deployed on Vercel Serverless. Presence and state signaling rely on an optimized HTTP polling engine with adaptive backoff backed by Neon Serverless PostgreSQL, avoiding expensive persistent WebSocket servers. WebRTC signaling exchanges SDP offers/answers and ICE candidates over atomic transactional REST routes.'
+            },
+            {
+              id: 'learnings',
+              number: '04 / KEY TAKEAWAYS',
+              title: 'WebRTC mesh topologies, serverless state synchronization & iOS UX tuning',
+              body: 'Deepened expertise in WebRTC peer connection orchestration, media stream handling, secure Twitch Everywhere iframe embedding with strict CSP and parent domains, and touch-screen viewport optimization for iOS Safari and mobile PWAs.'
+            }
+          ]
+        },
         beacon: {
           id: 'beacon-project',
           title: 'BEACON',
@@ -1338,7 +1474,7 @@
     };
 
     let currentLang = 'es';
-    let activeProjectId = 'beacon';
+    let activeProjectId = 'streamsync';
 
     function setLanguage(lang) {
       currentLang = lang;
